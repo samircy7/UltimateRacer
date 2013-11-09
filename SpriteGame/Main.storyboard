@@ -45,7 +45,7 @@
         <!--Ultimate Racer View Controller-->
         <scene sceneID="TqA-ee-9JV">
             <objects>
-                <viewController id="GTV-3O-SJn" customClass="UltimateRacerViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="GTV-3O-SJn" customClass="UltimateRacerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W6I-Df-FMV"/>
                         <viewControllerLayoutGuide type="bottom" id="Q8e-J1-CER"/>

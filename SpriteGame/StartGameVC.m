@@ -14,7 +14,7 @@
 
 @implementation StartGameVC
 {
-    NSMutableString* uniqueCode;
+    NSMutableString* uniqueCode1;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,10 +39,10 @@
     code[3] = arc4random() % 26 + 65;
     code[4] = arc4random() % 26 + 65;
     
-    uniqueCode = [[NSMutableString alloc] initWithCapacity:5];
-    [uniqueCode appendFormat:@"%C%C%C%C%C", code[0], code[1], code[2], code[3], code[4]];
+    uniqueCode1 = [[NSMutableString alloc] initWithCapacity:5];
+    [uniqueCode1 appendFormat:@"%C%C%C%C%C", code[0], code[1], code[2], code[3], code[4]];
     
-    _codeLabel.text = uniqueCode;
+    _codeLabel.text = uniqueCode1;
     _codeLabel.font = [UIFont fontWithName:@"SubatomicTsoonami" size:120];
     _codeLabel.textColor = [UIColor whiteColor];
 }

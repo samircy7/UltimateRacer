@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SpriteMyScene : SKScene
+@interface UltimateRacerLeftScene : SKScene
+
 
 @end

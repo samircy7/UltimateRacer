@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpriteAppDelegate : UIResponder <UIApplicationDelegate>
+@interface UltimateRacerAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

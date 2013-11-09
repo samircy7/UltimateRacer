@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */ = {isa = PBXBuildFile; fileRef = E3905A3E1828AD4400BF83EA /* toy_car.png */; };
 		FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
 		FD583D891813805F00BED4AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D881813805F00BED4AD /* CoreGraphics.framework */; };
 		FD583D8B1813805F00BED4AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D8A1813805F00BED4AD /* UIKit.framework */; };
 		FD583D8D1813805F00BED4AD /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D8C1813805F00BED4AD /* SpriteKit.framework */; };
 		FD583D931813805F00BED4AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD583D911813805F00BED4AD /* InfoPlist.strings */; };
 		FD583D951813805F00BED4AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D941813805F00BED4AD /* main.m */; };
-		FD583D991813805F00BED4AD /* SpriteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D981813805F00BED4AD /* SpriteAppDelegate.m */; };
-		FD583D9C1813805F00BED4AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD583D9A1813805F00BED4AD /* Main.storyboard */; };
-		FD583D9F1813805F00BED4AD /* SpriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D9E1813805F00BED4AD /* SpriteViewController.m */; };
-		FD583DA21813805F00BED4AD /* SpriteMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583DA11813805F00BED4AD /* SpriteMyScene.m */; };
-		FD583DA41813805F00BED4AD /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = FD583DA31813805F00BED4AD /* Spaceship.png */; };
+		FD583D991813805F00BED4AD /* UltimateRacerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D981813805F00BED4AD /* UltimateRacerAppDelegate.m */; };
+		FD583D9F1813805F00BED4AD /* UltimateRacerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */; };
+		FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583DA11813805F00BED4AD /* UltimateRacerLeftScene.m */; };
 		FD583DA61813805F00BED4AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD583DA51813805F00BED4AD /* Images.xcassets */; };
 		FD583DAD1813805F00BED4AD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583DAC1813805F00BED4AD /* XCTest.framework */; };
 		FD583DAE1813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
 		FD583DAF1813805F00BED4AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D8A1813805F00BED4AD /* UIKit.framework */; };
 		FD583DB71813805F00BED4AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD583DB51813805F00BED4AD /* InfoPlist.strings */; };
 		FD583DB91813805F00BED4AD /* SpriteGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583DB81813805F00BED4AD /* SpriteGameTests.m */; };
+		FDC80834182DB5710055B1E9 /* UltimateRacerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC80832182DB5710055B1E9 /* UltimateRacerMenuViewController.m */; };
+		FDC8083B182DBD3B0055B1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC8083A182DBD3B0055B1E9 /* Main.storyboard */; };
+		FDC8083F182DCA0F0055B1E9 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC8083E182DCA0F0055B1E9 /* button2.png */; };
+		FDC80841182DCA180055B1E9 /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC80840182DCA180055B1E9 /* button1.png */; };
+		FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC80842182DCA1F0055B1E9 /* Untitled.png */; };
+		FDF7E911182DAFAF00689890 /* UltimateRacerRightScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7E910182DAFAF00689890 /* UltimateRacerRightScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,29 +42,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FD583D831813805F00BED4AD /* SpriteGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3905A3E1828AD4400BF83EA /* toy_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_car.png; sourceTree = "<group>"; };
+		FD583D831813805F00BED4AD /* UltimateRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD583D861813805F00BED4AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD583D881813805F00BED4AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FD583D8A1813805F00BED4AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD583D8C1813805F00BED4AD /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		FD583D901813805F00BED4AD /* SpriteGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteGame-Info.plist"; sourceTree = "<group>"; };
+		FD583D901813805F00BED4AD /* UltimateRacer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UltimateRacer-Info.plist"; sourceTree = "<group>"; };
 		FD583D921813805F00BED4AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD583D941813805F00BED4AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FD583D961813805F00BED4AD /* SpriteGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpriteGame-Prefix.pch"; sourceTree = "<group>"; };
-		FD583D971813805F00BED4AD /* SpriteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteAppDelegate.h; sourceTree = "<group>"; };
-		FD583D981813805F00BED4AD /* SpriteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteAppDelegate.m; sourceTree = "<group>"; };
-		FD583D9B1813805F00BED4AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FD583D9D1813805F00BED4AD /* SpriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteViewController.h; sourceTree = "<group>"; };
-		FD583D9E1813805F00BED4AD /* SpriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteViewController.m; sourceTree = "<group>"; };
-		FD583DA01813805F00BED4AD /* SpriteMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteMyScene.h; sourceTree = "<group>"; };
-		FD583DA11813805F00BED4AD /* SpriteMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteMyScene.m; sourceTree = "<group>"; };
-		FD583DA31813805F00BED4AD /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		FD583D961813805F00BED4AD /* UltimateRacer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UltimateRacer-Prefix.pch"; sourceTree = "<group>"; };
+		FD583D971813805F00BED4AD /* UltimateRacerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltimateRacerAppDelegate.h; sourceTree = "<group>"; };
+		FD583D981813805F00BED4AD /* UltimateRacerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerAppDelegate.m; sourceTree = "<group>"; };
+		FD583D9D1813805F00BED4AD /* UltimateRacerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltimateRacerViewController.h; sourceTree = "<group>"; };
+		FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerViewController.m; sourceTree = "<group>"; };
+		FD583DA01813805F00BED4AD /* UltimateRacerLeftScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltimateRacerLeftScene.h; sourceTree = "<group>"; };
+		FD583DA11813805F00BED4AD /* UltimateRacerLeftScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerLeftScene.m; sourceTree = "<group>"; };
 		FD583DA51813805F00BED4AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FD583DAB1813805F00BED4AD /* SpriteGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpriteGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD583DAB1813805F00BED4AD /* UltimateRacerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimateRacerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD583DAC1813805F00BED4AD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		FD583DB41813805F00BED4AD /* SpriteGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteGameTests-Info.plist"; sourceTree = "<group>"; };
+		FD583DB41813805F00BED4AD /* UltimateRacerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UltimateRacerTests-Info.plist"; sourceTree = "<group>"; };
 		FD583DB61813805F00BED4AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD583DB81813805F00BED4AD /* SpriteGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteGameTests.m; sourceTree = "<group>"; };
+		FDC80831182DB5710055B1E9 /* UltimateRacerMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerMenuViewController.h; sourceTree = "<group>"; };
+		FDC80832182DB5710055B1E9 /* UltimateRacerMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerMenuViewController.m; sourceTree = "<group>"; };
+		FDC8083A182DBD3B0055B1E9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FDC8083D182DC6500055B1E9 /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = MenuFinal.m4a; path = ../../MenuFinal.m4a; sourceTree = "<group>"; };
+		FDC8083E182DCA0F0055B1E9 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
+		FDC80840182DCA180055B1E9 /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
+		FDC80842182DCA1F0055B1E9 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
+		FDF7E90F182DAFAF00689890 /* UltimateRacerRightScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerRightScene.h; sourceTree = "<group>"; };
+		FDF7E910182DAFAF00689890 /* UltimateRacerRightScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerRightScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +103,7 @@
 		FD583D7A1813805F00BED4AD = {
 			isa = PBXGroup;
 			children = (
+				E3905A3E1828AD4400BF83EA /* toy_car.png */,
 				FD583D8E1813805F00BED4AD /* SpriteGame */,
 				FD583DB21813805F00BED4AD /* SpriteGameTests */,
 				FD583D851813805F00BED4AD /* Frameworks */,
@@ -100,8 +114,8 @@
 		FD583D841813805F00BED4AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD583D831813805F00BED4AD /* SpriteGame.app */,
-				FD583DAB1813805F00BED4AD /* SpriteGameTests.xctest */,
+				FD583D831813805F00BED4AD /* UltimateRacer.app */,
+				FD583DAB1813805F00BED4AD /* UltimateRacerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,14 +135,17 @@
 		FD583D8E1813805F00BED4AD /* SpriteGame */ = {
 			isa = PBXGroup;
 			children = (
-				FD583D971813805F00BED4AD /* SpriteAppDelegate.h */,
-				FD583D981813805F00BED4AD /* SpriteAppDelegate.m */,
-				FD583D9A1813805F00BED4AD /* Main.storyboard */,
-				FD583D9D1813805F00BED4AD /* SpriteViewController.h */,
-				FD583D9E1813805F00BED4AD /* SpriteViewController.m */,
-				FD583DA01813805F00BED4AD /* SpriteMyScene.h */,
-				FD583DA11813805F00BED4AD /* SpriteMyScene.m */,
-				FD583DA31813805F00BED4AD /* Spaceship.png */,
+				FD583D971813805F00BED4AD /* UltimateRacerAppDelegate.h */,
+				FD583D981813805F00BED4AD /* UltimateRacerAppDelegate.m */,
+				FD583D9D1813805F00BED4AD /* UltimateRacerViewController.h */,
+				FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */,
+				FDC8083A182DBD3B0055B1E9 /* Main.storyboard */,
+				FDC80831182DB5710055B1E9 /* UltimateRacerMenuViewController.h */,
+				FDC80832182DB5710055B1E9 /* UltimateRacerMenuViewController.m */,
+				FD583DA01813805F00BED4AD /* UltimateRacerLeftScene.h */,
+				FD583DA11813805F00BED4AD /* UltimateRacerLeftScene.m */,
+				FDF7E90F182DAFAF00689890 /* UltimateRacerRightScene.h */,
+				FDF7E910182DAFAF00689890 /* UltimateRacerRightScene.m */,
 				FD583DA51813805F00BED4AD /* Images.xcassets */,
 				FD583D8F1813805F00BED4AD /* Supporting Files */,
 			);
@@ -138,10 +155,14 @@
 		FD583D8F1813805F00BED4AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FD583D901813805F00BED4AD /* SpriteGame-Info.plist */,
+				FD583D901813805F00BED4AD /* UltimateRacer-Info.plist */,
+				FDC80840182DCA180055B1E9 /* button1.png */,
+				FDC8083E182DCA0F0055B1E9 /* button2.png */,
+				FDC80842182DCA1F0055B1E9 /* Untitled.png */,
+				FDC8083D182DC6500055B1E9 /* MenuFinal.m4a */,
 				FD583D911813805F00BED4AD /* InfoPlist.strings */,
 				FD583D941813805F00BED4AD /* main.m */,
-				FD583D961813805F00BED4AD /* SpriteGame-Prefix.pch */,
+				FD583D961813805F00BED4AD /* UltimateRacer-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,7 +179,7 @@
 		FD583DB31813805F00BED4AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FD583DB41813805F00BED4AD /* SpriteGameTests-Info.plist */,
+				FD583DB41813805F00BED4AD /* UltimateRacerTests-Info.plist */,
 				FD583DB51813805F00BED4AD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -167,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FD583D821813805F00BED4AD /* SpriteGame */ = {
+		FD583D821813805F00BED4AD /* UltimateRacer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD583DBC1813805F00BED4AD /* Build configuration list for PBXNativeTarget "SpriteGame" */;
+			buildConfigurationList = FD583DBC1813805F00BED4AD /* Build configuration list for PBXNativeTarget "UltimateRacer" */;
 			buildPhases = (
 				FD583D7F1813805F00BED4AD /* Sources */,
 				FD583D801813805F00BED4AD /* Frameworks */,
@@ -179,14 +200,14 @@
 			);
 			dependencies = (
 			);
-			name = SpriteGame;
+			name = UltimateRacer;
 			productName = SpriteGame;
-			productReference = FD583D831813805F00BED4AD /* SpriteGame.app */;
+			productReference = FD583D831813805F00BED4AD /* UltimateRacer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FD583DAA1813805F00BED4AD /* SpriteGameTests */ = {
+		FD583DAA1813805F00BED4AD /* UltimateRacerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD583DBF1813805F00BED4AD /* Build configuration list for PBXNativeTarget "SpriteGameTests" */;
+			buildConfigurationList = FD583DBF1813805F00BED4AD /* Build configuration list for PBXNativeTarget "UltimateRacerTests" */;
 			buildPhases = (
 				FD583DA71813805F00BED4AD /* Sources */,
 				FD583DA81813805F00BED4AD /* Frameworks */,
@@ -197,9 +218,9 @@
 			dependencies = (
 				FD583DB11813805F00BED4AD /* PBXTargetDependency */,
 			);
-			name = SpriteGameTests;
+			name = UltimateRacerTests;
 			productName = SpriteGameTests;
-			productReference = FD583DAB1813805F00BED4AD /* SpriteGameTests.xctest */;
+			productReference = FD583DAB1813805F00BED4AD /* UltimateRacerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +238,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FD583D7E1813805F00BED4AD /* Build configuration list for PBXProject "SpriteGame" */;
+			buildConfigurationList = FD583D7E1813805F00BED4AD /* Build configuration list for PBXProject "UltimateRacer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -230,8 +251,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD583D821813805F00BED4AD /* SpriteGame */,
-				FD583DAA1813805F00BED4AD /* SpriteGameTests */,
+				FD583D821813805F00BED4AD /* UltimateRacer */,
+				FD583DAA1813805F00BED4AD /* UltimateRacerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,8 +264,11 @@
 			files = (
 				FD583D931813805F00BED4AD /* InfoPlist.strings in Resources */,
 				FD583DA61813805F00BED4AD /* Images.xcassets in Resources */,
-				FD583DA41813805F00BED4AD /* Spaceship.png in Resources */,
-				FD583D9C1813805F00BED4AD /* Main.storyboard in Resources */,
+				FDC8083F182DCA0F0055B1E9 /* button2.png in Resources */,
+				FDC8083B182DBD3B0055B1E9 /* Main.storyboard in Resources */,
+				FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */,
+				E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */,
+				FDC80841182DCA180055B1E9 /* button1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC80834182DB5710055B1E9 /* UltimateRacerMenuViewController.m in Sources */,
+				FDF7E911182DAFAF00689890 /* UltimateRacerRightScene.m in Sources */,
 				FD583D951813805F00BED4AD /* main.m in Sources */,
-				FD583DA21813805F00BED4AD /* SpriteMyScene.m in Sources */,
-				FD583D991813805F00BED4AD /* SpriteAppDelegate.m in Sources */,
-				FD583D9F1813805F00BED4AD /* SpriteViewController.m in Sources */,
+				FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */,
+				FD583D991813805F00BED4AD /* UltimateRacerAppDelegate.m in Sources */,
+				FD583D9F1813805F00BED4AD /* UltimateRacerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +309,7 @@
 /* Begin PBXTargetDependency section */
 		FD583DB11813805F00BED4AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD583D821813805F00BED4AD /* SpriteGame */;
+			target = FD583D821813805F00BED4AD /* UltimateRacer */;
 			targetProxy = FD583DB01813805F00BED4AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -295,14 +321,6 @@
 				FD583D921813805F00BED4AD /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FD583D9A1813805F00BED4AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD583D9B1813805F00BED4AD /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		FD583DB51813805F00BED4AD /* InfoPlist.strings */ = {
@@ -395,10 +413,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SpriteGame/SpriteGame-Prefix.pch";
-				INFOPLIST_FILE = "SpriteGame/SpriteGame-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SpriteGame/UltimateRacer-Prefix.pch";
+				INFOPLIST_FILE = "SpriteGame/UltimateRacer-Info.plist";
+				PRODUCT_NAME = UltimateRacer;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,10 +428,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SpriteGame/SpriteGame-Prefix.pch";
-				INFOPLIST_FILE = "SpriteGame/SpriteGame-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SpriteGame/UltimateRacer-Prefix.pch";
+				INFOPLIST_FILE = "SpriteGame/UltimateRacer-Info.plist";
+				PRODUCT_NAME = UltimateRacer;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -434,8 +454,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SpriteGameTests/SpriteGameTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SpriteGameTests/UltimateRacerTests-Info.plist";
+				PRODUCT_NAME = UltimateRacerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -453,8 +473,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpriteGame/SpriteGame-Prefix.pch";
-				INFOPLIST_FILE = "SpriteGameTests/SpriteGameTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SpriteGameTests/UltimateRacerTests-Info.plist";
+				PRODUCT_NAME = UltimateRacerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -463,7 +483,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FD583D7E1813805F00BED4AD /* Build configuration list for PBXProject "SpriteGame" */ = {
+		FD583D7E1813805F00BED4AD /* Build configuration list for PBXProject "UltimateRacer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD583DBA1813805F00BED4AD /* Debug */,
@@ -472,21 +492,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD583DBC1813805F00BED4AD /* Build configuration list for PBXNativeTarget "SpriteGame" */ = {
+		FD583DBC1813805F00BED4AD /* Build configuration list for PBXNativeTarget "UltimateRacer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD583DBD1813805F00BED4AD /* Debug */,
 				FD583DBE1813805F00BED4AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		FD583DBF1813805F00BED4AD /* Build configuration list for PBXNativeTarget "SpriteGameTests" */ = {
+		FD583DBF1813805F00BED4AD /* Build configuration list for PBXNativeTarget "UltimateRacerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD583DC01813805F00BED4AD /* Debug */,
 				FD583DC11813805F00BED4AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

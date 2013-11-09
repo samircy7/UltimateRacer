@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Samir Choudhary. All rights reserved.
 //
 
-#import "SpriteAppDelegate.h"
+#import "UltimateRacerAppDelegate.h"
 
-@implementation SpriteAppDelegate
+@implementation UltimateRacerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

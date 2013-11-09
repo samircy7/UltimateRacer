@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SpriteAppDelegate.h"
+#import "UltimateRacerAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([SpriteAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([UltimateRacerAppDelegate class]));
     }
 }

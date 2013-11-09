@@ -6,10 +6,12 @@
 //  Copyright (c) 2013 Samir Choudhary. All rights reserved.
 //
 
-#import "SpriteViewController.h"
-#import "SpriteMyScene.h"
+#import "UltimateRacerViewController.h"
+#import "UltimateRacerLeftScene.h"
+//#import "UltimateRacerRightScene.h"
 
-@implementation SpriteViewController
+@implementation UltimateRacerViewController
+@synthesize scene;
 
 - (void)viewDidLoad
 {
@@ -21,7 +23,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [SpriteMyScene sceneWithSize:skView.bounds.size];
+    scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.

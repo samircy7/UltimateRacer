@@ -23,6 +23,9 @@
 		FD583DAF1813805F00BED4AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D8A1813805F00BED4AD /* UIKit.framework */; };
 		FD583DB71813805F00BED4AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD583DB51813805F00BED4AD /* InfoPlist.strings */; };
 		FD583DB91813805F00BED4AD /* SpriteGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583DB81813805F00BED4AD /* SpriteGameTests.m */; };
+		FDC6CDC9182EF119006921EA /* subatomic.tsoonami.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCE2ECD182EEF8F0009BB3D /* subatomic.tsoonami.ttf */; };
+		FDC6CDCD182EF167006921EA /* StartGameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC6CDCB182EF167006921EA /* StartGameVC.m */; };
+		FDC6CDD1182EF1A3006921EA /* JoinGameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC6CDD0182EF1A3006921EA /* JoinGameVC.m */; };
 		FDC80834182DB5710055B1E9 /* UltimateRacerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC80832182DB5710055B1E9 /* UltimateRacerMenuViewController.m */; };
 		FDC8083B182DBD3B0055B1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC8083A182DBD3B0055B1E9 /* Main.storyboard */; };
 		FDC8083F182DCA0F0055B1E9 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC8083E182DCA0F0055B1E9 /* button2.png */; };
@@ -68,6 +71,10 @@
 		FD583DB41813805F00BED4AD /* UltimateRacerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UltimateRacerTests-Info.plist"; sourceTree = "<group>"; };
 		FD583DB61813805F00BED4AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD583DB81813805F00BED4AD /* SpriteGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteGameTests.m; sourceTree = "<group>"; };
+		FDC6CDCA182EF167006921EA /* StartGameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartGameVC.h; sourceTree = "<group>"; };
+		FDC6CDCB182EF167006921EA /* StartGameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartGameVC.m; sourceTree = "<group>"; };
+		FDC6CDCF182EF1A3006921EA /* JoinGameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinGameVC.h; sourceTree = "<group>"; };
+		FDC6CDD0182EF1A3006921EA /* JoinGameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinGameVC.m; sourceTree = "<group>"; };
 		FDC80831182DB5710055B1E9 /* UltimateRacerMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerMenuViewController.h; sourceTree = "<group>"; };
 		FDC80832182DB5710055B1E9 /* UltimateRacerMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerMenuViewController.m; sourceTree = "<group>"; };
 		FDC8083A182DBD3B0055B1E9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +86,7 @@
 		FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FDCE2EC9182EEACB0009BB3D /* v1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v1-1.png"; sourceTree = "<group>"; };
 		FDCE2ECB182EEAD40009BB3D /* v1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v1-2.png"; sourceTree = "<group>"; };
+		FDCE2ECD182EEF8F0009BB3D /* subatomic.tsoonami.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = subatomic.tsoonami.ttf; sourceTree = "<group>"; };
 		FDF7E90F182DAFAF00689890 /* UltimateRacerRightScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerRightScene.h; sourceTree = "<group>"; };
 		FDF7E910182DAFAF00689890 /* UltimateRacerRightScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerRightScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +158,10 @@
 				FD583D9D1813805F00BED4AD /* UltimateRacerViewController.h */,
 				FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */,
 				FDC8083A182DBD3B0055B1E9 /* Main.storyboard */,
+				FDC6CDCF182EF1A3006921EA /* JoinGameVC.h */,
+				FDC6CDD0182EF1A3006921EA /* JoinGameVC.m */,
+				FDC6CDCA182EF167006921EA /* StartGameVC.h */,
+				FDC6CDCB182EF167006921EA /* StartGameVC.m */,
 				FDC80831182DB5710055B1E9 /* UltimateRacerMenuViewController.h */,
 				FDC80832182DB5710055B1E9 /* UltimateRacerMenuViewController.m */,
 				FD583DA01813805F00BED4AD /* UltimateRacerLeftScene.h */,
@@ -169,6 +181,7 @@
 				FDC80840182DCA180055B1E9 /* button1.png */,
 				FDCE2EC6182EDE970009BB3D /* MenuFinal.m4a */,
 				FDC8083E182DCA0F0055B1E9 /* button2.png */,
+				FDCE2ECD182EEF8F0009BB3D /* subatomic.tsoonami.ttf */,
 				FDCE2EC3182EDBA50009BB3D /* logo1.png */,
 				FDCE2EC9182EEACB0009BB3D /* v1-1.png */,
 				FDCE2ECB182EEAD40009BB3D /* v1-2.png */,
@@ -275,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC6CDC9182EF119006921EA /* subatomic.tsoonami.ttf in Resources */,
 				FD583D931813805F00BED4AD /* InfoPlist.strings in Resources */,
 				FDCE2ECC182EEAD40009BB3D /* v1-2.png in Resources */,
 				FD583DA61813805F00BED4AD /* Images.xcassets in Resources */,
@@ -304,6 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDC80834182DB5710055B1E9 /* UltimateRacerMenuViewController.m in Sources */,
+				FDC6CDCD182EF167006921EA /* StartGameVC.m in Sources */,
+				FDC6CDD1182EF1A3006921EA /* JoinGameVC.m in Sources */,
 				FDF7E911182DAFAF00689890 /* UltimateRacerRightScene.m in Sources */,
 				FD583D951813805F00BED4AD /* main.m in Sources */,
 				FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */,

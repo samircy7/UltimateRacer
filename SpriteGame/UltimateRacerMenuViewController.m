@@ -34,6 +34,8 @@
     
     _player = [[AVAudioPlayer alloc] initWithData:soundFile error:nil];
     
+    self.player.numberOfLoops = -1;
+    
     [self.player prepareToPlay];
     [self.player setDelegate:self];
     [self.player play];

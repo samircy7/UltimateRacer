@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-1027" y="88"/>
         </scene>
-        <!--View Controller-->
+        <!--Join GameVC-->
         <scene sceneID="eh2-Yu-36d">
             <objects>
-                <viewController id="Mmg-19-JfY" sceneMemberID="viewController">
+                <viewController id="Mmg-19-JfY" customClass="JoinGameVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m0a-dO-i2W"/>
                         <viewControllerLayoutGuide type="bottom" id="xyu-u6-fxj"/>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="1" y="732"/>
         </scene>
-        <!--View Controller-->
+        <!--Start GameVC-->
         <scene sceneID="a25-r1-Pbd">
             <objects>
-                <viewController id="ar1-3n-TX6" sceneMemberID="viewController">
+                <viewController id="ar1-3n-TX6" customClass="StartGameVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aKp-TZ-o3v"/>
                         <viewControllerLayoutGuide type="bottom" id="MdE-7f-bEk"/>
@@ -86,10 +86,10 @@
                                 <rect key="frame" x="-32" y="657" width="833" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfT-Ih-5M6">
-                                <rect key="frame" x="267" y="471" width="235" height="82"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfT-Ih-5M6">
+                                <rect key="frame" x="77" y="450" width="615" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -97,6 +97,9 @@
                         <color key="backgroundColor" red="0.27843138575553894" green="0.062745101749897003" blue="0.17647059261798859" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="YF1-AM-Hvr"/>
+                    <connections>
+                        <outlet property="codeLabel" destination="HfT-Ih-5M6" id="URS-YD-ehY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAd-vi-heO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

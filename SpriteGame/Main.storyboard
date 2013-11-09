@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="GTV-3O-SJn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2a4-Ng-2be">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -26,6 +26,9 @@
                                 <state key="normal" image="button1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ar1-3n-TX6" kind="modal" id="ciV-Rh-v5i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e58-rd-IBo">
                                 <rect key="frame" x="240" y="681" width="325" height="56"/>
@@ -33,14 +36,71 @@
                                 <state key="normal" image="button2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Mmg-19-JfY" kind="modal" id="jy1-37-lxX"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.070588238537311554" green="0.18823531270027161" blue="0.26666668057441711" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.062745101749897003" green="0.18823531270027161" blue="0.25882354378700256" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGi-ED-x5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-327" y="8"/>
+            <point key="canvasLocation" x="-1027" y="88"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eh2-Yu-36d">
+            <objects>
+                <viewController id="Mmg-19-JfY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m0a-dO-i2W"/>
+                        <viewControllerLayoutGuide type="bottom" id="xyu-u6-fxj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Flx-rg-vfk">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.066666670143604279" green="0.20392158627510071" blue="0.050980396568775177" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqN-i9-2wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="732"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="a25-r1-Pbd">
+            <objects>
+                <viewController id="ar1-3n-TX6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aKp-TZ-o3v"/>
+                        <viewControllerLayoutGuide type="bottom" id="MdE-7f-bEk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zz5-6V-aFP">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="It0-SM-0Gj">
+                                <rect key="frame" x="85" y="228" width="598" height="131"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9JF-ya-hvT">
+                                <rect key="frame" x="-32" y="657" width="833" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfT-Ih-5M6">
+                                <rect key="frame" x="267" y="471" width="235" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27843138575553894" green="0.062745101749897003" blue="0.17647059261798859" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YF1-AM-Hvr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAd-vi-heO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="-496"/>
         </scene>
         <!--Ultimate Racer View Controller-->
         <scene sceneID="TqA-ee-9JV">
@@ -58,13 +118,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW6-xW-ZBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576" y="19"/>
+            <point key="canvasLocation" x="1210" y="27"/>
         </scene>
     </scenes>
     <resources>
         <image name="Untitled.png" width="600" height="131"/>
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
+        <image name="v1-1.png" width="1142" height="218"/>
+        <image name="v1-2.png" width="1639" height="218"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>

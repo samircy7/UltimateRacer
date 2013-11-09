@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface UltimateRacerMenuViewController : UIViewController
+@interface UltimateRacerMenuViewController : UIViewController <AVAudioPlayerDelegate>
+
+@property (nonatomic, retain) AVAudioPlayer *player;
 
 @end

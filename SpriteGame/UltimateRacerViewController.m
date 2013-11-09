@@ -16,10 +16,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"helloa;ksfbkqbflqwihefldn");
-    NSLog(@"Testing Thomas");
-    NSLog(@"The ultimate test");
-    NSLog(@"thomasFinalTest"); 
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

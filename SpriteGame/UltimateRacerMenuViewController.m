@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad
 {
+  
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -35,4 +36,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clickedJoin:(id)sender {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:@"Start" forKey:PlayerType];
+    [ud synchronize];
+    
+}
+
+- (IBAction)clickedStart:(id)sender {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:@"Join" forKey:PlayerType];
+    [ud synchronize];
+}
 @end

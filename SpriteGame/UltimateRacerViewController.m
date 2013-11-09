@@ -8,23 +8,27 @@
 
 #import "UltimateRacerViewController.h"
 #import "UltimateRacerLeftScene.h"
-//#import "UltimateRacerRightScene.h"
+#import "UltimateRacerRightScene.h"
 
 @implementation UltimateRacerViewController
+{
+    NSString * player;
+}
 @synthesize scene;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"helloa;ksfbkqbflqwihefldn");
-    NSLog(@"Testing Thomas");
-    kajfdgiqujksnf;pqiedhbfljqbehfouqneopfho
-    
-    NSLog(@"thomasFinalTest"); 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    player = [ud objectForKey:PlayerType];
+    
+    if (YES){
     
     // Create and configure the scene.
     scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
@@ -32,6 +36,17 @@
     
     // Present the scene.
     [skView presentScene:scene];
+    }
+    
+    else {
+        // Create and configure the scene.
+        scene = [UltimateRacerRightScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        // Present the scene.
+        [skView presentScene:scene];
+        
+    }
 }
 
 - (BOOL)shouldAutorotate

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define PlayerType @"PlayerType"
+
 @interface UltimateRacerMenuViewController : UIViewController
+
+- (IBAction)clickedJoin:(id)sender;
+- (IBAction)clickedStart:(id)sender;
 
 @end

@@ -26,6 +26,10 @@
                                 <state key="normal" image="button1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickedStart:" destination="2a4-Ng-2be" eventType="touchUpInside" id="Fm0-Vb-2rr"/>
+                                    <segue destination="GTV-3O-SJn" kind="modal" id="MZC-nU-HxQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e58-rd-IBo">
                                 <rect key="frame" x="240" y="681" width="325" height="56"/>
@@ -33,10 +37,17 @@
                                 <state key="normal" image="button2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickedJoin:" destination="2a4-Ng-2be" eventType="touchUpInside" id="ONH-ES-6qn"/>
+                                    <segue destination="GTV-3O-SJn" kind="modal" id="pL4-Qe-hbF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.070588238537311554" green="0.18823531270027161" blue="0.26666668057441711" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="clickedStart" destination="e58-rd-IBo" id="6GU-XT-3t5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGi-ED-x5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,6 +66,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NEF-eK-tSV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW6-xW-ZBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,4 +83,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="pL4-Qe-hbF"/>
+    </inferredMetricsTieBreakers>
 </document>

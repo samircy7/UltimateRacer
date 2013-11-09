@@ -16,7 +16,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    NSLog(@"helloa;ksfbkqbflqwihefldn");
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

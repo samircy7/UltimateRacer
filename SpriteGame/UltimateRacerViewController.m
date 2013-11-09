@@ -19,6 +19,8 @@
     NSLog(@"helloa;ksfbkqbflqwihefldn");
     NSLog(@"Testing Thomas");
     kajfdgiqujksnf;pqiedhbfljqbehfouqneopfho
+    
+    NSLog(@"thomasFinalTest"); 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

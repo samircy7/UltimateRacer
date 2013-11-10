@@ -29,17 +29,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    NSData *soundFile = [[NSData alloc] initWithContentsOfFile:@"/Users/ranner_76/UltimateRacer/SpriteGame-2/SpriteGame/MenuFinal.m4a"];
-    
-    _player = [[AVAudioPlayer alloc] initWithData:soundFile error:nil];
-    
-    self.player.numberOfLoops = -1;
-    
-    [self.player prepareToPlay];
-    [self.player setDelegate:self];
-    [self.player play];
-    
+    if (!_player) {
+        NSData *soundFile = [[NSData alloc] initWithContentsOfFile:@"/Users/ranner_76/UltimateRacer/SpriteGame-2/SpriteGame/MenuFinal.m4a"];
+        
+        _player = [[AVAudioPlayer alloc] initWithData:soundFile error:nil];
+        
+        self.player.numberOfLoops = -1;
+        
+        [self.player prepareToPlay];
+        [self.player setDelegate:self];
+        [self.player play]; }
 }
 
 - (void)didReceiveMemoryWarning

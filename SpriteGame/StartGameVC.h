@@ -11,5 +11,6 @@
 @interface StartGameVC : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *codeLabel;
+- (IBAction)goBack:(id)sender;
 
 @end

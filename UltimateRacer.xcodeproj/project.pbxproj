@@ -31,6 +31,7 @@
 		FDC8083F182DCA0F0055B1E9 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC8083E182DCA0F0055B1E9 /* button2.png */; };
 		FDC80841182DCA180055B1E9 /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC80840182DCA180055B1E9 /* button1.png */; };
 		FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC80842182DCA1F0055B1E9 /* Untitled.png */; };
+		FDCCD7751830385B001354DC /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCCD7741830385B001354DC /* backButton.png */; };
 		FDCE2EC4182EDBA50009BB3D /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCE2EC3182EDBA50009BB3D /* logo1.png */; };
 		FDCE2EC8182EE3A30009BB3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */; };
 		FDCE2ECA182EEACB0009BB3D /* v1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCE2EC9182EEACB0009BB3D /* v1-1.png */; };
@@ -81,6 +82,7 @@
 		FDC8083E182DCA0F0055B1E9 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
 		FDC80840182DCA180055B1E9 /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
 		FDC80842182DCA1F0055B1E9 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
+		FDCCD7741830385B001354DC /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		FDCE2EC3182EDBA50009BB3D /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		FDCE2EC6182EDE970009BB3D /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
 		FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -183,6 +185,7 @@
 				FDC8083E182DCA0F0055B1E9 /* button2.png */,
 				FDCE2ECD182EEF8F0009BB3D /* subatomic.tsoonami.ttf */,
 				FDCE2EC3182EDBA50009BB3D /* logo1.png */,
+				FDCCD7741830385B001354DC /* backButton.png */,
 				FDCE2EC9182EEACB0009BB3D /* v1-1.png */,
 				FDCE2ECB182EEAD40009BB3D /* v1-2.png */,
 				FDC80842182DCA1F0055B1E9 /* Untitled.png */,
@@ -298,6 +301,7 @@
 				FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */,
 				E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */,
 				FDCE2EC4182EDBA50009BB3D /* logo1.png in Resources */,
+				FDCCD7751830385B001354DC /* backButton.png in Resources */,
 				FDC80841182DCA180055B1E9 /* button1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

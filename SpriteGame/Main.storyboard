@@ -93,6 +93,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tK9-Uc-EMJ">
+                                <rect key="frame" x="54" y="78" width="152" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" image="backButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="ar1-3n-TX6" eventType="touchUpInside" id="UTR-Z4-RXB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.27843138575553894" green="0.062745101749897003" blue="0.17647059261798859" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -126,6 +137,7 @@
     </scenes>
     <resources>
         <image name="Untitled.png" width="600" height="131"/>
+        <image name="backButton.png" width="373" height="117"/>
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
         <image name="v1-1.png" width="1142" height="218"/>

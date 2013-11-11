@@ -7,6 +7,7 @@
 //
 
 #import "StartGameVC.h"
+#import "UltimateRacerLeftScene.h"
 
 @interface StartGameVC ()
 
@@ -44,7 +45,7 @@
     
     _codeLabel.text = uniqueCode1;
     _codeLabel.font = [UIFont fontWithName:@"SubatomicTsoonami" size:120];
-    _codeLabel.textColor = [UIColor whiteColor];
+    _codeLabel.textColor = [UIColor colorWithWhite:1 alpha:0.7];
 }
 
 - (void)didReceiveMemoryWarning

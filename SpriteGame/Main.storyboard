@@ -59,8 +59,92 @@
                     <view key="view" contentMode="scaleToFill" id="Flx-rg-vfk">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="s" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPP-AB-h1T">
+                                <rect key="frame" x="91" y="440" width="97" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="6Qu-MB-WZv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="96"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="s" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHV-6r-Buh">
+                                <rect key="frame" x="216" y="440" width="97" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="spJ-ah-1WJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="96"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="s" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHY-aZ-GFY">
+                                <rect key="frame" x="344" y="440" width="97" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="3Dv-lF-m9r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="96"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="s" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKS-Fm-yio">
+                                <rect key="frame" x="467" y="440" width="97" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="1am-m4-xtu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="96"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="s" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udm-ap-Lhn">
+                                <rect key="frame" x="591" y="440" width="97" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="IDV-rQ-xvl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="96"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v2-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-qo-ZTR">
+                                <rect key="frame" x="74" y="199" width="636" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-Cf-5qa">
+                                <rect key="frame" x="247" y="812" width="291" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="startGameButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONt-VR-po3">
+                                <rect key="frame" x="58" y="87" width="152" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" image="backButton2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="ar1-3n-TX6" eventType="touchUpInside" id="huW-ot-C0t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97t-Qr-GqY">
+                                <rect key="frame" x="58" y="87" width="152" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" image="backButton2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="Mmg-19-JfY" eventType="touchUpInside" id="Opu-Yz-8Yb"/>
+                                    <action selector="goBack:" destination="ar1-3n-TX6" eventType="touchUpInside" id="nX5-mZ-H2y"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.066666670143604279" green="0.20392158627510071" blue="0.050980396568775177" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="textField1" destination="BPP-AB-h1T" id="5ko-MH-Y6A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqN-i9-2wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,22 +163,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="It0-SM-0Gj">
-                                <rect key="frame" x="85" y="228" width="598" height="131"/>
+                                <rect key="frame" x="85" y="191" width="598" height="131"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9JF-ya-hvT">
-                                <rect key="frame" x="-32" y="657" width="833" height="131"/>
+                                <rect key="frame" x="-32" y="632" width="833" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfT-Ih-5M6">
-                                <rect key="frame" x="77" y="450" width="615" height="123"/>
+                                <rect key="frame" x="77" y="424" width="615" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tK9-Uc-EMJ">
-                                <rect key="frame" x="54" y="78" width="152" height="55"/>
+                                <rect key="frame" x="54" y="77" width="152" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" image="backButton.png">
@@ -102,6 +186,16 @@
                                 </state>
                                 <connections>
                                     <action selector="goBack:" destination="ar1-3n-TX6" eventType="touchUpInside" id="UTR-Z4-RXB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGj-dv-B0M">
+                                <rect key="frame" x="239" y="805" width="291" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="startGameButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GTV-3O-SJn" kind="modal" id="I9z-4S-nqY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,10 +232,13 @@
     <resources>
         <image name="Untitled.png" width="600" height="131"/>
         <image name="backButton.png" width="373" height="117"/>
+        <image name="backButton2.png" width="368" height="117"/>
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
+        <image name="startGameButton.png" width="537" height="123"/>
         <image name="v1-1.png" width="1142" height="218"/>
         <image name="v1-2.png" width="1639" height="218"/>
+        <image name="v2-1.png" width="1214" height="218"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>

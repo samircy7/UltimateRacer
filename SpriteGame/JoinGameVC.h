@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface JoinGameVC : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *textField1;
 
+- (IBAction)back:(id)sender;
 @end

@@ -35,6 +35,8 @@
 		FDCCD7771830432F001354DC /* startGameButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCCD7761830432F001354DC /* startGameButton.png */; };
 		FDCCD7791830CDEB001354DC /* v2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCCD7781830CDEB001354DC /* v2-1.png */; };
 		FDCCD77B1830CEB2001354DC /* backButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCCD77A1830CEB2001354DC /* backButton2.png */; };
+		FDCCD77D1830E2C5001354DC /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCCD77C1830E2C5001354DC /* correct.png */; };
+		FDCCD77F1830E2CF001354DC /* wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCCD77E1830E2CF001354DC /* wrong.png */; };
 		FDCE2EC4182EDBA50009BB3D /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCE2EC3182EDBA50009BB3D /* logo1.png */; };
 		FDCE2EC8182EE3A30009BB3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */; };
 		FDCE2ECA182EEACB0009BB3D /* v1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCE2EC9182EEACB0009BB3D /* v1-1.png */; };
@@ -89,6 +91,8 @@
 		FDCCD7761830432F001354DC /* startGameButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startGameButton.png; sourceTree = "<group>"; };
 		FDCCD7781830CDEB001354DC /* v2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v2-1.png"; sourceTree = "<group>"; };
 		FDCCD77A1830CEB2001354DC /* backButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton2.png; sourceTree = "<group>"; };
+		FDCCD77C1830E2C5001354DC /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
+		FDCCD77E1830E2CF001354DC /* wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrong.png; sourceTree = "<group>"; };
 		FDCE2EC3182EDBA50009BB3D /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		FDCE2EC6182EDE970009BB3D /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
 		FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -190,7 +194,9 @@
 				FDCE2EC6182EDE970009BB3D /* MenuFinal.m4a */,
 				FDC8083E182DCA0F0055B1E9 /* button2.png */,
 				FDCCD77A1830CEB2001354DC /* backButton2.png */,
+				FDCCD77E1830E2CF001354DC /* wrong.png */,
 				FDCCD7761830432F001354DC /* startGameButton.png */,
+				FDCCD77C1830E2C5001354DC /* correct.png */,
 				FDCE2ECD182EEF8F0009BB3D /* subatomic.tsoonami.ttf */,
 				FDCCD7781830CDEB001354DC /* v2-1.png */,
 				FDCE2EC3182EDBA50009BB3D /* logo1.png */,
@@ -300,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDCCD77D1830E2C5001354DC /* correct.png in Resources */,
 				FDC6CDC9182EF119006921EA /* subatomic.tsoonami.ttf in Resources */,
 				FDCCD77B1830CEB2001354DC /* backButton2.png in Resources */,
 				FD583D931813805F00BED4AD /* InfoPlist.strings in Resources */,
@@ -308,6 +315,7 @@
 				FD583DA61813805F00BED4AD /* Images.xcassets in Resources */,
 				FDCE2ECA182EEACB0009BB3D /* v1-1.png in Resources */,
 				FDC8083F182DCA0F0055B1E9 /* button2.png in Resources */,
+				FDCCD77F1830E2CF001354DC /* wrong.png in Resources */,
 				FDC8083B182DBD3B0055B1E9 /* Main.storyboard in Resources */,
 				FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */,
 				FDCCD7791830CDEB001354DC /* v2-1.png in Resources */,

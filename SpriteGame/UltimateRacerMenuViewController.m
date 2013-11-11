@@ -7,6 +7,8 @@
 //
 
 #import "UltimateRacerMenuViewController.h"
+#import "StartGameVC.h"
+#import "JoinGameVC.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 

@@ -7,8 +7,8 @@
 //
 
 #import "UltimateRacerLeftViewController.h"
-#import "UltimateRacerMenuViewController.h"
 #import "UltimateRacerLeftScene.h"
+#import "StartGameVC.h"
 
 @implementation UltimateRacerViewController
 @synthesize scene;
@@ -21,6 +21,9 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    
+    StartGameVC *parent = [self presentingViewController];
+    [parent stopMusic];
     
     // Create and configure the scene.
     scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];

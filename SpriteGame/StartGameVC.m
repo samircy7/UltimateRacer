@@ -7,7 +7,7 @@
 //
 
 #import "StartGameVC.h"
-#import "UltimateRacerLeftScene.h"
+#import "UltimateRacerMenuViewController.h"
 
 @interface StartGameVC ()
 
@@ -57,4 +57,11 @@
 - (IBAction)goBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void) stopMusic
+{
+    UltimateRacerMenuViewController *parent = [self presentingViewController];
+    [parent.player stop];
+}
+
 @end

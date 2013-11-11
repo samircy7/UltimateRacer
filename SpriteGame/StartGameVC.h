@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SpriteKit/SpriteKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface StartGameVC : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *codeLabel;
-@property (nonatomic, strong) SKScene * leftScene;
 - (IBAction)goBack:(id)sender;
+- (void) stopMusic;
 
 @end

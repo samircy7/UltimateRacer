@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface JoinGameVC : UIViewController
-@property (strong, nonatomic) IBOutlet UITextField *textField1;
+@interface JoinGameVC : UIViewController <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *textFields;
+@property (nonatomic, retain) AVAudioPlayer *player;
 
+@property (strong, nonatomic) IBOutlet UIImageView *correctImg;
+@property (strong, nonatomic) IBOutlet UIButton *playButton;
+@property (strong, nonatomic) IBOutlet UIImageView *wrongImg;
+- (id) initWithSoundFile:(AVAudioPlayer *)player;
 - (IBAction)back:(id)sender;
 @end

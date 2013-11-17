@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Samir Choudhary. All rights reserved.
 //
 
-#import "UltimateRacerViewController.h"
+#import "UltimateRacerLeftViewController.h"
 #import "UltimateRacerLeftScene.h"
 #import "UltimateRacerRightScene.h"
 

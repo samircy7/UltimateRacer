@@ -10,6 +10,8 @@
 		E30D496118396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
 		E30D496218396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
 		E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */ = {isa = PBXBuildFile; fileRef = E3905A3E1828AD4400BF83EA /* toy_car.png */; };
+		E397FB3718398F0D006B58F9 /* Deccelerate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */; };
+		E397FB3818398F0D006B58F9 /* Accelerate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E397FB3618398F0D006B58F9 /* Accelerate.mp3 */; };
 		FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
 		FD583D891813805F00BED4AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D881813805F00BED4AD /* CoreGraphics.framework */; };
 		FD583D8B1813805F00BED4AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D8A1813805F00BED4AD /* UIKit.framework */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		E30D496018396827008559A8 /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
 		E3905A3E1828AD4400BF83EA /* toy_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_car.png; sourceTree = "<group>"; };
+		E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Deccelerate.mp3; sourceTree = "<group>"; };
+		E397FB3618398F0D006B58F9 /* Accelerate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Accelerate.mp3; sourceTree = "<group>"; };
 		FD583D831813805F00BED4AD /* UltimateRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD583D861813805F00BED4AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD583D881813805F00BED4AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +138,8 @@
 		FD583D7A1813805F00BED4AD = {
 			isa = PBXGroup;
 			children = (
+				E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */,
+				E397FB3618398F0D006B58F9 /* Accelerate.mp3 */,
 				E3905A3E1828AD4400BF83EA /* toy_car.png */,
 				FD583D8E1813805F00BED4AD /* SpriteGame */,
 				FD583DB21813805F00BED4AD /* SpriteGameTests */,
@@ -312,6 +318,7 @@
 				FDC6CDC9182EF119006921EA /* subatomic.tsoonami.ttf in Resources */,
 				FDCCD77B1830CEB2001354DC /* backButton2.png in Resources */,
 				FD583D931813805F00BED4AD /* InfoPlist.strings in Resources */,
+				E397FB3718398F0D006B58F9 /* Deccelerate.mp3 in Resources */,
 				FDCCD7771830432F001354DC /* startGameButton.png in Resources */,
 				FDCE2ECC182EEAD40009BB3D /* v1-2.png in Resources */,
 				FD583DA61813805F00BED4AD /* Images.xcassets in Resources */,
@@ -320,6 +327,7 @@
 				FDCCD77F1830E2CF001354DC /* wrong.png in Resources */,
 				FDC8083B182DBD3B0055B1E9 /* Main.storyboard in Resources */,
 				FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */,
+				E397FB3818398F0D006B58F9 /* Accelerate.mp3 in Resources */,
 				E30D496118396827008559A8 /* MenuFinal.m4a in Resources */,
 				FDCCD7791830CDEB001354DC /* v2-1.png in Resources */,
 				E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */,

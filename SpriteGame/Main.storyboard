@@ -126,7 +126,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2Oc-Cv-Ef8" kind="modal" id="vGP-Ud-QTI"/>
+                                    <segue destination="GTV-3O-SJn" kind="modal" id="N2L-bN-YlJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONt-VR-po3">
@@ -238,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="1" y="-496"/>
         </scene>
-        <!--Ultimate Racer Left View Controller-->
+        <!--Ultimate Racer View Controller-->
         <scene sceneID="TqA-ee-9JV">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="GTV-3O-SJn" customClass="UltimateRacerLeftViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="GTV-3O-SJn" customClass="UltimateRacerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W6I-Df-FMV"/>
                         <viewControllerLayoutGuide type="bottom" id="Q8e-J1-CER"/>
@@ -255,25 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW6-xW-ZBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="-487"/>
-        </scene>
-        <!--Ultimate Racer Right View Controller-->
-        <scene sceneID="Obd-IQ-nIS">
-            <objects>
-                <viewController id="2Oc-Cv-Ef8" customClass="UltimateRacerRightViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lin-5A-2jB"/>
-                        <viewControllerLayoutGuide type="bottom" id="pwA-Lb-cgF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Co8-jS-UTN" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eTb-6U-6N7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1154" y="715"/>
+            <point key="canvasLocation" x="1090" y="65"/>
         </scene>
     </scenes>
     <resources>
@@ -294,4 +276,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="N2L-bN-YlJ"/>
+    </inferredMetricsTieBreakers>
 </document>

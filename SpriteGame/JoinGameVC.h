@@ -18,4 +18,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *wrongImg;
 - (id) initWithSoundFile:(AVAudioPlayer *)player;
 - (IBAction)back:(id)sender;
+
+- (void) stopMusic;
 @end

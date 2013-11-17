@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "SRWebSocket.h"
 
-@interface UltimateRacerViewController : UIViewController
+extern NSString * const kInboxString;
+extern NSString * const kOutboxString;
+
+@interface UltimateRacerViewController : UIViewController <SRWebSocketDelegate>
 
 @property (nonatomic, strong) SKScene * scene;
 

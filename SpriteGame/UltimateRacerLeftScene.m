@@ -23,7 +23,6 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
-        
         /* Setup your scene here */
         self.backgroundColor = [SKColor blackColor];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
@@ -64,8 +63,8 @@
         [car1 addChild:circle1];
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
-        [car1.physicsBody setFriction:0.9];
         [car1.physicsBody setLinearDamping:0.9];
+
         
         car2 = [SKNode node];
         SKShapeNode* circle2 = [SKShapeNode node];

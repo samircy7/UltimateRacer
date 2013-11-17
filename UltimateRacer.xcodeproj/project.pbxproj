@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30D496118396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
+		E30D496218396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
 		E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */ = {isa = PBXBuildFile; fileRef = E3905A3E1828AD4400BF83EA /* toy_car.png */; };
 		FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
 		FD583D891813805F00BED4AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D881813805F00BED4AD /* CoreGraphics.framework */; };
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E30D496018396827008559A8 /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
 		E3905A3E1828AD4400BF83EA /* toy_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_car.png; sourceTree = "<group>"; };
 		FD583D831813805F00BED4AD /* UltimateRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD583D861813805F00BED4AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,7 +97,6 @@
 		FDCCD77C1830E2C5001354DC /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
 		FDCCD77E1830E2CF001354DC /* wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrong.png; sourceTree = "<group>"; };
 		FDCE2EC3182EDBA50009BB3D /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
-		FDCE2EC6182EDE970009BB3D /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
 		FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FDCE2EC9182EEACB0009BB3D /* v1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v1-1.png"; sourceTree = "<group>"; };
 		FDCE2ECB182EEAD40009BB3D /* v1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v1-2.png"; sourceTree = "<group>"; };
@@ -189,9 +191,9 @@
 		FD583D8F1813805F00BED4AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E30D496018396827008559A8 /* MenuFinal.m4a */,
 				FD583D901813805F00BED4AD /* UltimateRacer-Info.plist */,
 				FDC80840182DCA180055B1E9 /* button1.png */,
-				FDCE2EC6182EDE970009BB3D /* MenuFinal.m4a */,
 				FDC8083E182DCA0F0055B1E9 /* button2.png */,
 				FDCCD77A1830CEB2001354DC /* backButton2.png */,
 				FDCCD77E1830E2CF001354DC /* wrong.png */,
@@ -318,6 +320,7 @@
 				FDCCD77F1830E2CF001354DC /* wrong.png in Resources */,
 				FDC8083B182DBD3B0055B1E9 /* Main.storyboard in Resources */,
 				FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */,
+				E30D496118396827008559A8 /* MenuFinal.m4a in Resources */,
 				FDCCD7791830CDEB001354DC /* v2-1.png in Resources */,
 				E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */,
 				FDCE2EC4182EDBA50009BB3D /* logo1.png in Resources */,
@@ -330,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30D496218396827008559A8 /* MenuFinal.m4a in Resources */,
 				FD583DB71813805F00BED4AD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

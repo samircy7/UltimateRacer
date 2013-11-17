@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 
 #define PlayerType @"PlayerType"
 
-@interface UltimateRacerMenuViewController : UIViewController
+@interface UltimateRacerMenuViewController : UIViewController <AVAudioPlayerDelegate>
 
-@property (nonatomic, strong, retain) AVAudioPlayer *player;
+
+@property (strong, nonatomic) AVAudioPlayer *player;
 @end

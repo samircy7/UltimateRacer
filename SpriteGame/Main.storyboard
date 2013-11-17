@@ -27,7 +27,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ar1-3n-TX6" kind="modal" id="IJx-RO-A3V"/>
+                                    <segue destination="ar1-3n-TX6" kind="modal" id="Kih-hg-8Lb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e58-rd-IBo">
@@ -259,11 +259,9 @@
         <image name="Untitled.png" width="600" height="131"/>
         <image name="backButton.png" width="373" height="117"/>
         <image name="backButton2.png" width="368" height="117"/>
-        <image name="backButton2.png" width="368" height="117"/>
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
         <image name="correct.png" width="102" height="131"/>
-        <image name="startGameButton.png" width="537" height="123"/>
         <image name="startGameButton.png" width="537" height="123"/>
         <image name="v1-1.png" width="1142" height="218"/>
         <image name="v1-2.png" width="1639" height="218"/>

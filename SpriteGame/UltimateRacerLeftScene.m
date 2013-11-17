@@ -92,7 +92,6 @@
         //[self addChild:car2];
         //[self addChild:acceleratorNode2];
         
-        
         accelerate = NO;
         pressed = NO;
     }

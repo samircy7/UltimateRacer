@@ -8,6 +8,9 @@
 
 #import "UltimateRacerViewController.h"
 #import "UltimateRacerLeftScene.h"
+#import "UltimateRacerRightScene.h"
+#import "StartGameVC.h"
+#import "JoinGameVC.h"
 
 NSString * const kInboxString = @"ws://secret-headland-1305.herokuapp.com/receive";
 NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submit";
@@ -22,6 +25,10 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
 @end
 
 @implementation UltimateRacerViewController
+{
+    NSString * player;
+}
+
 @synthesize scene;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -49,18 +56,35 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
     
+    SKView* skView = (SKView *)self.view;
+    
+    if ([[self presentingViewController] isKindOfClass:[StartGameVC class]])
+    {
     // Create and configure the scene.
-    scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+        scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+        [skView presentScene:scene];
+        
+        StartGameVC *vc = [self presentingViewController];
+        [vc stopMusic];
+    }
+    
+    else {
+        // Create and configure the scene.
+        scene = [UltimateRacerRightScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        // Present the scene.
+        [skView presentScene:scene];
+        
+        JoinGameVC *vc = [self presentingViewController];
+        [vc stopMusic];
+    }
+
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message

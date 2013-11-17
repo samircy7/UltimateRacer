@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+#define PlayerType @"PlayerType"
+
 @interface UltimateRacerMenuViewController : UIViewController <AVAudioPlayerDelegate>
 
-@property (nonatomic, retain) AVAudioPlayer *player;
 
+@property (strong, nonatomic) AVAudioPlayer *player;
 @end

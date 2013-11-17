@@ -7,6 +7,8 @@
 //
 
 #import "UltimateRacerMenuViewController.h"
+#import "StartGameVC.h"
+#import "JoinGameVC.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -15,6 +17,7 @@
 @end
 
 @implementation UltimateRacerMenuViewController
+@synthesize player;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,16 +30,19 @@
 
 - (void)viewDidLoad
 {
+  
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSData *soundFile = [[NSData alloc] initWithContentsOfFile:@"/Users/ranner_76/UltimateRacer/SpriteGame-2/SpriteGame/MenuFinal.m4a"];
+    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/MenuFinal.m4a",[[NSBundle mainBundle] resourcePath]]];
+    NSError * error;
     
-    _player = [[AVAudioPlayer alloc] initWithData:soundFile error:nil];
-    
-    [self.player prepareToPlay];
-    [self.player setDelegate:self];
-    [self.player play];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+    player.numberOfLoops = -1;
+
+    [player prepareToPlay];
+    [player setDelegate:self];
+    [player play];
     
 }
 

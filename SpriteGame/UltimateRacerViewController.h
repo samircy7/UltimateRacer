@@ -13,6 +13,8 @@
 extern NSString * const kInboxString;
 extern NSString * const kOutboxString;
 
+#define PlayerType @"PlayerType"
+
 @interface UltimateRacerViewController : UIViewController <SRWebSocketDelegate>
 
 @property (nonatomic, strong) SKScene * scene;

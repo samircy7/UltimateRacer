@@ -34,16 +34,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//        //NSData *soundFile = [[NSData alloc] initWithContentsOfFile:@"/Users/ranner_76/UltimateRacer/SpriteGame-2/SpriteGame/MenuFinal.m4a"];
-//        NSURL * soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"MenuFinal" ofType:@"m4a"]];
-//        NSData *soundFile = [[NSData alloc] initWithContentsOfURL:soundURL];
-//        _player = [[AVAudioPlayer alloc] initWithData:soundFile error:nil];
-//        
-//        self.player.numberOfLoops = -1;
-//        
-//        [self.player prepareToPlay];
-//        [self.player setDelegate:self];
-//        [self.player play]; }
     NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/MenuFinal.m4a",[[NSBundle mainBundle] resourcePath]]];
     NSError * error;
     

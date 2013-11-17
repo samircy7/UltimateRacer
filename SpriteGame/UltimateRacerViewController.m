@@ -26,18 +26,15 @@
     
     SKView* skView = (SKView *)self.view;
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    
-    player = [ud objectForKey:PlayerType];
-    
-    if ([[self presentingViewController] isKindOfClass:[StartGameVC class]]){
-    
+    if ([[self presentingViewController] isKindOfClass:[StartGameVC class]])
+    {
     // Create and configure the scene.
-    scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+        scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
         [skView presentScene:scene];
+        
         StartGameVC *vc = [self presentingViewController];
         [vc stopMusic];
     }

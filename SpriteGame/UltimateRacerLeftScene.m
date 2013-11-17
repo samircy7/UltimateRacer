@@ -123,6 +123,8 @@
         corner2 = NO;
         CGFloat refx = car1.physicsBody.velocity.dx * -1;
         
+        [car1 removeFromParent];
+        
         car1 = [SKNode node];
         SKShapeNode* circle1 = [SKShapeNode node];
         circle1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(768, 708, 30, 30)]).CGPath;

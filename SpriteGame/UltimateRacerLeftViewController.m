@@ -11,7 +11,7 @@
 #import "UltimateRacerRightScene.h"
 #import "StartGameVC.h"
 
-@implementation UltimateRacerViewController
+@implementation UltimateRacerLeftViewController
 {
     NSString * player;
 }

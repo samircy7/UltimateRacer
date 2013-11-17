@@ -91,4 +91,10 @@
 {
     return YES;
 }
+
+- (void) stopMusic
+{
+    UltimateRacerMenuViewController *parent = [self presentingViewController];
+    [parent.player stop];
+}
 @end

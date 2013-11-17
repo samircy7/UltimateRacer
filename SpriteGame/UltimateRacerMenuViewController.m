@@ -38,7 +38,10 @@
     NSError * error;
     
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
-    player.numberOfLoops = 0;
+    player.numberOfLoops = -1;
+
+    [player prepareToPlay];
+    [player setDelegate:self];
     [player play];
     
 }

@@ -9,6 +9,7 @@
 #import "UltimateRacerLeftViewController.h"
 #import "UltimateRacerLeftScene.h"
 #import "UltimateRacerRightScene.h"
+#import "StartGameVC.h"
 
 @implementation UltimateRacerViewController
 {
@@ -47,6 +48,9 @@
         [skView presentScene:scene];
         
     }
+    
+    StartGameVC *vc = [self presentingViewController];
+    [vc stopMusic];
 }
 
 - (BOOL)shouldAutorotate

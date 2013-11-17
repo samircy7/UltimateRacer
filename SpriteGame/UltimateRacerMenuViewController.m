@@ -40,7 +40,7 @@
         self.player.numberOfLoops = -1;
         
         [self.player prepareToPlay];
-        [self.player setDelegate:self];
+        self.player.delegate = self; 
         [self.player play]; }
 }
 
@@ -48,18 +48,5 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)clickedJoin:(id)sender {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:@"Start" forKey:PlayerType];
-    [ud synchronize];
-    
-}
-
-- (IBAction)clickedStart:(id)sender {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:@"Join" forKey:PlayerType];
-    [ud synchronize];
 }
 @end

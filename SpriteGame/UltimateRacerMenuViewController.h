@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #define PlayerType @"PlayerType"
 
 @interface UltimateRacerMenuViewController : UIViewController
 
-- (IBAction)clickedJoin:(id)sender;
-- (IBAction)clickedStart:(id)sender;
-
+@property (nonatomic, strong, retain) AVAudioPlayer *player;
 @end

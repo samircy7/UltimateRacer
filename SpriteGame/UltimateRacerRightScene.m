@@ -46,6 +46,9 @@
         SKShapeNode* circle2 = [SKShapeNode node];
         circle2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2-15, self.frame.size.height/2-127, 30, 30)]).CGPath;
         
+        car2.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
+        [car2.physicsBody setFriction:0.9];
+        [car2.physicsBody setLinearDamping:0.9];
         
         UIColor *myColor2 = [UIColor colorWithRed: 255.0/255.0 green: 193.0/255.0 blue:193.0/255.0 alpha: 1.0];
         circle2.fillColor = myColor2;
@@ -121,7 +124,7 @@
         [car2.physicsBody setLinearDamping:0.9];
         [self addChild:car2];
         
-        CGVector trial = CGVectorMake(-18, 0);
+        CGVector trial = CGVectorMake(18, 0);
         [car2.physicsBody setVelocity:CGVectorMake(refx, 0)];
         [car2.physicsBody applyForce:trial];
     }
@@ -134,7 +137,7 @@
     
     else if (accelerate && pressed) {
         if ( setted == NO) {
-            CGVector trial = CGVectorMake(18, 0);
+            CGVector trial = CGVectorMake(-18, 0);
             [car2.physicsBody applyForce:trial];
         }
         else {

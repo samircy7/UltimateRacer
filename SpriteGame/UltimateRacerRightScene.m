@@ -10,9 +10,7 @@
 
 @implementation UltimateRacerRightScene
 {
-    SKNode* car1;
     SKNode* car2;
-    SKShapeNode* track1;
     SKShapeNode* track2;
     BOOL accelerate;
     BOOL pressed;
@@ -83,10 +81,10 @@
     }
     
     acceleratorNode1.fillColor = [UIColor yellowColor];
-     acceleratorNode1.glowWidth = 20;
+    acceleratorNode1.glowWidth = 20;
      
-     accelerate = YES;
-     pressed = YES;
+    accelerate = YES;
+    pressed = YES;
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -110,7 +108,7 @@
     {
         
         setted = YES;
-        CGFloat refx = car1.physicsBody.velocity.dx * -1;
+        CGFloat refx = car2.physicsBody.velocity.dx * -1;
         
         car2 = [SKNode node];
         SKShapeNode* circle2 = [SKShapeNode node];

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E30D496118396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
 		E30D496218396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
-		E30F39C418396F7B00F25F04 /* UltimateRacerRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30F39C318396F7B00F25F04 /* UltimateRacerRightViewController.m */; };
 		E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */ = {isa = PBXBuildFile; fileRef = E3905A3E1828AD4400BF83EA /* toy_car.png */; };
 		FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
 		FD583D891813805F00BED4AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D881813805F00BED4AD /* CoreGraphics.framework */; };
@@ -59,8 +58,6 @@
 
 /* Begin PBXFileReference section */
 		E30D496018396827008559A8 /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
-		E30F39C218396F7B00F25F04 /* UltimateRacerRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerRightViewController.h; sourceTree = "<group>"; };
-		E30F39C318396F7B00F25F04 /* UltimateRacerRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerRightViewController.m; sourceTree = "<group>"; };
 		E3905A3E1828AD4400BF83EA /* toy_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_car.png; sourceTree = "<group>"; };
 		FD583D831813805F00BED4AD /* UltimateRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD583D861813805F00BED4AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,8 +171,6 @@
 				FD583D981813805F00BED4AD /* UltimateRacerAppDelegate.m */,
 				FD583D9D1813805F00BED4AD /* UltimateRacerViewController.h */,
 				FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */,
-				E30F39C218396F7B00F25F04 /* UltimateRacerRightViewController.h */,
-				E30F39C318396F7B00F25F04 /* UltimateRacerRightViewController.m */,
 				FDC8083A182DBD3B0055B1E9 /* Main.storyboard */,
 				FDC6CDCF182EF1A3006921EA /* JoinGameVC.h */,
 				FDC6CDD0182EF1A3006921EA /* JoinGameVC.m */,
@@ -357,7 +352,6 @@
 				FD583D951813805F00BED4AD /* main.m in Sources */,
 				FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */,
 				FD583D991813805F00BED4AD /* UltimateRacerAppDelegate.m in Sources */,
-				E30F39C418396F7B00F25F04 /* UltimateRacerRightViewController.m in Sources */,
 				FD583D9F1813805F00BED4AD /* UltimateRacerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #define PlayerType @"PlayerType"
-@interface UltimateRacerViewController : UIViewController
+@interface UltimateRacerLeftViewController : UIViewController
 
 @property (nonatomic, strong) SKScene * scene;
 

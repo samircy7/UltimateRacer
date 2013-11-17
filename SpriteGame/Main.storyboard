@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="1" y="-496"/>
         </scene>
-        <!--Ultimate Racer View Controller-->
+        <!--Ultimate Racer Left View Controller-->
         <scene sceneID="TqA-ee-9JV">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="GTV-3O-SJn" customClass="UltimateRacerViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="GTV-3O-SJn" customClass="UltimateRacerLeftViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W6I-Df-FMV"/>
                         <viewControllerLayoutGuide type="bottom" id="Q8e-J1-CER"/>

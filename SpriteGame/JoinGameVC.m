@@ -63,20 +63,44 @@
 {
     textField.text = string;
     
-    [enteredCode appendString:string];
+    if ([string isEqualToString:@"\n"])
+    {
+        [textField resignFirstResponder];
+        return YES;
+    }
     
     if (textField.text.length == 1)
+        [enteredCode appendString:string];
+
+    else
+    {
+        NSRange range;
+        range.length = 1;
+        range.location = [self.textFields indexOfObject:textField];
+        [enteredCode deleteCharactersInRange:range];
+    }
+    
+    if (textField.text.length == 1 || [textField.text isEqual: @""])
         [self textFieldShouldEndEditing:textField];
     
     [textField resignFirstResponder];
     
     NSInteger index = [self.textFields indexOfObject:textField];
-    if (index < 4)
+    
+    if (index < 4 && textField.text.length == 1)
         [[self.textFields objectAtIndex:index+1] becomeFirstResponder];
-    else
+    else if (index > 0 && [textField.text isEqual: @""])
+        [[self.textFields objectAtIndex:index-1] becomeFirstResponder];
+
+    if ([enteredCode length] == 5)
     {
         _correctImg.hidden = NO;
         _playButton.enabled = YES;
+    }
+    else
+    {
+        _correctImg.hidden = YES;
+        _playButton.enabled = NO;
     }
     
     return NO;

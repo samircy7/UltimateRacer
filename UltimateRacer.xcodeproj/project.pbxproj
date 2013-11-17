@@ -18,7 +18,7 @@
 		FD583D931813805F00BED4AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD583D911813805F00BED4AD /* InfoPlist.strings */; };
 		FD583D951813805F00BED4AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D941813805F00BED4AD /* main.m */; };
 		FD583D991813805F00BED4AD /* UltimateRacerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D981813805F00BED4AD /* UltimateRacerAppDelegate.m */; };
-		FD583D9F1813805F00BED4AD /* UltimateRacerLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D9E1813805F00BED4AD /* UltimateRacerLeftViewController.m */; };
+		FD583D9F1813805F00BED4AD /* UltimateRacerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */; };
 		FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FD583DA11813805F00BED4AD /* UltimateRacerLeftScene.m */; };
 		FD583DA61813805F00BED4AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD583DA51813805F00BED4AD /* Images.xcassets */; };
 		FD583DAD1813805F00BED4AD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583DAC1813805F00BED4AD /* XCTest.framework */; };
@@ -73,8 +73,8 @@
 		FD583D961813805F00BED4AD /* UltimateRacer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UltimateRacer-Prefix.pch"; sourceTree = "<group>"; };
 		FD583D971813805F00BED4AD /* UltimateRacerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltimateRacerAppDelegate.h; sourceTree = "<group>"; };
 		FD583D981813805F00BED4AD /* UltimateRacerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerAppDelegate.m; sourceTree = "<group>"; };
-		FD583D9D1813805F00BED4AD /* UltimateRacerLeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltimateRacerLeftViewController.h; sourceTree = "<group>"; };
-		FD583D9E1813805F00BED4AD /* UltimateRacerLeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerLeftViewController.m; sourceTree = "<group>"; };
+		FD583D9D1813805F00BED4AD /* UltimateRacerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltimateRacerViewController.h; sourceTree = "<group>"; };
+		FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerViewController.m; sourceTree = "<group>"; };
 		FD583DA01813805F00BED4AD /* UltimateRacerLeftScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UltimateRacerLeftScene.h; sourceTree = "<group>"; };
 		FD583DA11813805F00BED4AD /* UltimateRacerLeftScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerLeftScene.m; sourceTree = "<group>"; };
 		FD583DA51813805F00BED4AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 			children = (
 				FD583D971813805F00BED4AD /* UltimateRacerAppDelegate.h */,
 				FD583D981813805F00BED4AD /* UltimateRacerAppDelegate.m */,
-				FD583D9D1813805F00BED4AD /* UltimateRacerLeftViewController.h */,
-				FD583D9E1813805F00BED4AD /* UltimateRacerLeftViewController.m */,
+				FD583D9D1813805F00BED4AD /* UltimateRacerViewController.h */,
+				FD583D9E1813805F00BED4AD /* UltimateRacerViewController.m */,
 				E30F39C218396F7B00F25F04 /* UltimateRacerRightViewController.h */,
 				E30F39C318396F7B00F25F04 /* UltimateRacerRightViewController.m */,
 				FDC8083A182DBD3B0055B1E9 /* Main.storyboard */,
@@ -358,7 +358,7 @@
 				FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */,
 				FD583D991813805F00BED4AD /* UltimateRacerAppDelegate.m in Sources */,
 				E30F39C418396F7B00F25F04 /* UltimateRacerRightViewController.m in Sources */,
-				FD583D9F1813805F00BED4AD /* UltimateRacerLeftViewController.m in Sources */,
+				FD583D9F1813805F00BED4AD /* UltimateRacerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

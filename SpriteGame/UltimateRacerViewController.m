@@ -6,37 +6,40 @@
 //  Copyright (c) 2013 Samir Choudhary. All rights reserved.
 //
 
-#import "UltimateRacerLeftViewController.h"
+#import "UltimateRacerViewController.h"
 #import "UltimateRacerLeftScene.h"
 #import "UltimateRacerRightScene.h"
 #import "StartGameVC.h"
+#import "JoinGameVC.h"
 
-@implementation UltimateRacerLeftViewController
+@implementation UltimateRacerViewController
 {
     NSString * player;
 }
+
 @synthesize scene;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    
+    SKView* skView = (SKView *)self.view;
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
     player = [ud objectForKey:PlayerType];
     
-    if (YES){
+    if ([[self presentingViewController] isKindOfClass:[StartGameVC class]]){
     
     // Create and configure the scene.
     scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+        [skView presentScene:scene];
+        StartGameVC *vc = [self presentingViewController];
+        [vc stopMusic];
     }
     
     else {
@@ -47,10 +50,10 @@
         // Present the scene.
         [skView presentScene:scene];
         
+        JoinGameVC *vc = [self presentingViewController];
+        [vc stopMusic];
     }
-    
-    StartGameVC *vc = [self presentingViewController];
-    [vc stopMusic];
+
 }
 
 - (BOOL)shouldAutorotate

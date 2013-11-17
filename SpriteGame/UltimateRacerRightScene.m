@@ -79,11 +79,11 @@
         }
     }
     
-    /*acceleratorNode1.fillColor = [UIColor yellowColor];
+    acceleratorNode1.fillColor = [UIColor yellowColor];
      acceleratorNode1.glowWidth = 20;
      
      accelerate = YES;
-     pressed = YES;*/
+     pressed = YES;
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

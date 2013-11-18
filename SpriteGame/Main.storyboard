@@ -262,9 +262,11 @@
         <image name="Untitled.png" width="600" height="131"/>
         <image name="backButton.png" width="373" height="117"/>
         <image name="backButton2.png" width="368" height="117"/>
+        <image name="backButton2.png" width="368" height="117"/>
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
         <image name="correct.png" width="102" height="131"/>
+        <image name="startGameButton.png" width="537" height="123"/>
         <image name="startGameButton.png" width="537" height="123"/>
         <image name="v1-1.png" width="1142" height="218"/>
         <image name="v1-2.png" width="1639" height="218"/>

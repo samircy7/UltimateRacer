@@ -57,14 +57,6 @@
         [car1.physicsBody setLinearDamping:0.9];
 
         
-        car2 = [SKNode node];
-        SKShapeNode* circle2 = [SKShapeNode node];
-        circle2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2-65, self.frame.size.height/2-177, 30, 30)]).CGPath;
-        UIColor *myColor2 = [UIColor colorWithRed: 255.0/255.0 green: 193.0/255.0 blue:193.0/255.0 alpha: 1.0];
-        circle2.fillColor = myColor2;
-        circle2.strokeColor = myColor2;
-        [car2 addChild:circle2];
-        
         /* Set up of accelerator nodes */
         
         acceleratorNode1 = [SKShapeNode node];

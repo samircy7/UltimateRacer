@@ -25,6 +25,7 @@
     if(self)
     {
         [UltimateRacerWebSockets sharedInstance];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registeredUser:) name:@"registered_user" object:nil];
     }
     return self;
 }
@@ -56,6 +57,12 @@
     _codeLabel.text = uniqueCode1;
     _codeLabel.font = [UIFont fontWithName:@"SubatomicTsoonami" size:120];
     _codeLabel.textColor = [UIColor colorWithWhite:1 alpha:0.7];
+}
+
+- (void)registeredUser:(NSNotification *)note
+{
+    NSLog(@"%@", [note object]);
+    [self performSegueWithIdentifier:@"started" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

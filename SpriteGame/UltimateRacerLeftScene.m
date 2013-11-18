@@ -55,7 +55,6 @@
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.9];
-
         
         /* Set up of accelerator nodes */
         
@@ -103,8 +102,7 @@
             
             [APlayer prepareToPlay];
             [APlayer play];
-            
-            
+    
         }
     }
     
@@ -113,8 +111,6 @@
     
     accelerate = YES;
     pressed = YES;
-    
-    
     
 }
 

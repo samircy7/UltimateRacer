@@ -9,6 +9,7 @@
 #import "StartGameVC.h"
 #import "UltimateRacerMenuViewController.h"
 #import "UltimateRacerWebSockets.h"
+#import "UltimateRacerViewController.h"
 
 @interface StartGameVC ()
 
@@ -62,7 +63,10 @@
 - (void)registeredUser:(NSNotification *)note
 {
     NSLog(@"%@", [note object]);
-    [self performSegueWithIdentifier:@"started" sender:self];
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UltimateRacerViewController* vc = (UltimateRacerViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
+    [self presentModalViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

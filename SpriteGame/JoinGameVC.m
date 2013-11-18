@@ -9,6 +9,7 @@
 #import "JoinGameVC.h"
 #import "UltimateRacerMenuViewController.h"
 #import "UltimateRacerWebSockets.h"
+#import "UltimateRacerViewController.h"
 
 @interface JoinGameVC ()
 
@@ -42,7 +43,10 @@
 - (void)registeredUser:(NSNotification *)note
 {
     NSLog(@"%@", [note object]);
-    [self performSegueWithIdentifier:@"joined" sender:self];
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UltimateRacerViewController* vc = (UltimateRacerViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
+    [self presentModalViewController:vc animated:YES];
 }
 
 - (id) initWithSoundFile:(AVAudioPlayer *)player

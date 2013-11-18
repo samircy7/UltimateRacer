@@ -119,16 +119,6 @@
                                 <rect key="frame" x="74" y="199" width="636" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-Cf-5qa">
-                                <rect key="frame" x="247" y="812" width="291" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="startGameButton.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="GTV-3O-SJn" kind="modal" identifier="joined" id="N2L-bN-YlJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONt-VR-po3">
                                 <rect key="frame" x="58" y="87" width="152" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -165,7 +155,6 @@
                     </view>
                     <connections>
                         <outlet property="correctImg" destination="kY9-e8-aAf" id="p9i-GM-UcB"/>
-                        <outlet property="playButton" destination="fvZ-Cf-5qa" id="UTl-wM-MsV"/>
                         <outlet property="wrongImg" destination="eTj-9B-NBK" id="ijx-Jq-oDC"/>
                         <outletCollection property="textFields" destination="BPP-AB-h1T" id="8HC-4r-8g9"/>
                         <outletCollection property="textFields" destination="yHV-6r-Buh" id="rDy-jy-fjX"/>
@@ -216,16 +205,6 @@
                                     <action selector="goBack:" destination="ar1-3n-TX6" eventType="touchUpInside" id="UTR-Z4-RXB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGj-dv-B0M">
-                                <rect key="frame" x="239" y="805" width="291" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="startGameButton.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="GTV-3O-SJn" kind="modal" id="I9z-4S-nqY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.27843138575553894" green="0.062745101749897003" blue="0.17647059261798859" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -241,7 +220,7 @@
         <!--Ultimate Racer View Controller-->
         <scene sceneID="TqA-ee-9JV">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="GTV-3O-SJn" customClass="UltimateRacerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainvc" autoresizesArchivedViewToFullSize="NO" id="GTV-3O-SJn" customClass="UltimateRacerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W6I-Df-FMV"/>
                         <viewControllerLayoutGuide type="bottom" id="Q8e-J1-CER"/>
@@ -262,10 +241,10 @@
         <image name="Untitled.png" width="600" height="131"/>
         <image name="backButton.png" width="373" height="117"/>
         <image name="backButton2.png" width="368" height="117"/>
+        <image name="backButton2.png" width="368" height="117"/>
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
         <image name="correct.png" width="102" height="131"/>
-        <image name="startGameButton.png" width="537" height="123"/>
         <image name="v1-1.png" width="1142" height="218"/>
         <image name="v1-2.png" width="1639" height="218"/>
         <image name="v2-1.png" width="1214" height="218"/>
@@ -276,7 +255,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="N2L-bN-YlJ"/>
-    </inferredMetricsTieBreakers>
 </document>

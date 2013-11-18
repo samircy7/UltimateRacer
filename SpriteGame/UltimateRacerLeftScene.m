@@ -11,15 +11,18 @@
 @implementation UltimateRacerLeftScene
 {
     SKNode* car1;
-    SKNode* car2;
     SKShapeNode* track1;
-    SKShapeNode* track2;
     BOOL accelerate;
     BOOL pressed;
-    BOOL setted;
+    BOOL screenSetted;
+    BOOL corner1;
+    BOOL corner2;
     SKShapeNode* acceleratorNode1;
     SKShapeNode* acceleratorNode2;
 }
+
+@synthesize APlayer;
+@synthesize DPlayer;
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -29,7 +32,6 @@
         
         /* Set up of track */
         track1 = [SKShapeNode node];
-        track2 = [SKShapeNode node];
         
         CGRect selfSize = self.frame;
         selfSize.origin.x = selfSize.size.width/2;
@@ -42,18 +44,7 @@
         track1.strokeColor = [UIColor blueColor];
         track1.glowWidth = 7;
         track1.lineWidth = 23;
-        
-        selfSize.size.height += 100;
-        selfSize.size.width -= 100;
-        selfSize.origin.x -=50;
-        selfSize.origin.y -= 50;
-        
-        track2.path = ([UIBezierPath bezierPathWithRoundedRect:selfSize cornerRadius:10]).CGPath;
-        track2.fillColor = [UIColor clearColor];
-        track2.strokeColor = [UIColor redColor];
-        track2.glowWidth = 7;
-        track2.lineWidth = 23;
-        
+
         /* Set up of cars */
         car1 = [SKNode node];
         SKShapeNode* circle1 = [SKShapeNode node];
@@ -88,12 +79,13 @@
         [self addChild:track1];
         [self addChild:car1];
         [self addChild:acceleratorNode1];
-        //[self addChild:track2];
-        //[self addChild:car2];
         //[self addChild:acceleratorNode2];
         
         accelerate = NO;
         pressed = NO;
+        screenSetted = NO;
+        corner1 = NO;
+        corner2 = NO;
     }
     return self;
 }
@@ -108,14 +100,30 @@
             acceleratorNode1.glowWidth = 20;
             accelerate = YES;
             pressed = YES;
+            
+            [DPlayer stop];
+            NSLog(@"Accelerate");
+            NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Accelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+            NSError * error;
+            
+            APlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+            APlayer.numberOfLoops = 0;
+            
+            [APlayer prepareToPlay];
+            [APlayer play];
+            
+            
         }
     }
     
-    /*acceleratorNode1.fillColor = [UIColor yellowColor];
+    acceleratorNode1.fillColor = [UIColor yellowColor];
     acceleratorNode1.glowWidth = 20;
     
     accelerate = YES;
-    pressed = YES;*/
+    pressed = YES;
+    
+    
+    
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -125,6 +133,18 @@
     
     accelerate = NO;
     pressed = NO;
+    
+    
+    [APlayer stop];
+    
+    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+    NSError * error;
+    
+    DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+    DPlayer.numberOfLoops = 0;
+    
+    [DPlayer prepareToPlay];
+    [DPlayer play];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -133,17 +153,19 @@
     CGFloat limit = 384;
     CGFloat posx = car1.position.x;
     CGFloat posy = car1.position.y;
-    //NSLog(@"Look%f",posx);
     
-    if (posx - limit > 0.01 && setted == NO)
+    if ((posx > 0 && posx - limit > 0.01 && screenSetted == NO) || (corner2 && posx > 0))
     {
-        
-        setted = YES;
+        screenSetted = YES;
+        corner1 = NO;
+        corner2 = NO;
         CGFloat refx = car1.physicsBody.velocity.dx * -1;
+        
+        [car1 removeFromParent];
         
         car1 = [SKNode node];
         SKShapeNode* circle1 = [SKShapeNode node];
-        circle1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(768, posx+324, 30, 30)]).CGPath;
+        circle1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(768, 708, 30, 30)]).CGPath;
         UIColor *myColor1 = [UIColor colorWithRed: 176.0/255.0 green: 226.0/255.0 blue:255.0/255.0 alpha: 1.0];
         circle1.fillColor = myColor1;
         [car1 addChild:circle1];
@@ -158,25 +180,42 @@
         [car1.physicsBody applyForce:trial];
     }
     
-    else if (posx - limit > 0.01 && accelerate && pressed)
+    else if (posx < 0 && limit + 15 + posx < 0.01 && posy + 324 > 0.01)
     {
+        if (!corner1) {
+        CGFloat refy = car1.physicsBody.velocity.dx;
+        [car1.physicsBody setVelocity:CGVectorMake(0, refy)];
+        corner1 = YES;
+        screenSetted = NO;
+        }
         
-        CGVector trial = CGVectorMake(0, 18);
-        [car1.physicsBody applyForce:trial];
+        if (accelerate && pressed)
+            [car1.physicsBody applyForce:CGVectorMake(0, -18)];
+    }
+    
+    else if (posx < 0 && 309 + posy < 0.01 && !screenSetted)
+    {
+        if (!corner2) {
+            CGFloat refy = car1.physicsBody.velocity.dy * -1;
+            [car1.physicsBody setVelocity:CGVectorMake(refy, 0)];
+            corner2 = YES;
+            corner1 = NO;
+        }
+        
+        if (accelerate && pressed)
+            [car1.physicsBody applyForce:CGVectorMake(18, 0)];
     }
     
     else if (accelerate && pressed) {
-        if ( setted == NO) {
+        if ( screenSetted == NO) {
             CGVector trial = CGVectorMake(18, 0);
             [car1.physicsBody applyForce:trial];
         }
-        else {
+        else
+        {
             CGVector trial = CGVectorMake(-18, 0);
             [car1.physicsBody applyForce:trial];
         }
-    }
-    else if ( accelerate && pressed && posy){
-        
     }
     
     else {

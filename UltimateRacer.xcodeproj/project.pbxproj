@@ -10,6 +10,13 @@
 		E30D496118396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
 		E30D496218396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
 		E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */ = {isa = PBXBuildFile; fileRef = E3905A3E1828AD4400BF83EA /* toy_car.png */; };
+		F81A77541836C744009FCB83 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = F81A774D1836C744009FCB83 /* base64.c */; };
+		F81A77551836C744009FCB83 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A77501836C744009FCB83 /* NSData+SRB64Additions.m */; };
+		F81A77561836C744009FCB83 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A77531836C744009FCB83 /* SRWebSocket.m */; };
+		F81A77581836CB7C009FCB83 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A77571836CB7C009FCB83 /* CFNetwork.framework */; };
+		F81A775A1836CB81009FCB83 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A77591836CB81009FCB83 /* Security.framework */; };
+		F81A775C1836CB8B009FCB83 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A775B1836CB8B009FCB83 /* libicucore.dylib */; };
+		F8524042183983B300954318 /* UltimateRacerWebSockets.m in Sources */ = {isa = PBXBuildFile; fileRef = F8524041183983B300954318 /* UltimateRacerWebSockets.m */; };
 		E397FB3718398F0D006B58F9 /* Deccelerate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */; };
 		E397FB3818398F0D006B58F9 /* Accelerate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E397FB3618398F0D006B58F9 /* Accelerate.mp3 */; };
 		FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
@@ -61,6 +68,18 @@
 /* Begin PBXFileReference section */
 		E30D496018396827008559A8 /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
 		E3905A3E1828AD4400BF83EA /* toy_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_car.png; sourceTree = "<group>"; };
+		F81A774D1836C744009FCB83 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		F81A774E1836C744009FCB83 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		F81A774F1836C744009FCB83 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		F81A77501836C744009FCB83 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		F81A77511836C744009FCB83 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		F81A77521836C744009FCB83 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		F81A77531836C744009FCB83 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		F81A77571836CB7C009FCB83 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F81A77591836CB81009FCB83 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F81A775B1836CB8B009FCB83 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		F8524040183983B300954318 /* UltimateRacerWebSockets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerWebSockets.h; sourceTree = "<group>"; };
+		F8524041183983B300954318 /* UltimateRacerWebSockets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerWebSockets.m; sourceTree = "<group>"; };
 		E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Deccelerate.mp3; sourceTree = "<group>"; };
 		E397FB3618398F0D006B58F9 /* Accelerate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Accelerate.mp3; sourceTree = "<group>"; };
 		FD583D831813805F00BED4AD /* UltimateRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,11 +133,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81A775C1836CB8B009FCB83 /* libicucore.dylib in Frameworks */,
+				F81A775A1836CB81009FCB83 /* Security.framework in Frameworks */,
+				F81A77581836CB7C009FCB83 /* CFNetwork.framework in Frameworks */,
+				FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */,
 				FDCE2EC8182EE3A30009BB3D /* AVFoundation.framework in Frameworks */,
 				FD583D891813805F00BED4AD /* CoreGraphics.framework in Frameworks */,
 				FD583D8B1813805F00BED4AD /* UIKit.framework in Frameworks */,
 				FD583D8D1813805F00BED4AD /* SpriteKit.framework in Frameworks */,
-				FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,12 +157,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F81A774C1836C744009FCB83 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				F81A774D1836C744009FCB83 /* base64.c */,
+				F81A774E1836C744009FCB83 /* base64.h */,
+				F81A774F1836C744009FCB83 /* NSData+SRB64Additions.h */,
+				F81A77501836C744009FCB83 /* NSData+SRB64Additions.m */,
+				F81A77511836C744009FCB83 /* SocketRocket-Prefix.pch */,
+				F81A77521836C744009FCB83 /* SRWebSocket.h */,
+				F81A77531836C744009FCB83 /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
 		FD583D7A1813805F00BED4AD = {
 			isa = PBXGroup;
 			children = (
 				E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */,
 				E397FB3618398F0D006B58F9 /* Accelerate.mp3 */,
 				E3905A3E1828AD4400BF83EA /* toy_car.png */,
+				F81A774C1836C744009FCB83 /* SocketRocket */,
 				FD583D8E1813805F00BED4AD /* SpriteGame */,
 				FD583DB21813805F00BED4AD /* SpriteGameTests */,
 				FD583D851813805F00BED4AD /* Frameworks */,
@@ -160,6 +197,9 @@
 		FD583D851813805F00BED4AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F81A775B1836CB8B009FCB83 /* libicucore.dylib */,
+				F81A77591836CB81009FCB83 /* Security.framework */,
+				F81A77571836CB7C009FCB83 /* CFNetwork.framework */,
 				FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */,
 				FD583D861813805F00BED4AD /* Foundation.framework */,
 				FD583D881813805F00BED4AD /* CoreGraphics.framework */,
@@ -180,6 +220,8 @@
 				FDC8083A182DBD3B0055B1E9 /* Main.storyboard */,
 				FDC6CDCF182EF1A3006921EA /* JoinGameVC.h */,
 				FDC6CDD0182EF1A3006921EA /* JoinGameVC.m */,
+				F8524040183983B300954318 /* UltimateRacerWebSockets.h */,
+				F8524041183983B300954318 /* UltimateRacerWebSockets.m */,
 				FDC6CDCA182EF167006921EA /* StartGameVC.h */,
 				FDC6CDCB182EF167006921EA /* StartGameVC.m */,
 				FDC80831182DB5710055B1E9 /* UltimateRacerMenuViewController.h */,
@@ -353,12 +395,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81A77551836C744009FCB83 /* NSData+SRB64Additions.m in Sources */,
 				FDC80834182DB5710055B1E9 /* UltimateRacerMenuViewController.m in Sources */,
 				FDC6CDCD182EF167006921EA /* StartGameVC.m in Sources */,
 				FDC6CDD1182EF1A3006921EA /* JoinGameVC.m in Sources */,
 				FDF7E911182DAFAF00689890 /* UltimateRacerRightScene.m in Sources */,
+				F81A77541836C744009FCB83 /* base64.c in Sources */,
 				FD583D951813805F00BED4AD /* main.m in Sources */,
 				FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */,
+				F8524042183983B300954318 /* UltimateRacerWebSockets.m in Sources */,
+				F81A77561836C744009FCB83 /* SRWebSocket.m in Sources */,
 				FD583D991813805F00BED4AD /* UltimateRacerAppDelegate.m in Sources */,
 				FD583D9F1813805F00BED4AD /* UltimateRacerViewController.m in Sources */,
 			);

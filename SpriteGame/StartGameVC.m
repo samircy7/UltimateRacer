@@ -8,6 +8,7 @@
 
 #import "StartGameVC.h"
 #import "UltimateRacerMenuViewController.h"
+#import "UltimateRacerWebSockets.h"
 
 @interface StartGameVC ()
 
@@ -18,6 +19,15 @@
     NSMutableString* uniqueCode1;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self)
+    {
+        [UltimateRacerWebSockets sharedInstance];
+    }
+    return self;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,15 +44,15 @@
     
     unichar code[5];
     
-    code[0] = arc4random() % 26 + 65;
-    code[1] = arc4random() % 26 + 65;
-    code[2] = arc4random() % 26 + 65;
-    code[3] = arc4random() % 26 + 65;
-    code[4] = arc4random() % 26 + 65;
+    code[0] = arc4random() % 26 + 97;
+    code[1] = arc4random() % 26 + 97;
+    code[2] = arc4random() % 26 + 97;
+    code[3] = arc4random() % 26 + 97;
+    code[4] = arc4random() % 26 + 97;
     
     uniqueCode1 = [[NSMutableString alloc] initWithCapacity:5];
     [uniqueCode1 appendFormat:@"%C%C%C%C%C", code[0], code[1], code[2], code[3], code[4]];
-    
+    [[UltimateRacerWebSockets sharedInstance] sendMessage:[NSString stringWithFormat:@"new_game code:%@",[uniqueCode1 copy]]];
     _codeLabel.text = uniqueCode1;
     _codeLabel.font = [UIFont fontWithName:@"SubatomicTsoonami" size:120];
     _codeLabel.textColor = [UIColor colorWithWhite:1 alpha:0.7];
@@ -60,7 +70,7 @@
 
 - (void) stopMusic
 {
-    UltimateRacerMenuViewController *parent = [self presentingViewController];
+    UltimateRacerMenuViewController *parent = (UltimateRacerMenuViewController *)[self presentingViewController];
     [parent.player stop];
 }
 

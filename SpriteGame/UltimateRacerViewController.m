@@ -11,11 +11,16 @@
 #import "UltimateRacerRightScene.h"
 #import "StartGameVC.h"
 #import "JoinGameVC.h"
+#import "UltimateRacerWebSockets.h"
 
-@implementation UltimateRacerViewController
+@interface UltimateRacerViewController ()
 {
     NSString * player;
 }
+
+@end
+
+@implementation UltimateRacerViewController
 
 @synthesize scene;
 
@@ -35,7 +40,7 @@
     // Present the scene.
         [skView presentScene:scene];
         
-        StartGameVC *vc = [self presentingViewController];
+        StartGameVC *vc = (StartGameVC *)[self presentingViewController];
         [vc stopMusic];
     }
     
@@ -47,10 +52,10 @@
         // Present the scene.
         [skView presentScene:scene];
         
-        JoinGameVC *vc = [self presentingViewController];
+        JoinGameVC *vc = (JoinGameVC *)[self presentingViewController];
         [vc stopMusic];
     }
-
+    UltimateRacerWebSockets *websockets = [UltimateRacerWebSockets sharedInstance];
 }
 
 - (BOOL)shouldAutorotate

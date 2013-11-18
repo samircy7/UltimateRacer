@@ -26,7 +26,6 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
-        
         /* Setup your scene here */
         self.backgroundColor = [SKColor blackColor];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
@@ -55,9 +54,17 @@
         [car1 addChild:circle1];
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
-        [car1.physicsBody setFriction:0.9];
         [car1.physicsBody setLinearDamping:0.9];
-     
+
+        
+        car2 = [SKNode node];
+        SKShapeNode* circle2 = [SKShapeNode node];
+        circle2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2-65, self.frame.size.height/2-177, 30, 30)]).CGPath;
+        UIColor *myColor2 = [UIColor colorWithRed: 255.0/255.0 green: 193.0/255.0 blue:193.0/255.0 alpha: 1.0];
+        circle2.fillColor = myColor2;
+        circle2.strokeColor = myColor2;
+        [car2 addChild:circle2];
+        
         /* Set up of accelerator nodes */
         
         acceleratorNode1 = [SKShapeNode node];

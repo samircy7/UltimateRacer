@@ -21,6 +21,9 @@
     SKShapeNode* acceleratorNode2;
 }
 
+@synthesize APlayer;
+@synthesize DPlayer;
+
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         
@@ -90,6 +93,19 @@
             acceleratorNode1.glowWidth = 20;
             accelerate = YES;
             pressed = YES;
+            
+            [DPlayer stop];
+            NSLog(@"Accelerate");
+            NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Accelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+            NSError * error;
+            
+            APlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+            APlayer.numberOfLoops = 0;
+            
+            [APlayer prepareToPlay];
+            [APlayer play];
+            
+            
         }
     }
     
@@ -98,6 +114,9 @@
     
     accelerate = YES;
     pressed = YES;
+    
+    
+    
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -107,6 +126,18 @@
     
     accelerate = NO;
     pressed = NO;
+    
+    
+    [APlayer stop];
+    
+    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+    NSError * error;
+    
+    DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+    DPlayer.numberOfLoops = 0;
+    
+    [DPlayer prepareToPlay];
+    [DPlayer play];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

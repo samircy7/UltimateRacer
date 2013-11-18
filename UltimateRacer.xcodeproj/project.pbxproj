@@ -16,6 +16,7 @@
 		F81A77581836CB7C009FCB83 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A77571836CB7C009FCB83 /* CFNetwork.framework */; };
 		F81A775A1836CB81009FCB83 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A77591836CB81009FCB83 /* Security.framework */; };
 		F81A775C1836CB8B009FCB83 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A775B1836CB8B009FCB83 /* libicucore.dylib */; };
+		F8524042183983B300954318 /* UltimateRacerWebSockets.m in Sources */ = {isa = PBXBuildFile; fileRef = F8524041183983B300954318 /* UltimateRacerWebSockets.m */; };
 		FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
 		FD583D891813805F00BED4AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D881813805F00BED4AD /* CoreGraphics.framework */; };
 		FD583D8B1813805F00BED4AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D8A1813805F00BED4AD /* UIKit.framework */; };
@@ -75,6 +76,8 @@
 		F81A77571836CB7C009FCB83 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F81A77591836CB81009FCB83 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F81A775B1836CB8B009FCB83 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		F8524040183983B300954318 /* UltimateRacerWebSockets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerWebSockets.h; sourceTree = "<group>"; };
+		F8524041183983B300954318 /* UltimateRacerWebSockets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerWebSockets.m; sourceTree = "<group>"; };
 		FD583D831813805F00BED4AD /* UltimateRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD583D861813805F00BED4AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD583D881813805F00BED4AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -211,6 +214,8 @@
 				FDC8083A182DBD3B0055B1E9 /* Main.storyboard */,
 				FDC6CDCF182EF1A3006921EA /* JoinGameVC.h */,
 				FDC6CDD0182EF1A3006921EA /* JoinGameVC.m */,
+				F8524040183983B300954318 /* UltimateRacerWebSockets.h */,
+				F8524041183983B300954318 /* UltimateRacerWebSockets.m */,
 				FDC6CDCA182EF167006921EA /* StartGameVC.h */,
 				FDC6CDCB182EF167006921EA /* StartGameVC.m */,
 				FDC80831182DB5710055B1E9 /* UltimateRacerMenuViewController.h */,
@@ -390,6 +395,7 @@
 				F81A77541836C744009FCB83 /* base64.c in Sources */,
 				FD583D951813805F00BED4AD /* main.m in Sources */,
 				FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */,
+				F8524042183983B300954318 /* UltimateRacerWebSockets.m in Sources */,
 				F81A77561836C744009FCB83 /* SRWebSocket.m in Sources */,
 				FD583D991813805F00BED4AD /* UltimateRacerAppDelegate.m in Sources */,
 				FD583D9F1813805F00BED4AD /* UltimateRacerViewController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "JoinGameVC.h"
 #import "UltimateRacerMenuViewController.h"
+#import "UltimateRacerWebSockets.h"
 
 @interface JoinGameVC ()
 
@@ -18,6 +19,17 @@
     NSMutableString *enteredCode;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registeredUser:) name:@"registered_user" object:nil];
+        [UltimateRacerWebSockets sharedInstance];
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,6 +37,12 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)registeredUser:(NSNotification *)note
+{
+    NSLog(@"%@", [note object]);
+    [self performSegueWithIdentifier:@"joined" sender:self];
 }
 
 - (id) initWithSoundFile:(AVAudioPlayer *)player
@@ -94,8 +112,9 @@
 
     if ([enteredCode length] == 5)
     {
-        _correctImg.hidden = NO;
-        _playButton.enabled = YES;
+        _correctImg.hidden = YES;
+        _playButton.enabled = NO;
+        [[UltimateRacerWebSockets sharedInstance] sendMessage:[NSString stringWithFormat:@"register_user:hello code:%@", enteredCode]];
     }
     else
     {
@@ -118,7 +137,7 @@
 
 - (void) stopMusic
 {
-    UltimateRacerMenuViewController *parent = [self presentingViewController];
+    UltimateRacerMenuViewController *parent = (UltimateRacerMenuViewController *)[self presentingViewController];
     [parent.player stop];
 }
 @end

@@ -8,14 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-#import "SRWebSocket.h"
-
-extern NSString * const kInboxString;
-extern NSString * const kOutboxString;
 
 #define PlayerType @"PlayerType"
 
-@interface UltimateRacerViewController : UIViewController <SRWebSocketDelegate>
+@interface UltimateRacerViewController : UIViewController
 
 @property (nonatomic, strong) SKScene * scene;
 

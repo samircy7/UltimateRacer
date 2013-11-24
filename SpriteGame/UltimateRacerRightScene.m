@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 Samir Choudhary. All rights reserved.
 //
 
-#define THRESHOLD 10
+#define WIDTH 568
+#define HEIGHT 324
 
 #import "UltimateRacerRightScene.h"
 
@@ -162,7 +163,7 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    if (568 - car2.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
+    if (WIDTH - car2.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
     {
         turned[0] = NO;
         turned[1] = YES;
@@ -171,7 +172,7 @@
         [car2.physicsBody setVelocity:CGVectorMake(0, car2.physicsBody.velocity.dx)];
     }
     
-    if (568 - car2.position.x <= 0.0000001 && 324 - car2.position.y <= 0.0000001 && !turned[2])
+    if (WIDTH - car2.position.x <= 0.0000001 && HEIGHT - car2.position.y <= 0.0000001 && !turned[2])
     {
         turned[1] = NO;
         turned[2] = YES;
@@ -180,7 +181,7 @@
         [car2.physicsBody setVelocity:CGVectorMake(-1*car2.physicsBody.velocity.dy, 0)];
     }
     
-    if (324 - car2.position.y <= 0.0000001 && car2.position.x <= 0.0000001 && !turned[3])
+    if (HEIGHT - car2.position.y <= 0.0000001 && car2.position.x <= 0.0000001 && !turned[3])
     {
         turned[2] = NO;
         turned[3] = YES;

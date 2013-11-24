@@ -9,6 +9,9 @@
 #import "UltimateRacerLeftScene.h"
 #import "UltimateRacerWebSockets.h"
 
+#define WIDTH 568
+#define HEIGHT 324
+
 @implementation UltimateRacerLeftScene
 {
     SKNode* car1;
@@ -154,8 +157,7 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    
-    if (568 - car1.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
+    if (WIDTH - car1.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
     {
         turned[0] = NO;
         turned[1] = YES;
@@ -164,7 +166,7 @@
         [car1.physicsBody setVelocity:CGVectorMake(0, car1.physicsBody.velocity.dx)];
     }
     
-    if (568 - car1.position.x <= 0.0000001 && 324 - car1.position.y <= 0.0000001 && !turned[2])
+    if (WIDTH - car1.position.x <= 0.0000001 && HEIGHT - car1.position.y <= 0.0000001 && !turned[2])
     {
         turned[1] = NO;
         turned[2] = YES;
@@ -173,7 +175,7 @@
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
     }
     
-    if (324 - car1.position.y <= 0.0000001 && car1.position.x <= 0.0000001 && !turned[3])
+    if (HEIGHT - car1.position.y <= 0.0000001 && car1.position.x <= 0.0000001 && !turned[3])
     {
         turned[2] = NO;
         turned[3] = YES;
@@ -190,7 +192,7 @@
         trial = CGVectorMake(18, 0);
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
     }
-
+    
     if (accelerate && pressed)
         [car1.physicsBody applyForce:trial];
 }

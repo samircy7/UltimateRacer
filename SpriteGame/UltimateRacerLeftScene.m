@@ -23,6 +23,7 @@
     SKShapeNode* acceleratorNode2;
     CGVector trial;
     UltimateRacerWebSockets *_webSockets;
+    NSMutableString *_message;
 }
 
 @synthesize APlayer;
@@ -113,7 +114,9 @@
             
             [APlayer prepareToPlay];
             [APlayer play];
-            [_webSockets sendMessage:@"accelerate_car"];
+            NSMutableString *message = [NSMutableString stringWithFormat:@"{ \"accelerate_car\":\"left\" , "];
+            [message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"acc1.x\":%f, \"acc2.x\":%f }", car1.position.x, car1.position.y, trial.dx, trial.dy]];
+            [_webSockets sendMessage:message];
         }
     }
 }
@@ -133,25 +136,27 @@
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (pressed) {
-    
-    acceleratorNode1.fillColor = [UIColor clearColor];
-    acceleratorNode1.glowWidth = 0;
-    
-    accelerate = NO;
-    pressed = NO;
-    
-    
-    [APlayer stop];
-    
-    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
-    NSError * error;
-    
-    DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
-    DPlayer.numberOfLoops = 0;
-    
-    [DPlayer prepareToPlay];
-    [DPlayer play];
-    [_webSockets sendMessage:@"deccelerate_car"];
+        
+        acceleratorNode1.fillColor = [UIColor clearColor];
+        acceleratorNode1.glowWidth = 0;
+        
+        accelerate = NO;
+        pressed = NO;
+        
+        
+        [APlayer stop];
+        
+        NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+        NSError * error;
+        
+        DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+        DPlayer.numberOfLoops = 0;
+        
+        [DPlayer prepareToPlay];
+        [DPlayer play];
+        NSMutableString *message = [NSMutableString stringWithFormat:@"{ \"deccelerate_car\":\"left\" , "];
+        [message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"acc1.x\":%f, \"acc2.x\":%f }", car1.position.x, car1.position.y, trial.dx, trial.dy]];
+        [_webSockets sendMessage:message];
     }
 }
 
@@ -195,6 +200,9 @@
     
     if (accelerate && pressed)
         [car1.physicsBody applyForce:trial];
+    _message = [NSMutableString stringWithFormat:@"{ \"update_car\":\"left\" , "];
+    [_message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"acc1.x\":%f, \"acc2.x\":%f }", car1.position.x, car1.position.y, trial.dx, trial.dy]];
+    [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
 }
 
 @end

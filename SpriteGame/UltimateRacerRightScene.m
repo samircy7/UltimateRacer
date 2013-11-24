@@ -22,6 +22,7 @@
     SKShapeNode* acceleratorNode1;
     SKShapeNode* acceleratorNode2;
     CGVector trial;
+    CGFloat offset;
 }
 
 @synthesize APlayer;
@@ -81,12 +82,58 @@
         pressed = NO;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:@"accelerate_car" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:@"deccelerate_car" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLeftCar:) name:@"update_car" object:nil];
         
         turned[0] = YES;
         turned[1] = turned[2] = turned[3] = NO;
         trial = CGVectorMake(18, 0);
     }
     return self;
+}
+
+- (void)updateLeftCar:(NSNotification *)note
+{
+    NSDictionary *json = [note object];
+    // car2 - jsonpos
+    CGFloat dx = car2.position.x - [[json objectForKey:@"car1.x"] floatValue];
+    CGFloat dy = car2.position.y - [[json objectForKey:@"car1.y"] floatValue];
+    NSLog(@"%f %f", dx, dy);
+    if(turned[0])
+    {
+        if(dx > 5)
+            offset = -2;
+        else if(0 - dx > 5)
+            offset = 2;
+        else
+            offset = 0;
+    }
+    else if(turned[1])
+    {
+        if(dy > 5)
+            offset = -2;
+        else if (0 - dy > 5)
+            offset = 2;
+        else
+            offset = 0;
+    }
+    else if(turned[2])
+    {
+        if(0 - dx > 5)
+            offset = -2;
+        else if(dx > 5)
+            offset = 2;
+        else
+            offset = 0;
+    }
+    else if(turned[3])
+    {
+        if(0 - dy > 5)
+            offset = -2;
+        else if(dy > 5)
+            offset = 2;
+        else
+            offset = 0;
+    }
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -168,7 +215,7 @@
         turned[0] = NO;
         turned[1] = YES;
         
-        trial = CGVectorMake(0, 18);
+        trial = CGVectorMake(0, 18+offset);
         [car2.physicsBody setVelocity:CGVectorMake(0, car2.physicsBody.velocity.dx)];
     }
     
@@ -177,7 +224,7 @@
         turned[1] = NO;
         turned[2] = YES;
         
-        trial = CGVectorMake(-18, 0);
+        trial = CGVectorMake(-(18+offset), 0);
         [car2.physicsBody setVelocity:CGVectorMake(-1*car2.physicsBody.velocity.dy, 0)];
     }
     
@@ -186,7 +233,7 @@
         turned[2] = NO;
         turned[3] = YES;
         
-        trial = CGVectorMake(0, -18);
+        trial = CGVectorMake(0, -(18+offset));
         [car2.physicsBody setVelocity:CGVectorMake(0, car2.physicsBody.velocity.dx)];
     }
     
@@ -195,7 +242,7 @@
         turned[3] = NO;
         turned[0] = YES;
         
-        trial = CGVectorMake(18, 0);
+        trial = CGVectorMake(18+offset, 0);
         [car2.physicsBody setVelocity:CGVectorMake(-1*car2.physicsBody.velocity.dy, 0)];
     }
     

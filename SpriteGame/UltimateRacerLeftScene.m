@@ -90,6 +90,16 @@
     }
     
     
+    
+    
+    [self performSelector:@selector(setUpCountDown) withObject:self afterDelay:1.0];
+    
+    
+    return self;
+}
+
+- (void) setUpCountDown
+{
     NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/CountDown.mp3",[[NSBundle mainBundle] resourcePath]]];
     NSError * error;
     
@@ -100,7 +110,9 @@
     [CountPlayer play];
     
     
-    return self;
+    
+    
+    
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

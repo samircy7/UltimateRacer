@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 #define PlayerType @"PlayerType"
 
 @interface UltimateRacerViewController : UIViewController
 
 @property (nonatomic, strong) SKScene * scene;
-
+@property (nonatomic, retain) AVAudioPlayer *DingPlayer;
 @end

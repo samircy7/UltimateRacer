@@ -12,6 +12,7 @@
 @interface JoinGameVC : UIViewController <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *textFields;
 @property (nonatomic, retain) AVAudioPlayer *player;
+@property (nonatomic, retain) AVAudioPlayer *effectPlayer;
 
 @property (strong, nonatomic) IBOutlet UIImageView *correctImg;
 @property (strong, nonatomic) IBOutlet UIButton *playButton;

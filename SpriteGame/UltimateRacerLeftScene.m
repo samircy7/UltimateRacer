@@ -27,7 +27,7 @@
 
 @synthesize APlayer;
 @synthesize DPlayer;
-
+@synthesize CountPlayer;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
@@ -88,6 +88,18 @@
         turned[1] = turned[2] = turned[3] = NO;
         trial = CGVectorMake(18, 0);
     }
+    
+    
+    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/CountDown.mp3",[[NSBundle mainBundle] resourcePath]]];
+    NSError * error;
+    
+    CountPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+    CountPlayer.numberOfLoops = 0;
+    
+    [CountPlayer prepareToPlay];
+    [CountPlayer play];
+    
+    
     return self;
 }
 

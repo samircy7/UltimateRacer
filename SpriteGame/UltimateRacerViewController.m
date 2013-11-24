@@ -23,6 +23,7 @@
 @implementation UltimateRacerViewController
 
 @synthesize scene;
+@synthesize DingPlayer;
 
 - (void)viewDidLoad
 {
@@ -42,6 +43,7 @@
         
         StartGameVC *vc = (StartGameVC *)[self presentingViewController];
         [vc stopMusic];
+        
     }
     
     else {
@@ -54,6 +56,17 @@
         
         JoinGameVC *vc = (JoinGameVC *)[self presentingViewController];
         [vc stopMusic];
+        
+        NSURL * DingURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Ding.mp3",[[NSBundle mainBundle] resourcePath]]];
+        NSError * error2;
+        
+        DingPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:DingURL error:&error2];
+        DingPlayer.numberOfLoops = 0;
+        
+        [DingPlayer prepareToPlay];
+        [DingPlayer setVolume:1.0];
+        [DingPlayer play];
+        
     }
     UltimateRacerWebSockets *websockets = [UltimateRacerWebSockets sharedInstance];
 }

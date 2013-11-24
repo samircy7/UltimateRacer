@@ -19,6 +19,8 @@
 {
     NSMutableString *enteredCode;
 }
+@synthesize effectPlayer;
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -109,16 +111,35 @@
     
     NSInteger index = [self.textFields indexOfObject:textField];
     
-    if (index < 4 && textField.text.length == 1)
+    
+    NSURL * SelectURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Select.mp3",[[NSBundle mainBundle] resourcePath]]];
+    NSError * error;
+    
+    effectPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:SelectURL error:&error];
+    effectPlayer.numberOfLoops = 0;
+    
+    [effectPlayer prepareToPlay];
+    [effectPlayer setVolume:1.0];
+    
+    
+    
+    
+    if (index < 4 && textField.text.length == 1){
         [[self.textFields objectAtIndex:index+1] becomeFirstResponder];
-    else if (index > 0 && [textField.text isEqual: @""])
+        [effectPlayer play];
+    }
+    else if (index > 0 && [textField.text isEqual: @""]){
         [[self.textFields objectAtIndex:index-1] becomeFirstResponder];
+        [effectPlayer play];
+    }
 
     if ([enteredCode length] == 5)
     {
+        [effectPlayer play];
         _correctImg.hidden = YES;
         _playButton.enabled = NO;
         [[UltimateRacerWebSockets sharedInstance] sendMessage:[NSString stringWithFormat:@"register_user:hello code:%@", enteredCode]];
+        
     }
     else
     {

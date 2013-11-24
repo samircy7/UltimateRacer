@@ -42,6 +42,7 @@
 
     [player prepareToPlay];
     [player setDelegate:self];
+    [player setVolume:0.6];
     [player play];
     
 }

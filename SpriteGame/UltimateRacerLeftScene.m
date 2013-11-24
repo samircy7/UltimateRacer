@@ -28,7 +28,7 @@
 
 @synthesize APlayer;
 @synthesize DPlayer;
-
+@synthesize CountPlayer;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
@@ -58,6 +58,11 @@
         circle1.fillColor = myColor1;
         [car1 addChild:circle1];
         
+        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
+        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+        trail.targetNode = self;
+        [car1 addChild:trail];
+        
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.9];
         
@@ -84,6 +89,18 @@
         turned[1] = turned[2] = turned[3] = NO;
         trial = CGVectorMake(18, 0);
     }
+    
+    
+    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/CountDown.mp3",[[NSBundle mainBundle] resourcePath]]];
+    NSError * error;
+    
+    CountPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+    CountPlayer.numberOfLoops = 0;
+    
+    [CountPlayer prepareToPlay];
+    [CountPlayer play];
+    
+    
     return self;
 }
 
@@ -205,4 +222,11 @@
     [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
 }
 
+@end
+
+@implementation SKEmitterNode (fromFile)
++ (instancetype)carNamed:(NSString*)name
+{
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:name ofType:@"sks"]];
+}
 @end

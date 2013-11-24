@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E30D496118396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
 		E30D496218396827008559A8 /* MenuFinal.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E30D496018396827008559A8 /* MenuFinal.m4a */; };
+		E3708C191842B15F00DDC4C0 /* Ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3708C161842B15F00DDC4C0 /* Ding.mp3 */; };
+		E3708C1A1842B15F00DDC4C0 /* Select.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3708C171842B15F00DDC4C0 /* Select.mp3 */; };
+		E3708C1B1842B15F00DDC4C0 /* CountDown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3708C181842B15F00DDC4C0 /* CountDown.mp3 */; };
 		E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */ = {isa = PBXBuildFile; fileRef = E3905A3E1828AD4400BF83EA /* toy_car.png */; };
 		E397FB3718398F0D006B58F9 /* Deccelerate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */; };
 		E397FB3818398F0D006B58F9 /* Accelerate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E397FB3618398F0D006B58F9 /* Accelerate.mp3 */; };
@@ -52,6 +55,9 @@
 		FDCE2EC8182EE3A30009BB3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCE2EC7182EE3A30009BB3D /* AVFoundation.framework */; };
 		FDCE2ECA182EEACB0009BB3D /* v1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCE2EC9182EEACB0009BB3D /* v1-1.png */; };
 		FDCE2ECC182EEAD40009BB3D /* v1-2.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCE2ECB182EEAD40009BB3D /* v1-2.png */; };
+		FDE45B1A1842B0F600238D08 /* carParticle1.sks in Resources */ = {isa = PBXBuildFile; fileRef = FDE45B191842B0F600238D08 /* carParticle1.sks */; };
+		FDE45B1C1842B11100238D08 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FDE45B1B1842B11100238D08 /* spark.png */; };
+		FDE45B1E1842B6F800238D08 /* carParticle2.sks in Resources */ = {isa = PBXBuildFile; fileRef = FDE45B1D1842B6F800238D08 /* carParticle2.sks */; };
 		FDF7E911182DAFAF00689890 /* UltimateRacerRightScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7E910182DAFAF00689890 /* UltimateRacerRightScene.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +73,9 @@
 
 /* Begin PBXFileReference section */
 		E30D496018396827008559A8 /* MenuFinal.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MenuFinal.m4a; sourceTree = "<group>"; };
+		E3708C161842B15F00DDC4C0 /* Ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ding.mp3; sourceTree = "<group>"; };
+		E3708C171842B15F00DDC4C0 /* Select.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Select.mp3; sourceTree = "<group>"; };
+		E3708C181842B15F00DDC4C0 /* CountDown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CountDown.mp3; sourceTree = "<group>"; };
 		E3905A3E1828AD4400BF83EA /* toy_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_car.png; sourceTree = "<group>"; };
 		E397FB3518398F0D006B58F9 /* Deccelerate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Deccelerate.mp3; sourceTree = "<group>"; };
 		E397FB3618398F0D006B58F9 /* Accelerate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Accelerate.mp3; sourceTree = "<group>"; };
@@ -124,6 +133,9 @@
 		FDCE2EC9182EEACB0009BB3D /* v1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v1-1.png"; sourceTree = "<group>"; };
 		FDCE2ECB182EEAD40009BB3D /* v1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "v1-2.png"; sourceTree = "<group>"; };
 		FDCE2ECD182EEF8F0009BB3D /* subatomic.tsoonami.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = subatomic.tsoonami.ttf; sourceTree = "<group>"; };
+		FDE45B191842B0F600238D08 /* carParticle1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = carParticle1.sks; sourceTree = "<group>"; };
+		FDE45B1B1842B11100238D08 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		FDE45B1D1842B6F800238D08 /* carParticle2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = carParticle2.sks; sourceTree = "<group>"; };
 		FDF7E90F182DAFAF00689890 /* UltimateRacerRightScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerRightScene.h; sourceTree = "<group>"; };
 		FDF7E910182DAFAF00689890 /* UltimateRacerRightScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerRightScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +237,9 @@
 				FDC6CDCA182EF167006921EA /* StartGameVC.h */,
 				FDC6CDCB182EF167006921EA /* StartGameVC.m */,
 				FDC80831182DB5710055B1E9 /* UltimateRacerMenuViewController.h */,
+				FDE45B191842B0F600238D08 /* carParticle1.sks */,
+				FDE45B1D1842B6F800238D08 /* carParticle2.sks */,
+				FDE45B1B1842B11100238D08 /* spark.png */,
 				FDC80832182DB5710055B1E9 /* UltimateRacerMenuViewController.m */,
 				FD583DA01813805F00BED4AD /* UltimateRacerLeftScene.h */,
 				FD583DA11813805F00BED4AD /* UltimateRacerLeftScene.m */,
@@ -239,6 +254,9 @@
 		FD583D8F1813805F00BED4AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E3708C161842B15F00DDC4C0 /* Ding.mp3 */,
+				E3708C171842B15F00DDC4C0 /* Select.mp3 */,
+				E3708C181842B15F00DDC4C0 /* CountDown.mp3 */,
 				E30D496018396827008559A8 /* MenuFinal.m4a */,
 				FD583D901813805F00BED4AD /* UltimateRacer-Info.plist */,
 				FDC80840182DCA180055B1E9 /* button1.png */,
@@ -360,12 +378,16 @@
 				FDC6CDC9182EF119006921EA /* subatomic.tsoonami.ttf in Resources */,
 				FDCCD77B1830CEB2001354DC /* backButton2.png in Resources */,
 				FD583D931813805F00BED4AD /* InfoPlist.strings in Resources */,
+				FDE45B1A1842B0F600238D08 /* carParticle1.sks in Resources */,
 				E397FB3718398F0D006B58F9 /* Deccelerate.mp3 in Resources */,
 				FDCCD7771830432F001354DC /* startGameButton.png in Resources */,
+				E3708C191842B15F00DDC4C0 /* Ding.mp3 in Resources */,
 				FDCE2ECC182EEAD40009BB3D /* v1-2.png in Resources */,
 				FD583DA61813805F00BED4AD /* Images.xcassets in Resources */,
 				FDCE2ECA182EEACB0009BB3D /* v1-1.png in Resources */,
+				E3708C1A1842B15F00DDC4C0 /* Select.mp3 in Resources */,
 				FDC8083F182DCA0F0055B1E9 /* button2.png in Resources */,
+				FDE45B1C1842B11100238D08 /* spark.png in Resources */,
 				FDCCD77F1830E2CF001354DC /* wrong.png in Resources */,
 				FDC8083B182DBD3B0055B1E9 /* Main.storyboard in Resources */,
 				FDC80843182DCA1F0055B1E9 /* Untitled.png in Resources */,
@@ -375,7 +397,9 @@
 				E3905A3F1828AD4400BF83EA /* toy_car.png in Resources */,
 				FDCE2EC4182EDBA50009BB3D /* logo1.png in Resources */,
 				FDCCD7751830385B001354DC /* backButton.png in Resources */,
+				FDE45B1E1842B6F800238D08 /* carParticle2.sks in Resources */,
 				FDC80841182DCA180055B1E9 /* button1.png in Resources */,
+				E3708C1B1842B15F00DDC4C0 /* CountDown.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

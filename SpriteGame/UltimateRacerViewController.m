@@ -16,6 +16,8 @@
 @interface UltimateRacerViewController ()
 {
     NSString * player;
+    NSTimer *timer;
+    int countDown;
 }
 
 @end
@@ -24,12 +26,16 @@
 
 @synthesize scene;
 @synthesize DingPlayer;
+@synthesize first;
+@synthesize second;
+@synthesize third;
+@synthesize CountPlayer;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Configure the view.
-    
+    countDown = 5;
     SKView* skView = (SKView *)self.view;
     
     if ([[self presentingViewController] isKindOfClass:[StartGameVC class]])
@@ -68,7 +74,56 @@
         [DingPlayer play];
         
     }
+    NSLog(@"HERE");
+    timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+    [self performSelector:@selector(setUpCountDown) withObject:self afterDelay:1.5];
     UltimateRacerWebSockets *websockets = [UltimateRacerWebSockets sharedInstance];
+}
+
+-(void) timerFired
+{
+    countDown--;
+    
+    if ( countDown == 3 )
+    {
+        NSLog(@"Count3");
+        first.hidden = NO;
+        //[first setImage:[UIImage imageNamed:@"redlight.png"]];
+    }
+    else if(countDown == 2 )
+    {
+        NSLog(@"Count2");
+        second.hidden = NO;
+        //[second setImage:[UIImage imageNamed:@"redlight.png"]];
+    }
+    else if (countDown == 1 )
+    {
+        NSLog(@"Count1");
+        [first setImage:[UIImage imageNamed:@"greenlight.png"]];
+        [second setImage:[UIImage imageNamed:@"greenlight.png"]];
+        third.hidden = NO;
+        
+        
+    }
+    else if ( countDown == 0 )
+    {
+        [timer invalidate];
+    }
+}
+
+- (void) setUpCountDown
+{
+    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/CountDown.mp3",[[NSBundle mainBundle] resourcePath]]];
+    NSError * error;
+    
+    CountPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+    CountPlayer.numberOfLoops = 0;
+    
+    [CountPlayer prepareToPlay];
+    [CountPlayer play];
+    
+    
+    
 }
 
 - (BOOL)shouldAutorotate

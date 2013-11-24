@@ -7,8 +7,11 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface UltimateRacerRightScene : SKScene
 
+@property (strong, nonatomic) AVAudioPlayer *APlayer;
+@property (strong, nonatomic) AVAudioPlayer *DPlayer;
 
 @end

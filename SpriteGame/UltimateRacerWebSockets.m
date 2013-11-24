@@ -78,7 +78,15 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
     NSLog(@"%@", message);
-    if([message rangeOfString:@"registered_user"].location != NSNotFound)
+    if([message rangeOfString:@"accelerate_car"].location != NSNotFound)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"accelerate_car" object:nil];
+    }
+    else if([message rangeOfString:@"deccelerate_car"].location != NSNotFound)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"deccelerate_car" object:nil];
+    }
+    else if([message rangeOfString:@"registered_user"].location != NSNotFound)
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"registered_user" object:message];
         [_outboxWebSockets send:[NSString stringWithFormat:@"close_game code:abcde"]];

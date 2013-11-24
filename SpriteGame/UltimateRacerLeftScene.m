@@ -57,6 +57,11 @@
         circle1.fillColor = myColor1;
         [car1 addChild:circle1];
         
+        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
+        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+        trail.targetNode = self;
+        [car1 addChild:trail];
+        
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.9];
         
@@ -197,4 +202,11 @@
         [car1.physicsBody applyForce:trial];
 }
 
+@end
+
+@implementation SKEmitterNode (fromFile)
++ (instancetype)carNamed:(NSString*)name
+{
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:name ofType:@"sks"]];
+}
 @end

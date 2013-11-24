@@ -16,3 +16,7 @@
 @property (strong, nonatomic) AVAudioPlayer *DPlayer;
 
 @end
+
+@interface SKEmitterNode (fromFile)
++ (instancetype)carNamed:(NSString*)name;
+@end

@@ -14,6 +14,7 @@
 #define WIDTH 568
 #define HEIGHT 324
 #define INTERVAL 1.5
+#define TRACKOFFSET 0
 
 @implementation UltimateRacerLeftScene
 {
@@ -47,7 +48,7 @@
         track1 = [SKShapeNode node];
         
         CGRect selfSize = self.frame;
-        selfSize.origin.x = selfSize.size.width/2;
+        selfSize.origin.x = selfSize.size.width/2 - TRACKOFFSET;
         selfSize.origin.y = selfSize.size.height/2 - 112;
         selfSize.size.height -= 700;
         selfSize.size.width -= 200;

@@ -9,6 +9,8 @@
 #define WIDTH 568
 #define HEIGHT 324
 #define OFFSET 1
+#define TRACKOFFSET 300
+#define SETORIGIN 1
 
 #import "UltimateRacerRightScene.h"
 
@@ -43,7 +45,7 @@
         track2 = [SKShapeNode node];
         
         CGRect selfSize = self.frame;
-        selfSize.origin.x = (selfSize.size.width/2)*-1;
+        selfSize.origin.x = (selfSize.size.width/2 + TRACKOFFSET) * SETORIGIN;
         selfSize.origin.y = selfSize.size.height/2 - 112;
         selfSize.size.height -= 700;
         selfSize.size.width -= 200;

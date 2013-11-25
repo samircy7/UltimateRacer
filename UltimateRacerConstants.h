@@ -13,3 +13,4 @@
 #define kREGISTERED @"registered_user"
 #define kCLOSEGAME @"closed_game"
 #define kNEWGAME @"new_game"
+#define kCOLORCHANGE @"color_change"

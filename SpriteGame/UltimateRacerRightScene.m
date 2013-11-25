@@ -92,6 +92,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:kACCELERATE object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:kDECCELERATE object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLeftCar:) name:kUPDATECAR object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeColor:) name:kCOLORCHANGE object:nil];
         
         turned[0] = YES;
         turned[1] = turned[2] = turned[3] = NO;

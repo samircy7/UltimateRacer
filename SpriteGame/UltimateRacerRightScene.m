@@ -54,7 +54,7 @@
         
         track2.path = ([UIBezierPath bezierPathWithRoundedRect:selfSize cornerRadius:10]).CGPath;
         track2.fillColor = [UIColor clearColor];
-        track2.strokeColor = [UIColor blueColor];
+        track2.strokeColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.8];
         track2.glowWidth = 7;
         track2.lineWidth = 23;
         
@@ -66,10 +66,10 @@
         circle1.fillColor = myColor1;
         [car2 addChild:circle1];
         
-//        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle2"];
-//        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
-//        trail.targetNode = self;
-//        [car2 addChild:trail];
+        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle2"];
+        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+        trail.targetNode = self;
+        [car2 addChild:trail];
         
         car2.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car2.physicsBody setLinearDamping:0.9];
@@ -104,14 +104,14 @@
 
 - (void)changeColor:(NSNotification *)note
 {
-    BOOL isRed = ([[note object] rangeOfString:@"red"].location != NSNotFound);
-    if(isRed)
+    BOOL isGreen = ([[note object] rangeOfString:@"green"].location != NSNotFound);
+    if(isGreen)
     {
-        track2.strokeColor = [UIColor redColor];
+        track2.strokeColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
     }
     else
     {
-        track2.strokeColor = [UIColor blueColor];
+        track2.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
     }
 }
 
@@ -203,6 +203,7 @@
         trial = CGVectorMake(0, 18+offset);
         offsetVector = CGVectorMake(0, offset);
         [car2.physicsBody setVelocity:CGVectorMake(0, car2.physicsBody.velocity.dx)];
+        car2.position = CGPointMake(WIDTH, 0);
     }
     
     if (WIDTH - car2.position.x <= 0.0000001 && HEIGHT - car2.position.y <= 0.0000001 && !turned[2])
@@ -213,6 +214,7 @@
         trial = CGVectorMake(-(18+offset), 0);
         offsetVector = CGVectorMake(-offset, 0);
         [car2.physicsBody setVelocity:CGVectorMake(-1*car2.physicsBody.velocity.dy, 0)];
+        car2.position = CGPointMake(WIDTH, HEIGHT);
     }
     
     if (HEIGHT - car2.position.y <= 0.0000001 && car2.position.x <= 0.0000001 && !turned[3])
@@ -223,6 +225,7 @@
         trial = CGVectorMake(0, -(18+offset));
         offsetVector = CGVectorMake(0, -offset);
         [car2.physicsBody setVelocity:CGVectorMake(0, car2.physicsBody.velocity.dx)];
+        car2.position = CGPointMake(0, HEIGHT);
     }
     
     if (car2.position.x <= 0.0000001 && car2.position.y <= 0.0000001 && !turned[0])
@@ -233,6 +236,7 @@
         trial = CGVectorMake(18+offset, 0);
         offsetVector = CGVectorMake(offset, 0);
         [car2.physicsBody setVelocity:CGVectorMake(-1*car2.physicsBody.velocity.dy, 0)];
+        car2.position = CGPointMake(0, 0);
     }
     
     if (accelerate && pressed)

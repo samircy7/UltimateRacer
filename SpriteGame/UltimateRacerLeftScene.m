@@ -54,7 +54,7 @@
         
         track1.path = ([UIBezierPath bezierPathWithRoundedRect:selfSize cornerRadius:10]).CGPath;
         track1.fillColor = [UIColor clearColor];
-        track1.strokeColor = [UIColor blueColor];
+        track1.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
         track1.glowWidth = 7;
         track1.lineWidth = 23;
 
@@ -62,14 +62,15 @@
         car1 = [SKNode node];
         SKShapeNode* circle1 = [SKShapeNode node];
         circle1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(selfSize.origin.x - 15, selfSize.origin.y - 15, 30, 30)]).CGPath;
-        UIColor *myColor1 = [UIColor colorWithRed: 176.0/255.0 green: 226.0/255.0 blue:255.0/255.0 alpha: 1.0];
+        UIColor *myColor1 = [UIColor colorWithRed: 238.0/255.0 green: 213.0/255.0 blue:183.0/255.0 alpha: 1.0];
         circle1.fillColor = myColor1;
+        circle1.strokeColor = myColor1;
         [car1 addChild:circle1];
         
-//        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
-//        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
-//        trail.targetNode = self;
-//        [car1 addChild:trail];
+        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
+        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+        trail.targetNode = self;
+        [car1 addChild:trail];
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.9];
@@ -102,10 +103,6 @@
     }
     
     checker = 0;
-    
-    
-    
-    
     
     return self;
 }
@@ -190,12 +187,12 @@
 
 -(void) changeColorBlue
 {
-    track1.strokeColor = [UIColor blueColor];
+    track1.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
 }
 
--(void) changeColorRed
+-(void) changeColorGreen
 {
-    track1.strokeColor = [UIColor redColor];
+    track1.strokeColor = [UIColor colorWithRed:0 green:100.0/225.0 blue:0 alpha:1];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -203,12 +200,12 @@
     
     if (trackChangeTimer == 0)
     {
-        if ([track1.strokeColor isEqual:[UIColor blueColor]])
+        if ([track1.strokeColor isEqual:[UIColor colorWithRed:0 green:0 blue:0.9 alpha:1]])
         {
-            [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:red"];
-            [self performSelector:@selector(changeColorRed) withObject:self afterDelay:0.037];
+            [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:green"];
+            [self performSelector:@selector(changeColorGreen) withObject:self afterDelay:0.037];
         }
-        else if ([track1.strokeColor isEqual:[UIColor redColor]])
+        else if ([track1.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/225.0 blue:0 alpha:1]])
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:blue"];
             [self performSelector:@selector(changeColorBlue) withObject:self afterDelay:0.037];
@@ -228,6 +225,7 @@
         
         trial = CGVectorMake(0, 18);
         [car1.physicsBody setVelocity:CGVectorMake(0, car1.physicsBody.velocity.dx)];
+        car1.position = CGPointMake(WIDTH, 0);
     }
     
     if (WIDTH - car1.position.x <= 0.0000001 && HEIGHT - car1.position.y <= 0.0000001 && !turned[2])
@@ -237,6 +235,7 @@
         
         trial = CGVectorMake(-18, 0);
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
+        car1.position = CGPointMake(WIDTH, HEIGHT);
     }
     
     if (HEIGHT - car1.position.y <= 0.0000001 && car1.position.x <= 0.0000001 && !turned[3])
@@ -246,6 +245,7 @@
         
         trial = CGVectorMake(0, -18);
         [car1.physicsBody setVelocity:CGVectorMake(0, car1.physicsBody.velocity.dx)];
+        car1.position = CGPointMake(0, HEIGHT);
     }
     
     if (car1.position.x <= 0.0000001 && car1.position.y <= 0.0000001 && !turned[0])
@@ -255,6 +255,7 @@
         
         trial = CGVectorMake(18, 0);
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
+        car1.position = CGPointMake(0, 0);
     }
     
     if (accelerate && pressed)

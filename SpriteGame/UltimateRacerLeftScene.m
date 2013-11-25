@@ -45,7 +45,7 @@
         track1 = [SKShapeNode node];
         
         CGRect selfSize = self.frame;
-        selfSize.origin.x = selfSize.size.width/2 - 300;
+        selfSize.origin.x = selfSize.size.width/2;
         selfSize.origin.y = selfSize.size.height/2 - 112;
         selfSize.size.height -= 700;
         selfSize.size.width -= 200;

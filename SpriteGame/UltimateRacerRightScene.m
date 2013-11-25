@@ -87,7 +87,6 @@
         acceleratorNode2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2+100, 100, 100, 100)]).CGPath;
         acceleratorNode2.strokeColor = [UIColor colorWithRed:0 green:100.0/225.0 blue:0 alpha:1];
         
-        
         [self addChild:track2];
         [self addChild:car2];
         [self addChild:acceleratorNode1];
@@ -125,21 +124,6 @@
         acceleratorNode2.fillColor = [UIColor clearColor];
         acceleratorNode2.glowWidth = 0;
         isBlue = YES;
-    }
-    
-    [APlayer stop];
-    
-    if (accelerate && pressed)
-    {
-        NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
-        NSError * error;
-        
-        DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
-        DPlayer.numberOfLoops = 0;
-        
-        [DPlayer prepareToPlay];
-        [DPlayer play];
-        accelerate = pressed = NO;
     }
 }
 
@@ -214,7 +198,6 @@
         accelerate = NO;
         pressed = NO;
         
-        
         [APlayer stop];
         
         NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
@@ -246,7 +229,7 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     
-    if (WIDTH - car2.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
+    if (WIDTH - car2.position.x <= 0.001 && !turned[1] && !turned[2]) // right bottom corner
     {
         turned[0] = NO;
         turned[1] = YES;
@@ -257,7 +240,7 @@
         car2.position = CGPointMake(WIDTH, 0);
     }
     
-    if (WIDTH - car2.position.x <= 0.0000001 && HEIGHT - car2.position.y <= 0.0000001 && !turned[2])
+    if (WIDTH - car2.position.x <= 0.001 && HEIGHT - car2.position.y <= 0.001 && !turned[2])
     {
         turned[1] = NO;
         turned[2] = YES;
@@ -268,7 +251,7 @@
         car2.position = CGPointMake(WIDTH, HEIGHT);
     }
     
-    if (HEIGHT - car2.position.y <= 0.0000001 && car2.position.x <= 0.0000001 && !turned[3])
+    if (HEIGHT - car2.position.y <= 0.001 && car2.position.x <= 0.001 && !turned[3])
     {
         turned[2] = NO;
         turned[3] = YES;
@@ -279,7 +262,7 @@
         car2.position = CGPointMake(0, HEIGHT);
     }
     
-    if (car2.position.x <= 0.0000001 && car2.position.y <= 0.0000001 && !turned[0])
+    if (car2.position.x <= 0.001 && car2.position.y <= 0.001 && !turned[0])
     {
         turned[3] = NO;
         turned[0] = YES;

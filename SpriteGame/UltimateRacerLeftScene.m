@@ -138,8 +138,6 @@
         BOOL check3 = temp.y > self.frame.size.height - 230;
         BOOL check4 = temp.y < self.frame.size.height - 70;
         
-        BOOL checker = [track1.strokeColor isEqual:[UIColor colorWithRed:0 green:0 blue:0.9 alpha:1]];
-        
         if (check3 && check4)
         {
             if (check1 && check2 && !isGreen)
@@ -150,7 +148,7 @@
                 pressed = YES;
             }
                 
-            else if (check5 && check6 && isGreen)
+            if (check5 && check6 && isGreen)
             {
                 acceleratorNode2.fillColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
                 acceleratorNode2.glowWidth = 20;
@@ -190,15 +188,14 @@
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (pressed) {
-        
-        acceleratorNode1.fillColor = [UIColor clearColor];
-        acceleratorNode1.glowWidth = 0;
-        
-        accelerate = NO;
-        pressed = NO;
-        
-        
+    acceleratorNode1.fillColor = [UIColor clearColor];
+    acceleratorNode1.glowWidth = 0;
+    
+    accelerate = NO;
+    pressed = NO;
+    
+    if (accelerate)
+    {
         [APlayer stop];
         
         NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
@@ -236,6 +233,7 @@
             [self performSelector:@selector(changeColorGreen) withObject:self afterDelay:0.037];
             acceleratorNode1.fillColor = [UIColor clearColor];
             acceleratorNode1.glowWidth = 0;
+            isGreen = YES;
         }
         else if (isGreen)
         {
@@ -243,6 +241,7 @@
             [self performSelector:@selector(changeColorBlue) withObject:self afterDelay:0.037];
             acceleratorNode2.fillColor = [UIColor clearColor];
             acceleratorNode2.glowWidth = 0;
+            isGreen = NO;
         }
         trackChangeTimer = 100 + (arc4random() % 200);
         
@@ -259,7 +258,6 @@
             [DPlayer prepareToPlay];
             [DPlayer play];
             [_webSockets sendMessage:kDECCELERATE];
-            accelerate = pressed = NO;
         }
     }
     else

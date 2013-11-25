@@ -26,13 +26,17 @@
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         
         CGRect selfSize = self.frame;
-        selfSize.origin.x = selfSize.size.width/2 - 300;
+        selfSize.origin.x = selfSize.size.width/2 - 350;
         selfSize.origin.y = selfSize.size.height/2 - 112;
         selfSize.size.height -= 700;
-        selfSize.size.width -= 200;
+        selfSize.size.width -= 75;
         
         track1 = [SKShapeNode node];
-        track1.path = ([UIBezierPath bezierPathWithRoundedRect:selfSize cornerRadius:10]).CGPath;
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:selfSize.origin];
+        [path addLineToPoint:CGPointMake(selfSize.origin.x + selfSize.size.width/2, selfSize.origin.y)];
+        track1.path = [path CGPath];
+        
         track1.fillColor = [UIColor clearColor];
         track1.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
         track1.glowWidth = 7;

@@ -31,6 +31,7 @@
     NSTimer *timer;
     int checker;
     NSInteger trackChangeTimer;
+    BOOL isGreen;
 }
 
 @synthesize APlayer;
@@ -86,6 +87,7 @@
         acceleratorNode2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2+100, 100, 100, 100)]).CGPath;
         acceleratorNode2.strokeColor = [UIColor colorWithRed:0 green:100.0/225.0 blue:0 alpha:1];
         
+        isGreen = NO;
         
         [self addChild:track1];
         [self addChild:car1];
@@ -136,9 +138,11 @@
         BOOL check3 = temp.y > self.frame.size.height - 230;
         BOOL check4 = temp.y < self.frame.size.height - 70;
         
+        BOOL checker = [track1.strokeColor isEqual:[UIColor colorWithRed:0 green:0 blue:0.9 alpha:1]];
+        
         if (check3 && check4)
         {
-            if (check1 && check2 && [track1.strokeColor isEqual:[UIColor colorWithRed:0 green:0 blue:0.9 alpha:1]])
+            if (check1 && check2 && !isGreen)
             {
                 acceleratorNode1.fillColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
                 acceleratorNode1.glowWidth = 20;
@@ -146,7 +150,7 @@
                 pressed = YES;
             }
                 
-            else if (check5 && check6 && [track1.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1]])
+            else if (check5 && check6 && isGreen)
             {
                 acceleratorNode2.fillColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
                 acceleratorNode2.glowWidth = 20;
@@ -212,11 +216,13 @@
 -(void) changeColorBlue
 {
     track1.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
+    isGreen = NO;
 }
 
 -(void) changeColorGreen
 {
     track1.strokeColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
+    isGreen = YES;
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -224,14 +230,14 @@
     
     if (trackChangeTimer == 0)
     {
-        if ([track1.strokeColor isEqual:[UIColor colorWithRed:0 green:0 blue:0.9 alpha:1]])
+        if (!isGreen)
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:green"];
             [self performSelector:@selector(changeColorGreen) withObject:self afterDelay:0.037];
             acceleratorNode1.fillColor = [UIColor clearColor];
             acceleratorNode1.glowWidth = 0;
         }
-        else if ([track1.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1]])
+        else if (isGreen)
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:blue"];
             [self performSelector:@selector(changeColorBlue) withObject:self afterDelay:0.037];

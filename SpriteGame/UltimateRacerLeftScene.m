@@ -30,8 +30,10 @@
 
 @synthesize APlayer;
 @synthesize DPlayer;
-@synthesize CountPlayer;
--(id)initWithSize:(CGSize)size {    
+
+
+-(id)initWithSize:(CGSize)size {
+        
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         self.backgroundColor = [SKColor blackColor];
@@ -60,10 +62,10 @@
         circle1.fillColor = myColor1;
         [car1 addChild:circle1];
         
-        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
-        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
-        trail.targetNode = self;
-        [car1 addChild:trail];
+//        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
+//        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+//        trail.targetNode = self;
+//        [car1 addChild:trail];
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.9];
@@ -94,14 +96,9 @@
     }
     
     
-    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/CountDown.mp3",[[NSBundle mainBundle] resourcePath]]];
-    NSError * error;
     
-    CountPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
-    CountPlayer.numberOfLoops = 0;
     
-    [CountPlayer prepareToPlay];
-    [CountPlayer play];
+    
     
     
     return self;
@@ -132,7 +129,7 @@
             pressed = YES;
             
             [DPlayer stop];
-            //NSLog(@"Accelerate");
+            NSLog(@"Accelerate");
             NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Accelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
             NSError * error;
             

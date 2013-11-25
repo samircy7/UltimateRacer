@@ -14,7 +14,9 @@
 
 @property (strong, nonatomic) AVAudioPlayer *APlayer;
 @property (strong, nonatomic) AVAudioPlayer *DPlayer;
-@property (strong, nonatomic) AVAudioPlayer *CountPlayer;
+
+
+
 @end
 
 @interface SKEmitterNode (fromFile)

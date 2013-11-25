@@ -64,10 +64,10 @@
         circle1.fillColor = myColor1;
         [car2 addChild:circle1];
         
-        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle2"];
-        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
-        trail.targetNode = self;
-        [car2 addChild:trail];
+//        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle2"];
+//        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+//        trail.targetNode = self;
+//        [car2 addChild:trail];
         
         car2.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car2.physicsBody setLinearDamping:0.9];

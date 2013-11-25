@@ -249,10 +249,31 @@
                                     <segue destination="2a4-Ng-2be" kind="modal" id="U7R-Ed-M2V"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trafficboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="6d1-JX-Drk">
+                                <rect key="frame" x="264" y="76" width="240" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="O7E-XE-khf">
+                                <rect key="frame" x="285" y="94" width="61" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="VE3-bd-0X0">
+                                <rect key="frame" x="354" y="94" width="61" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenlight.png" translatesAutoresizingMaskIntoConstraints="NO" id="uac-7a-y42">
+                                <rect key="frame" x="423" y="93" width="61" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="NEF-eK-tSV"/>
+                    <connections>
+                        <outlet property="first" destination="O7E-XE-khf" id="1e5-Hh-sED"/>
+                        <outlet property="second" destination="VE3-bd-0X0" id="SxV-MF-Qvo"/>
+                        <outlet property="third" destination="uac-7a-y42" id="Z8S-mV-HPa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW6-xW-ZBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,6 +288,10 @@
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
         <image name="correct.png" width="102" height="131"/>
+        <image name="greenlight.png" width="135" height="135"/>
+        <image name="redlight.png" width="135" height="135"/>
+        <image name="redlight.png" width="135" height="135"/>
+        <image name="trafficboard.png" width="413" height="149"/>
         <image name="v1-1.png" width="1142" height="218"/>
         <image name="v1-2.png" width="1639" height="218"/>
         <image name="v2-1.png" width="1214" height="218"/>

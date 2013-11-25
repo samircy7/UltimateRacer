@@ -25,6 +25,7 @@
 		F81A775A1836CB81009FCB83 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A77591836CB81009FCB83 /* Security.framework */; };
 		F81A775C1836CB8B009FCB83 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F81A775B1836CB8B009FCB83 /* libicucore.dylib */; };
 		F8524042183983B300954318 /* UltimateRacerWebSockets.m in Sources */ = {isa = PBXBuildFile; fileRef = F8524041183983B300954318 /* UltimateRacerWebSockets.m */; };
+		F8EF340818430EEC00719BDA /* UltimateRacerLeftScene2.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EF340718430EEC00719BDA /* UltimateRacerLeftScene2.m */; };
 		FD583D871813805F00BED4AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D861813805F00BED4AD /* Foundation.framework */; };
 		FD583D891813805F00BED4AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D881813805F00BED4AD /* CoreGraphics.framework */; };
 		FD583D8B1813805F00BED4AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD583D8A1813805F00BED4AD /* UIKit.framework */; };
@@ -98,6 +99,8 @@
 		F8409F171842DD73000425B1 /* UltimateRacerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltimateRacerConstants.h; path = ../UltimateRacerConstants.h; sourceTree = "<group>"; };
 		F8524040183983B300954318 /* UltimateRacerWebSockets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimateRacerWebSockets.h; sourceTree = "<group>"; };
 		F8524041183983B300954318 /* UltimateRacerWebSockets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimateRacerWebSockets.m; sourceTree = "<group>"; };
+		F8EF340618430EEC00719BDA /* UltimateRacerLeftScene2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltimateRacerLeftScene2.h; path = ../UltimateRacerLeftScene2.h; sourceTree = "<group>"; };
+		F8EF340718430EEC00719BDA /* UltimateRacerLeftScene2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltimateRacerLeftScene2.m; path = ../UltimateRacerLeftScene2.m; sourceTree = "<group>"; };
 		FD583D831813805F00BED4AD /* UltimateRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD583D861813805F00BED4AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD583D881813805F00BED4AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -252,6 +255,8 @@
 				FD583DA11813805F00BED4AD /* UltimateRacerLeftScene.m */,
 				FDF7E90F182DAFAF00689890 /* UltimateRacerRightScene.h */,
 				FDF7E910182DAFAF00689890 /* UltimateRacerRightScene.m */,
+				F8EF340618430EEC00719BDA /* UltimateRacerLeftScene2.h */,
+				F8EF340718430EEC00719BDA /* UltimateRacerLeftScene2.m */,
 				F8409F171842DD73000425B1 /* UltimateRacerConstants.h */,
 				FD583DA51813805F00BED4AD /* Images.xcassets */,
 				FD583D8F1813805F00BED4AD /* Supporting Files */,
@@ -357,7 +362,7 @@
 				ORGANIZATIONNAME = "Samir Choudhary";
 				TargetAttributes = {
 					FD583D821813805F00BED4AD = {
-						DevelopmentTeam = MTRBMUCZX6;
+						DevelopmentTeam = 9NTYJT99MQ;
 					};
 					FD583DAA1813805F00BED4AD = {
 						TestTargetID = FD583D821813805F00BED4AD;
@@ -442,6 +447,7 @@
 				FDC6CDD1182EF1A3006921EA /* JoinGameVC.m in Sources */,
 				FDF7E911182DAFAF00689890 /* UltimateRacerRightScene.m in Sources */,
 				F81A77541836C744009FCB83 /* base64.c in Sources */,
+				F8EF340818430EEC00719BDA /* UltimateRacerLeftScene2.m in Sources */,
 				FD583D951813805F00BED4AD /* main.m in Sources */,
 				FD583DA21813805F00BED4AD /* UltimateRacerLeftScene.m in Sources */,
 				F8524042183983B300954318 /* UltimateRacerWebSockets.m in Sources */,

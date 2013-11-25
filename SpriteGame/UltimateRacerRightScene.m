@@ -9,8 +9,8 @@
 #define WIDTH 568
 #define HEIGHT 324
 #define OFFSET 1
-#define TRACKOFFSET 300
-#define SETORIGIN 1
+#define TRACKOFFSET 0
+#define SETORIGIN -1
 
 #import "UltimateRacerRightScene.h"
 

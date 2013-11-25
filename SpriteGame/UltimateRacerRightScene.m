@@ -111,22 +111,33 @@
 {
     BOOL isGreen = ([[note object] rangeOfString:@"green"].location != NSNotFound);
     if(isGreen)
+    {
         track2.strokeColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
+        acceleratorNode1.fillColor = [UIColor clearColor];
+        acceleratorNode1.glowWidth = 0;
+    }
     else
+    {
         track2.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
-    
-    accelerate = pressed = NO;
+        acceleratorNode2.fillColor = [UIColor clearColor];
+        acceleratorNode2.glowWidth = 0;
+    }
+
     
     [APlayer stop];
     
-    NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
-    NSError * error;
-    
-    DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
-    DPlayer.numberOfLoops = 0;
-    
-    [DPlayer prepareToPlay];
-    [DPlayer play];
+    if (accelerate && pressed)
+    {
+        NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+        NSError * error;
+        
+        DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+        DPlayer.numberOfLoops = 0;
+        
+        [DPlayer prepareToPlay];
+        [DPlayer play];
+        accelerate = pressed = NO;
+    }
 }
 
 - (void)updateLeftCar:(NSNotification *)note

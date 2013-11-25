@@ -103,7 +103,7 @@
         trial = CGVectorMake(18, 0);
         timer = [NSTimer scheduledTimerWithTimeInterval:INTERVAL target:self selector:@selector(updateCar) userInfo:nil repeats:YES];
         
-        trackChangeTimer = 50 + (arc4random() % 200);
+        trackChangeTimer = 100 + (arc4random() % 200);
     }
     
     checker = 0;
@@ -228,26 +228,33 @@
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:green"];
             [self performSelector:@selector(changeColorGreen) withObject:self afterDelay:0.037];
+            acceleratorNode1.fillColor = [UIColor clearColor];
+            acceleratorNode1.glowWidth = 0;
         }
         else if ([track1.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1]])
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:blue"];
             [self performSelector:@selector(changeColorBlue) withObject:self afterDelay:0.037];
+            acceleratorNode2.fillColor = [UIColor clearColor];
+            acceleratorNode2.glowWidth = 0;
         }
-        trackChangeTimer = 50 + (arc4random() % 200);
-        accelerate = pressed = NO;
+        trackChangeTimer = 100 + (arc4random() % 200);
         
         [APlayer stop];
         
-        NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
-        NSError * error;
-        
-        DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
-        DPlayer.numberOfLoops = 0;
-        
-        [DPlayer prepareToPlay];
-        [DPlayer play];
-        [_webSockets sendMessage:kDECCELERATE];
+        if (accelerate && pressed)
+        {
+            NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+            NSError * error;
+            
+            DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+            DPlayer.numberOfLoops = 0;
+            
+            [DPlayer prepareToPlay];
+            [DPlayer play];
+            [_webSockets sendMessage:kDECCELERATE];
+            accelerate = pressed = NO;
+        }
     }
     else
     {

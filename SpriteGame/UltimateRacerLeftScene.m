@@ -24,8 +24,8 @@
     CGVector trial;
     UltimateRacerWebSockets *_webSockets;
     NSMutableString *_message;
-    
-    
+    int checker;
+    NSInteger trackChangeTimer;
 }
 
 @synthesize APlayer;
@@ -92,9 +92,11 @@
         turned[0] = YES;
         turned[1] = turned[2] = turned[3] = NO;
         trial = CGVectorMake(18, 0);
+        
+        trackChangeTimer = 50 + (arc4random() % 200);
     }
     
-    
+    checker = 0;
     
     
     
@@ -181,6 +183,27 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    
+    if (trackChangeTimer == 0)
+    {
+        if ([track1.strokeColor isEqual:[UIColor blueColor]])
+        {
+            [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:red"];
+            track1.strokeColor = [UIColor redColor];
+        }
+        else if ([track1.strokeColor isEqual:[UIColor redColor]])
+        {
+            [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:blue"];
+            track1.strokeColor = [UIColor blueColor];
+        }
+        trackChangeTimer = 50 + (arc4random() % 200);
+    }
+    else
+    {
+        trackChangeTimer--;
+        NSLog(@"change%i", trackChangeTimer);
+    }
+    
     if (WIDTH - car1.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
     {
         turned[0] = NO;

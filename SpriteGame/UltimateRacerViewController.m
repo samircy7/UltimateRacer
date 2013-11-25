@@ -75,8 +75,8 @@
         
     }
     NSLog(@"HERE");
-    timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
-    [self performSelector:@selector(setUpCountDown) withObject:self afterDelay:1.5];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+    [self performSelector:@selector(setUpCountDown) withObject:self afterDelay:1.15];
     UltimateRacerWebSockets *websockets = [UltimateRacerWebSockets sharedInstance];
 }
 
@@ -103,7 +103,6 @@
         [second setImage:[UIImage imageNamed:@"greenlight.png"]];
         third.hidden = NO;
         
-        
     }
     else if ( countDown == 0 )
     {
@@ -121,9 +120,6 @@
     
     [CountPlayer prepareToPlay];
     [CountPlayer play];
-    
-    
-    
 }
 
 - (BOOL)shouldAutorotate

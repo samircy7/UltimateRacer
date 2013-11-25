@@ -97,6 +97,10 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
         [[NSNotificationCenter defaultCenter] postNotificationName:@"registered_user" object:message];
         [_outboxWebSockets send:[NSString stringWithFormat:@"close_game code:abcde"]];
     }
+    else if ([message rangeOfString:@"color_change"].location != NSNotFound)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"color_change" object:message];
+    }
     else if([message rangeOfString:@"closed_game"].location != NSNotFound)
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"closed_game" object:nil];

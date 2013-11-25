@@ -88,12 +88,26 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:@"accelerate_car" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:@"deccelerate_car" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLeftCar:) name:@"update_car" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeColor:) name:@"color_change" object:nil];
         
         turned[0] = YES;
         turned[1] = turned[2] = turned[3] = NO;
         trial = CGVectorMake(18, 0);
     }
     return self;
+}
+
+- (void)changeColor:(NSNotification *)note
+{
+    BOOL isRed = ([[note object] rangeOfString:@"red"].location != NSNotFound);
+    if(isRed)
+    {
+        track2.strokeColor = [UIColor redColor];
+    }
+    else
+    {
+        track2.strokeColor = [UIColor blueColor];
+    }
 }
 
 - (void)updateLeftCar:(NSNotification *)note
@@ -215,6 +229,7 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    
     if (WIDTH - car2.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
     {
         turned[0] = NO;

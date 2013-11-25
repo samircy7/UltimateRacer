@@ -9,6 +9,8 @@
 #import "UltimateRacerLeftScene.h"
 #import "UltimateRacerWebSockets.h"
 
+#import "UltimateRacerConstants.h"
+
 #define WIDTH 568
 #define HEIGHT 324
 #define INTERVAL 1.5
@@ -86,8 +88,8 @@
         accelerate = NO;
         pressed = NO;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:@"accelerate_car" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:@"deccelerate_car" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:kACCELERATE object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:kDECCELERATE object:nil];
         _webSockets = [UltimateRacerWebSockets sharedInstance];
         turned[0] = YES;
         turned[1] = turned[2] = turned[3] = NO;
@@ -106,10 +108,12 @@
 
 - (void)updateCar
 {
-    _message = [NSMutableString stringWithFormat:@"{ \"update_car\":\"left\" , "];
+    _message = [NSMutableString stringWithFormat:@"{ \"%@\":\"left\" , ", kUPDATECAR];
     [_message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"velocity1.x\":%f, \"velocity1.y\":%f }", car1.position.x, car1.position.y, car1.physicsBody.velocity.dx, car1.physicsBody.velocity.dy]];
     [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
 }
+
+
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -138,7 +142,7 @@
             
             [APlayer prepareToPlay];
             [APlayer play];
-            [_webSockets sendMessage:@"accelerate_car"];
+            [_webSockets sendMessage:kACCELERATE];
         }
     }
 }
@@ -176,7 +180,7 @@
         
         [DPlayer prepareToPlay];
         [DPlayer play];
-        [_webSockets sendMessage:@"deccelerate_car"];
+        [_webSockets sendMessage:kDECCELERATE];
     }
 }
 

@@ -12,6 +12,8 @@
 
 #import "UltimateRacerRightScene.h"
 
+#import "UltimateRacerConstants.h"
+
 @implementation UltimateRacerRightScene
 {
     SKNode* car2;
@@ -87,9 +89,9 @@
         
         accelerate = NO;
         pressed = NO;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:@"accelerate_car" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:@"deccelerate_car" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLeftCar:) name:@"update_car" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:kACCELERATE object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:kDECCELERATE object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLeftCar:) name:kUPDATECAR object:nil];
         
         turned[0] = YES;
         turned[1] = turned[2] = turned[3] = NO;
@@ -133,7 +135,6 @@
             
             [APlayer prepareToPlay];
             [APlayer play];
-            //[_webSockets sendMessage:@"accelerate_car"];
         }
     }
 }
@@ -159,7 +160,6 @@
         
         [DPlayer prepareToPlay];
         [DPlayer play];
-        //[_webSockets sendMessage:@"deccelerate_car"];
     }
 }
 

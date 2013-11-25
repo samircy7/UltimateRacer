@@ -8,6 +8,8 @@
 
 #import "UltimateRacerWebSockets.h"
 
+#import "UltimateRacerConstants.h"
+
 NSString * const kInboxString = @"ws://secret-headland-1305.herokuapp.com/receive";
 NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submit";
 
@@ -77,31 +79,31 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-    if([message rangeOfString:@"update_car"].location != NSNotFound)
+    if([message rangeOfString:kUPDATECAR].location != NSNotFound)
     {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"update_car" object:json];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUPDATECAR object:json];
         return;
     }
-    else if([message rangeOfString:@"accelerate_car"].location != NSNotFound)
+    else if([message rangeOfString:kACCELERATE].location != NSNotFound)
     {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"accelerate_car" object:json];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kACCELERATE object:json];
     }
-    else if([message rangeOfString:@"deccelerate_car"].location != NSNotFound)
+    else if([message rangeOfString:kDECCELERATE].location != NSNotFound)
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"deccelerate_car" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDECCELERATE object:nil];
     }
-    else if([message rangeOfString:@"registered_user"].location != NSNotFound)
+    else if([message rangeOfString:kREGISTERED].location != NSNotFound)
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"registered_user" object:message];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kREGISTERED object:message];
         [_outboxWebSockets send:[NSString stringWithFormat:@"close_game code:abcde"]];
     }
-    else if([message rangeOfString:@"closed_game"].location != NSNotFound)
+    else if([message rangeOfString:kCLOSEGAME].location != NSNotFound)
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"closed_game" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kCLOSEGAME object:nil];
     }
-    else if([message rangeOfString:@"new_game"].location != NSNotFound)
+    else if([message rangeOfString:kNEWGAME].location != NSNotFound)
     {
         NSLog(@"new game created %@", message);
     }

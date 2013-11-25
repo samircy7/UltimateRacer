@@ -215,7 +215,6 @@
     else
     {
         trackChangeTimer--;
-        NSLog(@"change%i", trackChangeTimer);
     }
     
     if (WIDTH - car1.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner

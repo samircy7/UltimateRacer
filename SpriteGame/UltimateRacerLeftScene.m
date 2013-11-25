@@ -11,6 +11,7 @@
 
 #define WIDTH 568
 #define HEIGHT 324
+#define INTERVAL 1.5
 
 @implementation UltimateRacerLeftScene
 {
@@ -105,8 +106,12 @@
     return self;
 }
 
-
-
+- (void)updateCar
+{
+    _message = [NSMutableString stringWithFormat:@"{ \"update_car\":\"left\" , "];
+    [_message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"velocity1.x\":%f, \"velocity1.y\":%f }", car1.position.x, car1.position.y, car1.physicsBody.velocity.dx, car1.physicsBody.velocity.dy]];
+    [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
+}
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -135,9 +140,7 @@
             
             [APlayer prepareToPlay];
             [APlayer play];
-            NSMutableString *message = [NSMutableString stringWithFormat:@"{ \"accelerate_car\":\"left\" , "];
-            [message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"acc1.x\":%f, \"acc2.x\":%f }", car1.position.x, car1.position.y, trial.dx, trial.dy]];
-            [_webSockets sendMessage:message];
+            [_webSockets sendMessage:@"accelerate_car"];
         }
     }
 }
@@ -175,9 +178,7 @@
         
         [DPlayer prepareToPlay];
         [DPlayer play];
-        NSMutableString *message = [NSMutableString stringWithFormat:@"{ \"deccelerate_car\":\"left\" , "];
-        [message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"acc1.x\":%f, \"acc2.x\":%f }", car1.position.x, car1.position.y, trial.dx, trial.dy]];
-        [_webSockets sendMessage:message];
+        [_webSockets sendMessage:@"deccelerate_car"];
     }
 }
 
@@ -242,9 +243,11 @@
     
     if (accelerate && pressed)
         [car1.physicsBody applyForce:trial];
-    _message = [NSMutableString stringWithFormat:@"{ \"update_car\":\"left\" , "];
-    [_message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"acc1.x\":%f, \"acc2.x\":%f }", car1.position.x, car1.position.y, trial.dx, trial.dy]];
-    [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
+}
+
+- (void)dealloc
+{
+    [timer invalidate];
 }
 
 @end

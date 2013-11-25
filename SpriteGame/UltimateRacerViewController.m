@@ -12,6 +12,7 @@
 #import "StartGameVC.h"
 #import "JoinGameVC.h"
 #import "UltimateRacerWebSockets.h"
+#import "UltimateRacerLeftScene2.h"
 
 @interface UltimateRacerViewController ()
 {

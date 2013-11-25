@@ -101,6 +101,19 @@
     return self;
 }
 
+- (void)changeColor:(NSNotification *)note
+{
+    BOOL isRed = ([[note object] rangeOfString:@"red"].location != NSNotFound);
+    if(isRed)
+    {
+        track2.strokeColor = [UIColor redColor];
+    }
+    else
+    {
+        track2.strokeColor = [UIColor blueColor];
+    }
+}
+
 - (void)updateLeftCar:(NSNotification *)note
 {
     NSDictionary *json = [note object];
@@ -180,6 +193,7 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    
     if (WIDTH - car2.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
     {
         turned[0] = NO;

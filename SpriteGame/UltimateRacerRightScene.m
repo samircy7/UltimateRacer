@@ -9,8 +9,8 @@
 #define WIDTH 568
 #define HEIGHT 324
 #define OFFSET 1
-#define TRACKOFFSET 300
-#define SETORIGIN 1
+#define TRACKOFFSET 0
+#define SETORIGIN -1
 
 #import "UltimateRacerRightScene.h"
 
@@ -29,6 +29,7 @@
     CGVector trial;
     CGFloat offset;
     CGVector offsetVector;
+    BOOL isBlue;
 }
 
 @synthesize APlayer;
@@ -103,6 +104,7 @@
         turned[1] = turned[2] = turned[3] = NO;
         trial = CGVectorMake(18, 0);
         offset = 0;
+        isBlue = YES;
     }
     return self;
 }
@@ -115,14 +117,15 @@
         track2.strokeColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
         acceleratorNode1.fillColor = [UIColor clearColor];
         acceleratorNode1.glowWidth = 0;
+        isBlue = NO;
     }
     else
     {
         track2.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
         acceleratorNode2.fillColor = [UIColor clearColor];
         acceleratorNode2.glowWidth = 0;
+        isBlue = YES;
     }
-
     
     [APlayer stop];
     
@@ -167,7 +170,7 @@
         
         if (check3 && check4)
         {
-            if (check1 && check2 && [track2.strokeColor isEqual:[UIColor colorWithRed:0 green:0 blue:0.9 alpha:1]])
+            if (check1 && check2 && isBlue)
             {
                 acceleratorNode1.fillColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
                 acceleratorNode1.glowWidth = 20;
@@ -175,7 +178,7 @@
                 pressed = YES;
             }
             
-            else if (check5 && check6 && [track2.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1]])
+            else if (check5 && check6 && isBlue)
             {
                 acceleratorNode2.fillColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
                 acceleratorNode2.glowWidth = 20;

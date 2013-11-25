@@ -79,15 +79,18 @@
         /* Set up of accelerator nodes */
         
         acceleratorNode1 = [SKShapeNode node];
-        acceleratorNode1.name = @"Car 1";
-        acceleratorNode1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2-50, 100, 100, 100)]).CGPath;
-        acceleratorNode1.strokeColor = [UIColor yellowColor];
+        acceleratorNode1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2-200, 100, 100, 100)]).CGPath;
+        acceleratorNode1.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
+        
+        acceleratorNode2 = [SKShapeNode node];
+        acceleratorNode2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(self.frame.size.width/2+100, 100, 100, 100)]).CGPath;
+        acceleratorNode2.strokeColor = [UIColor colorWithRed:0 green:100.0/225.0 blue:0 alpha:1];
         
         
         [self addChild:track1];
         [self addChild:car1];
         [self addChild:acceleratorNode1];
-        //[self addChild:acceleratorNode2];
+        [self addChild:acceleratorNode2];
         
         accelerate = NO;
         pressed = NO;
@@ -115,25 +118,45 @@
     [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
 }
 
-
-
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch* touch in touches)
     {
         CGPoint temp = [touch locationInView:self.view];
         
-        BOOL check1 = temp.x > self.frame.size.width/2 - 70;
-        BOOL check2 = temp.x < self.frame.size.width/2 + 70;
+        //left node
+        BOOL check1 = temp.x > self.frame.size.width/2 - 220;
+        BOOL check2 = temp.x < self.frame.size.width/2 - 80;
+        
+        //right node
+        BOOL check5 = temp.x > self.frame.size.width/2 + 80;
+        BOOL check6 = temp.x < self.frame.size.width/2 + 220;
+        
+        //common y-axis check
         BOOL check3 = temp.y > self.frame.size.height - 230;
         BOOL check4 = temp.y < self.frame.size.height - 70;
         
-        if (check1 && check2 && check3 && check4) {
-            acceleratorNode1.fillColor = [UIColor yellowColor];
-            acceleratorNode1.glowWidth = 20;
-            accelerate = YES;
-            pressed = YES;
-            
+        if (check3 && check4)
+        {
+            if (check1 && check2 && [track1.strokeColor isEqual:[UIColor colorWithRed:0 green:0 blue:0.9 alpha:1]])
+            {
+                acceleratorNode1.fillColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
+                acceleratorNode1.glowWidth = 20;
+                accelerate = YES;
+                pressed = YES;
+            }
+                
+            else if (check5 && check6 && [track1.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1]])
+            {
+                acceleratorNode2.fillColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
+                acceleratorNode2.glowWidth = 20;
+                accelerate = YES;
+                pressed = YES;
+            }
+        }
+        
+        if (accelerate && pressed)
+        {
             [DPlayer stop];
             NSLog(@"Accelerate");
             NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Accelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
@@ -193,7 +216,7 @@
 
 -(void) changeColorGreen
 {
-    track1.strokeColor = [UIColor colorWithRed:0 green:100.0/225.0 blue:0 alpha:1];
+    track1.strokeColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -206,12 +229,25 @@
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:green"];
             [self performSelector:@selector(changeColorGreen) withObject:self afterDelay:0.037];
         }
-        else if ([track1.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/225.0 blue:0 alpha:1]])
+        else if ([track1.strokeColor isEqual:[UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1]])
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:blue"];
             [self performSelector:@selector(changeColorBlue) withObject:self afterDelay:0.037];
         }
         trackChangeTimer = 50 + (arc4random() % 200);
+        accelerate = pressed = NO;
+        
+        [APlayer stop];
+        
+        NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
+        NSError * error;
+        
+        DPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:countDownURL error:&error];
+        DPlayer.numberOfLoops = 0;
+        
+        [DPlayer prepareToPlay];
+        [DPlayer play];
+        [_webSockets sendMessage:kDECCELERATE];
     }
     else
     {

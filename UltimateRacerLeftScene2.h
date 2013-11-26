@@ -11,3 +11,7 @@
 @interface UltimateRacerLeftScene2 : SKScene
 
 @end
+
+@interface SKEmitterNode (fromFile)
++ (instancetype)carNamed:(NSString*)name;
+@end

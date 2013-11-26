@@ -42,13 +42,20 @@
     return self;
 }
 
+-(void) displayVC
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UltimateRacerViewController* vc = (UltimateRacerViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 - (void)registeredUser:(NSNotification *)note
 {
     NSLog(@"%@", [note object]);
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UltimateRacerViewController* vc = (UltimateRacerViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
-    [self presentViewController:vc animated:YES completion:nil];
+    _correctImg.hidden = NO;
+    
+    [self performSelector:@selector(displayVC) withObject:self afterDelay:1.73];
 }
 
 - (id) initWithSoundFile:(AVAudioPlayer *)player
@@ -134,19 +141,8 @@
     }
 
     if ([enteredCode length] == 5)
-    {
-        [effectPlayer play];
-        _correctImg.hidden = YES;
-        _playButton.enabled = NO;
         [[UltimateRacerWebSockets sharedInstance] sendMessage:[NSString stringWithFormat:@"register_user:hello code:%@", enteredCode]];
         
-    }
-    else
-    {
-        _correctImg.hidden = YES;
-        _playButton.enabled = NO;
-    }
-    
     return NO;
 }
 

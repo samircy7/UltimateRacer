@@ -42,7 +42,7 @@
     if ([[self presentingViewController] isKindOfClass:[StartGameVC class]])
     {
     // Create and configure the scene.
-        scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
+        scene = [UltimateRacerLeftScene2 sceneWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.

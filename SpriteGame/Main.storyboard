@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPP-AB-h1T">
-                                <rect key="frame" x="91" y="440" width="97" height="87"/>
+                                <rect key="frame" x="86" y="516" width="97" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.79643397177419351" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -72,7 +72,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHV-6r-Buh">
-                                <rect key="frame" x="216" y="440" width="97" height="87"/>
+                                <rect key="frame" x="211" y="516" width="97" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.79993069556451613" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -83,7 +83,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHY-aZ-GFY">
-                                <rect key="frame" x="344" y="440" width="97" height="87"/>
+                                <rect key="frame" x="336" y="516" width="97" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.79854460685483875" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -94,7 +94,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKS-Fm-yio">
-                                <rect key="frame" x="467" y="440" width="97" height="87"/>
+                                <rect key="frame" x="461" y="516" width="97" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.79958417338709686" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -105,7 +105,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udm-ap-Lhn">
-                                <rect key="frame" x="591" y="440" width="97" height="87"/>
+                                <rect key="frame" x="586" y="516" width="97" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.79678049395161288" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -116,7 +116,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v2-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-qo-ZTR">
-                                <rect key="frame" x="74" y="199" width="636" height="128"/>
+                                <rect key="frame" x="74" y="225" width="636" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONt-VR-po3">
@@ -142,20 +142,15 @@
                                     <action selector="goBack:" destination="ar1-3n-TX6" eventType="touchUpInside" id="nX5-mZ-H2y"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correct.png" translatesAutoresizingMaskIntoConstraints="NO" id="kY9-e8-aAf">
-                                <rect key="frame" x="364" y="565" width="56" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wrong.png" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-9B-NBK">
-                                <rect key="frame" x="364" y="565" width="56" height="51"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correct.png" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-4d-irA">
+                                <rect key="frame" x="287" y="681" width="194" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.066666670143604279" green="0.20392158627510071" blue="0.050980396568775177" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
-                        <outlet property="correctImg" destination="kY9-e8-aAf" id="p9i-GM-UcB"/>
-                        <outlet property="wrongImg" destination="eTj-9B-NBK" id="ijx-Jq-oDC"/>
+                        <outlet property="correctImg" destination="rMz-4d-irA" id="rz4-Ym-l6u"/>
                         <outletCollection property="textFields" destination="BPP-AB-h1T" id="8HC-4r-8g9"/>
                         <outletCollection property="textFields" destination="yHV-6r-Buh" id="rDy-jy-fjX"/>
                         <outletCollection property="textFields" destination="GHY-aZ-GFY" id="5Xb-9r-d29"/>
@@ -184,7 +179,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9JF-ya-hvT">
-                                <rect key="frame" x="50" y="700" width="669" height="61"/>
+                                <rect key="frame" x="29" y="663" width="710" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfT-Ih-5M6">
@@ -215,12 +210,17 @@
                                     <segue destination="GTV-3O-SJn" kind="modal" id="xBB-IJ-Zbg"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correct.png" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-P6-OnH">
+                                <rect key="frame" x="296" y="705" width="194" height="196"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.27843138575553894" green="0.062745101749897003" blue="0.17647059261798859" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="YF1-AM-Hvr"/>
                     <connections>
                         <outlet property="codeLabel" destination="HfT-Ih-5M6" id="URS-YD-ehY"/>
+                        <outlet property="correctImg" destination="bIZ-P6-OnH" id="jd7-5h-C7X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAd-vi-heO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -239,16 +239,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpe-2C-CEF">
-                                <rect key="frame" x="70" y="57" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2a4-Ng-2be" kind="modal" id="U7R-Ed-M2V"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trafficboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="6d1-JX-Drk">
                                 <rect key="frame" x="264" y="76" width="240" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -286,14 +276,13 @@
         <image name="backButton2.png" width="368" height="117"/>
         <image name="button1.png" width="939" height="156"/>
         <image name="button2.png" width="939" height="156"/>
-        <image name="correct.png" width="102" height="131"/>
+        <image name="correct.png" width="191" height="259"/>
         <image name="greenlight.png" width="135" height="135"/>
         <image name="redlight.png" width="135" height="135"/>
         <image name="trafficboard.png" width="413" height="149"/>
         <image name="v1-1.png" width="1142" height="218"/>
         <image name="v1-2.png" width="1290" height="87"/>
         <image name="v2-1.png" width="1214" height="218"/>
-        <image name="wrong.png" width="92" height="121"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>

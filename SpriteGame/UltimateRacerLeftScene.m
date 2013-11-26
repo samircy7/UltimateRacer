@@ -230,7 +230,7 @@
         if (!isGreen)
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:green"];
-            [self performSelector:@selector(changeColorGreen) withObject:self afterDelay:0.037];
+            [self performSelector:@selector(changeColorGreen) withObject:self afterDelay:0.038];
             acceleratorNode1.fillColor = [UIColor clearColor];
             acceleratorNode1.glowWidth = 0;
             isGreen = YES;
@@ -238,7 +238,7 @@
         else if (isGreen)
         {
             [[UltimateRacerWebSockets sharedInstance] sendMessage:@"color_change:blue"];
-            [self performSelector:@selector(changeColorBlue) withObject:self afterDelay:0.037];
+            [self performSelector:@selector(changeColorBlue) withObject:self afterDelay:0.038];
             acceleratorNode2.fillColor = [UIColor clearColor];
             acceleratorNode2.glowWidth = 0;
             isGreen = NO;

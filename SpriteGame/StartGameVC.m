@@ -60,13 +60,20 @@
     _codeLabel.textColor = [UIColor colorWithWhite:1 alpha:0.7];
 }
 
+-(void) displayVC
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UltimateRacerViewController* vc = (UltimateRacerViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 - (void)registeredUser:(NSNotification *)note
 {
     NSLog(@"%@", [note object]);
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UltimateRacerViewController* vc = (UltimateRacerViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
-    [self presentViewController:vc animated:YES completion:nil];
+    _correctImg.hidden = NO;
+    
+    [self performSelector:@selector(displayVC) withObject:self afterDelay:1.5];
 }
 
 - (void)didReceiveMemoryWarning

@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *codeLabel;
 - (IBAction)goBack:(id)sender;
 - (void) stopMusic;
+@property (strong, nonatomic) IBOutlet UIImageView *correctImg;
 
 @end

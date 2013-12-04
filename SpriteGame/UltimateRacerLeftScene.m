@@ -19,17 +19,18 @@
 @implementation UltimateRacerLeftScene
 {
     SKNode* car1;
+    SKNode* car2;
     SKShapeNode* track1;
-    BOOL accelerate;
-    BOOL pressed;
-    BOOL turned[4];
+    BOOL accelerate1, accelerate2;
+    BOOL pressed1, pressed2;
+    BOOL turned1[4];
+    BOOL turned2[4];
     SKShapeNode* acceleratorNode1;
     SKShapeNode* acceleratorNode2;
     CGVector trial;
     UltimateRacerWebSockets *_webSockets;
     NSMutableString *_message;
     NSTimer *timer;
-    int checker;
     NSInteger trackChangeTimer;
     BOOL isGreen;
 }
@@ -69,6 +70,15 @@
         circle1.strokeColor = myColor1;
         [car1 addChild:circle1];
         
+        car2 = [SKNode node];
+        SKShapeNode* circle2 = [SKShapeNode node];
+        circle2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(selfSize.origin.x - 15, selfSize.origin.y - 15, 30, 30)]).CGPath;
+        UIColor *myColor2 = [UIColor redColor];
+        circle2.fillColor = myColor2;
+        circle2.strokeColor = myColor2;
+        [car2 addChild:circle2];
+
+        
         SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
         trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
         trail.targetNode = self;
@@ -76,6 +86,9 @@
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.8];
+        
+        car2.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
+        [car2.physicsBody setLinearDamping:0.8];
         
         /* Set up of accelerator nodes */
         
@@ -90,32 +103,37 @@
         isGreen = NO;
         
         [self addChild:track1];
-        [self addChild:car1];
+        //[self addChild:car1];
+        [self addChild:car2];
         [self addChild:acceleratorNode1];
         [self addChild:acceleratorNode2];
         
-        accelerate = NO;
-        pressed = NO;
+        accelerate1 = accelerate2 = NO;
+        pressed1 = pressed2 = NO;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed:) name:kACCELERATE object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed:) name:kDECCELERATE object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed2:) name:kACCELERATE2 object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed2:) name:kDECCELERATE2 object:nil];
         _webSockets = [UltimateRacerWebSockets sharedInstance];
-        turned[0] = YES;
-        turned[1] = turned[2] = turned[3] = NO;
+        turned1[0] = turned2[0] = YES;
+        turned1[1] = turned1[2] = turned1[3] = turned2[1] = turned2[2] = turned2[3] = NO;
         trial = CGVectorMake(18, 0);
         timer = [NSTimer scheduledTimerWithTimeInterval:INTERVAL target:self selector:@selector(updateCar) userInfo:nil repeats:YES];
         
         trackChangeTimer = 100 + (arc4random() % 200);
     }
-    
-    checker = 0;
-    
     return self;
+}
+
+- (void)updateRightCar:(NSNotification *)note
+{
+    NSDictionary *json = [note object];
+    car2.position = CGPointMake([[json objectForKey:@"car2.x"] floatValue], [[json objectForKey:@"car2.y"] floatValue]);
+    car2.physicsBody.velocity = CGVectorMake([[json objectForKey:@"velocity2.x"] floatValue], [[json objectForKey:@"velocity2.y"] floatValue]);
 }
 
 - (void)updateCar
 {
-    _message = [NSMutableString stringWithFormat:@"{ \"%@\":\"left\" , ", kUPDATECAR];
+    _message = [NSMutableString stringWithFormat:@"{ \"%@\":\"left\" , ", kUPDATECAR1];
     [_message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"velocity1.x\":%f, \"velocity1.y\":%f }", car1.position.x, car1.position.y, car1.physicsBody.velocity.dx, car1.physicsBody.velocity.dy]];
     [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
 }
@@ -144,20 +162,20 @@
             {
                 acceleratorNode1.fillColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
                 acceleratorNode1.glowWidth = 20;
-                accelerate = YES;
-                pressed = YES;
+                accelerate1 = YES;
+                pressed1 = YES;
             }
                 
             if (check5 && check6 && isGreen)
             {
                 acceleratorNode2.fillColor = [UIColor colorWithRed:0 green:100.0/255.0 blue:0 alpha:1];
                 acceleratorNode2.glowWidth = 20;
-                accelerate = YES;
-                pressed = YES;
+                accelerate1 = YES;
+                pressed1 = YES;
             }
         }
         
-        if (accelerate && pressed)
+        if (accelerate1 && pressed1)
         {
             [DPlayer stop];
             NSLog(@"Accelerate");
@@ -169,34 +187,49 @@
             
             [APlayer prepareToPlay];
             [APlayer play];
-            [_webSockets sendMessage:kACCELERATE];
+            [_webSockets sendMessage:kACCELERATE1];
         }
     }
 }
+//
+//- (void)acceleratorPressed1
+//{
+//    accelerate1 = YES;
+//    pressed1 = YES;
+//}
+//
+//- (void)decceleratorPressed1
+//{
+//    accelerate1 = NO;
+//    pressed1 = NO;
+//}
 
-- (void)acceleratorPressed:(NSNotification *)note
+- (void)acceleratorPressed2:(NSNotification *)note
 {
-    accelerate = YES;
-    pressed = YES;
+    NSLog(@"called!!!!!!!!!!");
+    accelerate2 = YES;
+    pressed2 = YES;
 }
 
-- (void)decceleratorPressed:(NSNotification *)note
+- (void)decceleratorPressed2:(NSNotification *)note
 {
-    accelerate = NO;
-    pressed = NO;
+    NSLog(@"2called!!!!!!!!!!");
+    accelerate2 = NO;
+    pressed2 = NO;
 }
+
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {    
-    if (accelerate)
+    if (accelerate1)
     {
         [APlayer stop];
         
         acceleratorNode1.fillColor = acceleratorNode2.fillColor = [UIColor clearColor];
         acceleratorNode1.glowWidth = acceleratorNode2.glowWidth = 0;
         
-        accelerate = NO;
-        pressed = NO;
+        accelerate1 = NO;
+        pressed1 = NO;
         
         NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
         NSError * error;
@@ -206,7 +239,7 @@
         
         [DPlayer prepareToPlay];
         [DPlayer play];
-        [_webSockets sendMessage:kDECCELERATE];
+        [_webSockets sendMessage:kDECCELERATE1];
     }
 }
 
@@ -247,7 +280,7 @@
         
         [APlayer stop];
         
-        if (accelerate && pressed)
+        if (accelerate2 && pressed2)
         {
             NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
             NSError * error;
@@ -257,7 +290,7 @@
             
             [DPlayer prepareToPlay];
             [DPlayer play];
-            [_webSockets sendMessage:kDECCELERATE];
+            [_webSockets sendMessage:kDECCELERATE1];
         }
     }
     else
@@ -265,48 +298,91 @@
         trackChangeTimer--;
     }
     
-    if (WIDTH - car1.position.x <= 0.000001 && !turned[1] && !turned[2]) // right bottom corner
+    if (WIDTH - car1.position.x <= 0.000001 && !turned1[1] && !turned1[2]) // right bottom corner
     {
-        turned[0] = NO;
-        turned[1] = YES;
+        turned1[0] = NO;
+        turned1[1] = YES;
         
         trial = CGVectorMake(0, 18);
         [car1.physicsBody setVelocity:CGVectorMake(0, car1.physicsBody.velocity.dx)];
         car1.position = CGPointMake(WIDTH, 0);
     }
     
-    if (WIDTH - car1.position.x <= 0.0000001 && HEIGHT - car1.position.y <= 0.0000001 && !turned[2])
+    if (WIDTH - car1.position.x <= 0.0000001 && HEIGHT - car1.position.y <= 0.0000001 && !turned1[2])
     {
-        turned[1] = NO;
-        turned[2] = YES;
+        turned1[1] = NO;
+        turned1[2] = YES;
         
         trial = CGVectorMake(-18, 0);
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
         car1.position = CGPointMake(WIDTH, HEIGHT);
     }
     
-    if (HEIGHT - car1.position.y <= 0.0000001 && car1.position.x <= 0.0000001 && !turned[3])
+    if (HEIGHT - car1.position.y <= 0.0000001 && car1.position.x <= 0.0000001 && !turned1[3])
     {
-        turned[2] = NO;
-        turned[3] = YES;
+        turned1[2] = NO;
+        turned1[3] = YES;
         
         trial = CGVectorMake(0, -18);
         [car1.physicsBody setVelocity:CGVectorMake(0, car1.physicsBody.velocity.dx)];
         car1.position = CGPointMake(0, HEIGHT);
     }
     
-    if (car1.position.x <= 0.0000001 && car1.position.y <= 0.0000001 && !turned[0])
+    if (car1.position.x <= 0.0000001 && car1.position.y <= 0.0000001 && !turned1[0])
     {
-        turned[3] = NO;
-        turned[0] = YES;
+        turned1[3] = NO;
+        turned1[0] = YES;
         
         trial = CGVectorMake(18, 0);
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
         car1.position = CGPointMake(0, 0);
     }
     
-    if (accelerate && pressed)
+    if (accelerate1 && pressed1)
         [car1.physicsBody applyForce:trial];
+    
+    if (WIDTH - car2.position.x <= 0.001 && !turned2[1] && !turned2[2]) // right bottom corner
+    {
+        turned2[0] = NO;
+        turned2[1] = YES;
+        
+        trial = CGVectorMake(0, 18);
+        [car2.physicsBody setVelocity:CGVectorMake(0, car2.physicsBody.velocity.dx)];
+        car2.position = CGPointMake(WIDTH, 0);
+    }
+    
+    if (WIDTH - car2.position.x <= 0.001 && HEIGHT - car2.position.y <= 0.001 && !turned2[2])
+    {
+        turned2[1] = NO;
+        turned2[2] = YES;
+        
+        trial = CGVectorMake(-18, 0);
+        [car2.physicsBody setVelocity:CGVectorMake(-1*car2.physicsBody.velocity.dy, 0)];
+        car2.position = CGPointMake(WIDTH, HEIGHT);
+    }
+    
+    if (HEIGHT - car2.position.y <= 0.001 && car2.position.x <= 0.001 && !turned2[3])
+    {
+        turned2[2] = NO;
+        turned2[3] = YES;
+        
+        trial = CGVectorMake(0, -18);
+        [car2.physicsBody setVelocity:CGVectorMake(0, car2.physicsBody.velocity.dx)];
+        car2.position = CGPointMake(0, HEIGHT);
+    }
+    
+    if (car2.position.x <= 0.001 && car2.position.y <= 0.001 && !turned2[0])
+    {
+        turned2[3] = NO;
+        turned2[0] = YES;
+        
+        trial = CGVectorMake(18, 0);
+        [car2.physicsBody setVelocity:CGVectorMake(-1*car2.physicsBody.velocity.dy, 0)];
+        car2.position = CGPointMake(0, 0);
+    }
+    
+    if (accelerate2 && pressed2)
+        [car2.physicsBody applyForce:trial];
 }
 
 - (void)dealloc

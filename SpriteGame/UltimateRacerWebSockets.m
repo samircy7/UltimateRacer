@@ -79,20 +79,35 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-    if([message rangeOfString:kUPDATECAR].location != NSNotFound)
+    if([message rangeOfString:kUPDATECAR1].location != NSNotFound)
     {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kUPDATECAR object:json];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUPDATECAR1 object:json];
         return;
     }
-    else if([message rangeOfString:kACCELERATE].location != NSNotFound)
+    else if([message rangeOfString:kUPDATECAR2].location != NSNotFound)
     {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kACCELERATE object:json];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUPDATECAR2 object:json];
+        return;
     }
-    else if([message rangeOfString:kDECCELERATE].location != NSNotFound)
+    else if([message rangeOfString:kACCELERATE1].location != NSNotFound)
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kDECCELERATE object:nil];
+        NSDictionary *json = nil;//[NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kACCELERATE1 object:json];
+    }
+    else if([message rangeOfString:kDECCELERATE1].location != NSNotFound)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDECCELERATE1 object:nil];
+    }
+    else if([message rangeOfString:kACCELERATE2].location != NSNotFound)
+    {
+        NSDictionary *json = nil;//[NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kACCELERATE2 object:json];
+    }
+    else if([message rangeOfString:kDECCELERATE2].location != NSNotFound)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDECCELERATE2 object:nil];
     }
     else if([message rangeOfString:kREGISTERED].location != NSNotFound)
     {
@@ -115,7 +130,7 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
     {
         //[_outboxWebSockets send:[NSString stringWithFormat:@"hello"]];
     }
-    NSLog(@"%@", message);
+    //NSLog(@"%@", message);
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket

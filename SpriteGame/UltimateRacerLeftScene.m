@@ -75,7 +75,7 @@
         [car1 addChild:trail];
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
-        [car1.physicsBody setLinearDamping:0.9];
+        [car1.physicsBody setLinearDamping:0.8];
         
         /* Set up of accelerator nodes */
         
@@ -187,16 +187,16 @@
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    acceleratorNode1.fillColor = [UIColor clearColor];
-    acceleratorNode1.glowWidth = 0;
-    
-    accelerate = NO;
-    pressed = NO;
-    
+{    
     if (accelerate)
     {
         [APlayer stop];
+        
+        acceleratorNode1.fillColor = acceleratorNode2.fillColor = [UIColor clearColor];
+        acceleratorNode1.glowWidth = acceleratorNode2.glowWidth = 0;
+        
+        accelerate = NO;
+        pressed = NO;
         
         NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Deccelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
         NSError * error;

@@ -190,10 +190,10 @@
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (pressed) {
+    if (accelerate) {
         
-        acceleratorNode1.fillColor = [UIColor clearColor];
-        acceleratorNode1.glowWidth = 0;
+        acceleratorNode1.fillColor = acceleratorNode2.fillColor = [UIColor clearColor];
+        acceleratorNode1.glowWidth = acceleratorNode2.glowWidth = 0;
         
         accelerate = NO;
         pressed = NO;

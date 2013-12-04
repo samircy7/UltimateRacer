@@ -11,7 +11,7 @@
 
 #import "UltimateRacerConstants.h"
 
-#define WIDTH 768
+#define WIDTH 568
 #define HEIGHT 324
 #define INTERVAL 1.5
 #define TRACKOFFSET 0
@@ -20,8 +20,6 @@
 {
     SKNode* car1;
     SKShapeNode* track1;
-    SKNode* car2;
-    SKShapeNode* track2;
     BOOL accelerate;
     BOOL pressed;
     BOOL turned[4];
@@ -54,6 +52,7 @@
         selfSize.origin.x = selfSize.size.width/2 - TRACKOFFSET;
         selfSize.origin.y = selfSize.size.height/2 - 112;
         selfSize.size.height -= 700;
+        selfSize.size.width -= 200;
         
         track1.path = ([UIBezierPath bezierPathWithRoundedRect:selfSize cornerRadius:10]).CGPath;
         track1.fillColor = [UIColor clearColor];

@@ -75,17 +75,32 @@
         car1 = [SKNode node];
         SKShapeNode* circle1 = [SKShapeNode node];
         circle1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(corners[0].x, corners[0].y, 30, 30)]).CGPath;
-        UIColor *myColor1 = [UIColor colorWithRed: 176.0/255.0 green: 226.0/255.0 blue:255.0/255.0 alpha: 1.0];
+        UIColor *myColor1 = [UIColor colorWithRed: 244.0/255.0 green: 164.0/255.0 blue:96.0/255.0 alpha: 1.0];
         circle1.fillColor = myColor1;
+        circle1.strokeColor = myColor1;
         [car1 addChild:circle1];
         
         car2 = [SKNode node];
         SKShapeNode* circle2 = [SKShapeNode node];
         circle2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(selfSize.origin.x - 15, selfSize.origin.y - 15, 30, 30)]).CGPath;
-        UIColor *myColor2 = [UIColor redColor];
+        UIColor *myColor2 = [UIColor colorWithRed:171.0/255.0 green:130.0/255.0 blue:1 alpha:1.0];
         circle2.fillColor = myColor2;
         circle2.strokeColor = myColor2;
         [car2 addChild:circle2];
+        
+        SKEmitterNode *trail2 = [SKEmitterNode carNamed:@"carParticle1"];
+        trail2.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+        trail2.targetNode = self;
+        [car2 addChild:trail2];
+        
+        SKShapeNode* colorIndicator = [SKShapeNode node];
+        CGRect temp;
+        temp.origin.x = temp.origin.y = 0;
+        temp.size.height = 40;
+        temp.size.width = self.frame.size.width;
+        colorIndicator.path = ([UIBezierPath bezierPathWithRect:temp]).CGPath;
+        colorIndicator.fillColor = myColor2;
+        colorIndicator.strokeColor = myColor2;
         
         SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle2"];
         trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
@@ -120,6 +135,7 @@
         [self addChild:car2];
         [self addChild:acceleratorNode1];
         [self addChild:acceleratorNode2];
+        [self addChild:colorIndicator];
         
         accelerate1 = accelerate2 = NO;
         pressed1 = pressed2 = NO;

@@ -16,6 +16,7 @@
 #import "UltimateRacerRightScene.h"
 #import "UltimateRacerWebSockets.h"
 #import "UltimateRacerConstants.h"
+#import "UltimateRacerViewController.h"
 
 @implementation UltimateRacerRightScene
 {
@@ -191,6 +192,11 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    UltimateRacerViewController* temp = (UltimateRacerViewController *)self.view.window.rootViewController.presentedViewController.presentedViewController;
+    
+    if ([temp checkCountDown])
+        return;
+    
     for (UITouch* touch in touches)
     {
         CGPoint temp = [touch locationInView:self.view];
@@ -333,6 +339,10 @@
         trial1 = CGVectorMake(18, 0);
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
         car1.position = CGPointMake(0, 0);
+        
+        UltimateRacerViewController* temp = (UltimateRacerViewController *)self.view.window.rootViewController.presentedViewController.presentedViewController;
+        
+        [temp hideLight];
     }
     
     if (accelerate1 && pressed1)

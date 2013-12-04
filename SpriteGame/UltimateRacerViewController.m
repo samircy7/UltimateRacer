@@ -19,6 +19,7 @@
     NSString * player;
     NSTimer *timer;
     int countDown;
+    BOOL isCountingDown;
 }
 
 @end
@@ -38,6 +39,7 @@
     // Configure the view.
     countDown = 5;
     SKView* skView = (SKView *)self.view;
+    isCountingDown = YES;
     
     if ([[self presentingViewController] isKindOfClass:[StartGameVC class]])
     {
@@ -108,6 +110,7 @@
     else if ( countDown == 0 )
     {
         [timer invalidate];
+        isCountingDown = NO;
     }
 }
 
@@ -141,6 +144,16 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (BOOL) checkCountDown
+{
+    return isCountingDown;
+}
+
+- (void) hideLight
+{
+    first.hidden = second.hidden = third.hidden = _board.hidden = YES;
 }
 
 @end

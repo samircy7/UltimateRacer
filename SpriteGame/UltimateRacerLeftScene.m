@@ -8,7 +8,7 @@
 
 #import "UltimateRacerLeftScene.h"
 #import "UltimateRacerWebSockets.h"
-
+#import "UltimateRacerViewController.h"
 #import "UltimateRacerConstants.h"
 
 #define WIDTH 768
@@ -34,6 +34,7 @@
     NSTimer *timer;
     NSInteger trackChangeTimer;
     BOOL isGreen;
+    int lapCount;
 }
 
 @synthesize APlayer;
@@ -60,6 +61,15 @@
         track1.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
         track1.glowWidth = 7;
         track1.lineWidth = 23;
+        
+        SKShapeNode* finishLine = [SKShapeNode node];
+        UIBezierPath* path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(selfSize.origin.x+30, selfSize.origin.y-30)];
+        [path addLineToPoint:CGPointMake(selfSize.origin.x+30, selfSize.origin.y+30)];
+        finishLine.path = path.CGPath;
+        finishLine.strokeColor = [UIColor whiteColor];
+        finishLine.lineWidth = 4;
+        finishLine.glowWidth = 4;
 
         /* Set up of cars */
         car1 = [SKNode node];
@@ -113,6 +123,7 @@
         [self addChild:car2];
         [self addChild:acceleratorNode1];
         [self addChild:acceleratorNode2];
+        [self addChild:finishLine];
         
         accelerate1 = accelerate2 = NO;
         pressed1 = pressed2 = NO;
@@ -146,6 +157,11 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    UltimateRacerViewController* temp = (UltimateRacerViewController *)self.view.window.rootViewController.presentedViewController.presentedViewController;
+    
+    if ([temp checkCountDown])
+        return;
+    
     for (UITouch* touch in touches)
     {
         CGPoint temp = [touch locationInView:self.view];
@@ -340,6 +356,10 @@
         trial1 = CGVectorMake(18, 0);
         [car1.physicsBody setVelocity:CGVectorMake(-1*car1.physicsBody.velocity.dy, 0)];
         car1.position = CGPointMake(0, 0);
+        
+        UltimateRacerViewController* temp = (UltimateRacerViewController *)self.view.window.rootViewController.presentedViewController.presentedViewController;
+        
+        [temp hideLight];
     }
     
     if (accelerate1 && pressed1)

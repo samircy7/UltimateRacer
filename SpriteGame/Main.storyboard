@@ -260,6 +260,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NEF-eK-tSV"/>
                     <connections>
+                        <outlet property="board" destination="6d1-JX-Drk" id="SJp-4M-vcs"/>
                         <outlet property="first" destination="O7E-XE-khf" id="1e5-Hh-sED"/>
                         <outlet property="second" destination="VE3-bd-0X0" id="SxV-MF-Qvo"/>
                         <outlet property="third" destination="uac-7a-y42" id="Z8S-mV-HPa"/>

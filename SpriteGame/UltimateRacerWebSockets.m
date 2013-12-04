@@ -83,13 +83,13 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
     {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:kUPDATECAR1 object:json];
-        return;
+        //return;
     }
     else if([message rangeOfString:kUPDATECAR2].location != NSNotFound)
     {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[message dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:kUPDATECAR2 object:json];
-        return;
+        //return;
     }
     else if([message rangeOfString:kACCELERATE1].location != NSNotFound)
     {
@@ -130,7 +130,7 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
     {
         //[_outboxWebSockets send:[NSString stringWithFormat:@"hello"]];
     }
-    //NSLog(@"%@", message);
+    NSLog(@"%@", message);
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket

@@ -55,7 +55,7 @@
         track1.path = [path CGPath];
         
         track1.fillColor = [UIColor clearColor];
-        track1.strokeColor = [UIColor colorWithRed:0 green:0 blue:0.9 alpha:1];
+        track1.strokeColor = [UIColor colorWithRed:0 green:0.9 blue:0 alpha:1];
         track1.glowWidth = 7;
         track1.lineWidth = 5;
         

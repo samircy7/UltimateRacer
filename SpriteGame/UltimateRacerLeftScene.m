@@ -75,6 +75,18 @@
 
         /* Set up of cars */
         car1 = [SKNode node];
+        car2 = [SKNode node];
+        
+        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
+        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+        trail.targetNode = self;
+        [car1 addChild:trail];
+        
+        SKEmitterNode *trail2 = [SKEmitterNode carNamed:@"carParticle1"];
+        trail2.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
+        trail2.targetNode = self;
+        [car2 addChild:trail2];
+        
         SKShapeNode* circle1 = [SKShapeNode node];
         circle1.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(selfSize.origin.x - 15, selfSize.origin.y - 15, 30, 30)]).CGPath;
         UIColor *myColor1 = [UIColor colorWithRed: 244.0/255.0 green: 164.0/255.0 blue:96.0/255.0 alpha: 1.0];
@@ -82,7 +94,6 @@
         circle1.strokeColor = myColor1;
         [car1 addChild:circle1];
         
-        car2 = [SKNode node];
         SKShapeNode* circle2 = [SKShapeNode node];
         circle2.path = ([UIBezierPath bezierPathWithOvalInRect:CGRectMake(selfSize.origin.x - 15, selfSize.origin.y - 15, 30, 30)]).CGPath;
         UIColor *myColor2 = [UIColor colorWithRed:171.0/255.0 green:130.0/255.0 blue:1 alpha:1.0];
@@ -98,16 +109,6 @@
         colorIndicator.path = ([UIBezierPath bezierPathWithRect:temp]).CGPath;
         colorIndicator.fillColor = myColor1;
         colorIndicator.strokeColor = myColor1;
-        
-        SKEmitterNode *trail = [SKEmitterNode carNamed:@"carParticle1"];
-        trail.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
-        trail.targetNode = self;
-        [car1 addChild:trail];
-        
-        SKEmitterNode *trail2 = [SKEmitterNode carNamed:@"carParticle1"];
-        trail2.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
-        trail2.targetNode = self;
-        [car2 addChild:trail2];
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.9];

@@ -116,7 +116,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v2-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-qo-ZTR">
-                                <rect key="frame" x="74" y="225" width="636" height="128"/>
+                                <rect key="frame" x="74" y="273" width="636" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONt-VR-po3">
@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="It0-SM-0Gj">
-                                <rect key="frame" x="85" y="191" width="598" height="131"/>
+                                <rect key="frame" x="85" y="217" width="598" height="131"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9JF-ya-hvT">

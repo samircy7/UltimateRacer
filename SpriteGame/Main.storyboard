@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2a4-Ng-2be">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3017" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2a4-Ng-2be">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGi-ED-x5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1027" y="88"/>
+            <point key="canvasLocation" x="961" y="740"/>
         </scene>
         <!--Join GameVC-->
         <scene sceneID="eh2-Yu-36d">
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqN-i9-2wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="732"/>
+            <point key="canvasLocation" x="2085" y="1496"/>
         </scene>
         <!--Start GameVC-->
         <scene sceneID="a25-r1-Pbd">
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAd-vi-heO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="-496"/>
+            <point key="canvasLocation" x="2133" y="252"/>
         </scene>
         <!--Ultimate Racer View Controller-->
         <scene sceneID="TqA-ee-9JV">
@@ -255,6 +255,13 @@
                                 <rect key="frame" x="423" y="93" width="61" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lap 0/3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-dQ-DSw">
+                                <rect key="frame" x="285" y="200" width="199" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -262,13 +269,54 @@
                     <connections>
                         <outlet property="board" destination="6d1-JX-Drk" id="SJp-4M-vcs"/>
                         <outlet property="first" destination="O7E-XE-khf" id="1e5-Hh-sED"/>
+                        <outlet property="lapCount" destination="RQI-dQ-DSw" id="laU-hL-GER"/>
                         <outlet property="second" destination="VE3-bd-0X0" id="SxV-MF-Qvo"/>
                         <outlet property="third" destination="uac-7a-y42" id="Z8S-mV-HPa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW6-xW-ZBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="105"/>
+            <point key="canvasLocation" x="3070" y="789"/>
+        </scene>
+        <!--Ultimate Racer Game Finish View Controller-->
+        <scene sceneID="fOH-Nn-V8D">
+            <objects>
+                <viewController storyboardIdentifier="GameFinishVC" id="uHj-Mp-kLt" customClass="UltimateRacerGameFinishViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VvK-7i-zOc"/>
+                        <viewControllerLayoutGuide type="bottom" id="9kz-NS-OHb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xrd-V1-KAs">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioB-Fx-ggf">
+                                <rect key="frame" x="58" y="87" width="152" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="backButton2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2a4-Ng-2be" kind="modal" id="i5h-4d-Lzy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAe-aa-FkS">
+                                <rect key="frame" x="168" y="418" width="432" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.067758505415053405" green="0.083482630005150688" blue="0.26195227581521741" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="xAe-aa-FkS" id="tmd-jW-eZN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEA-KU-o5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3964" y="825"/>
         </scene>
     </scenes>
     <resources>

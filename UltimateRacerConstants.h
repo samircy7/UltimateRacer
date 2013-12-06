@@ -17,3 +17,7 @@
 #define kCLOSEGAME @"closed_game"
 #define kNEWGAME @"new_game"
 #define kCOLORCHANGE @"color_change"
+#define kGAMEFINISHED @"finish_game"
+#define kINDICATORHEIGHT 20
+@class UltimateRacerMenuViewController;
+extern UltimateRacerMenuViewController *menu;

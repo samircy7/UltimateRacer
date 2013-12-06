@@ -9,10 +9,14 @@
 #import <SpriteKit/SpriteKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+@class UltimateRacerViewController;
+
 @interface UltimateRacerRightScene : SKScene
 
 @property (strong, nonatomic) AVAudioPlayer *APlayer;
 @property (strong, nonatomic) AVAudioPlayer *DPlayer;
+@property (weak, nonatomic) UltimateRacerViewController *viewController;
+@property (weak, nonatomic) UILabel *label;
 
 @end
 

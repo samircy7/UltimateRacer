@@ -21,6 +21,7 @@
     int countDown;
     BOOL isCountingDown;
 }
+@property (weak, nonatomic) IBOutlet UILabel *lapCount;
 
 @end
 
@@ -46,7 +47,9 @@
     // Create and configure the scene.
         scene = [UltimateRacerLeftScene sceneWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-    
+        [(UltimateRacerLeftScene *)scene setViewController:self];
+        [(UltimateRacerLeftScene *)scene setLabel:_lapCount];
+        
     // Present the scene.
         [skView presentScene:scene];
         
@@ -59,7 +62,8 @@
         // Create and configure the scene.
         scene = [UltimateRacerRightScene sceneWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        
+        [(UltimateRacerRightScene *)scene setViewController:self];
+        [(UltimateRacerRightScene *)scene setLabel:_lapCount];
         // Present the scene.
         [skView presentScene:scene];
         
@@ -79,6 +83,7 @@
     }
     NSLog(@"HERE");
     timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+    [_lapCount setFont:[UIFont fontWithName:@"SubatomicTsoonami" size:30.0]];
     [self performSelector:@selector(setUpCountDown) withObject:self afterDelay:1.15];
     UltimateRacerWebSockets *websockets = [UltimateRacerWebSockets sharedInstance];
 }

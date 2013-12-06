@@ -10,6 +10,7 @@
 #import "UltimateRacerWebSockets.h"
 #import "UltimateRacerViewController.h"
 #import "UltimateRacerConstants.h"
+#import "UltimateRacerGameFinishViewController.h"
 
 #define WIDTH 768
 #define HEIGHT 324
@@ -82,7 +83,7 @@
         trail.targetNode = self;
         [car1 addChild:trail];
         
-        SKEmitterNode *trail2 = [SKEmitterNode carNamed:@"carParticle1"];
+        SKEmitterNode *trail2 = [SKEmitterNode carNamed:@"carParticle2"];
         trail2.position = CGPointMake(selfSize.origin.x, selfSize.origin.y);
         trail2.targetNode = self;
         [car2 addChild:trail2];
@@ -101,14 +102,15 @@
         circle2.strokeColor = myColor2;
         [car2 addChild:circle2];
         
+        UIColor *color = [UIColor colorWithRed:252.0/255.0 green:34.0/255.0 blue:228.0/255.0 alpha:0.8];
         SKShapeNode* colorIndicator = [SKShapeNode node];
         CGRect temp;
         temp.origin.x = temp.origin.y = 0;
-        temp.size.height = 40;
+        temp.size.height = kINDICATORHEIGHT;
         temp.size.width = self.frame.size.width;
         colorIndicator.path = ([UIBezierPath bezierPathWithRect:temp]).CGPath;
-        colorIndicator.fillColor = myColor1;
-        colorIndicator.strokeColor = myColor1;
+        colorIndicator.fillColor = color;
+        colorIndicator.strokeColor = [UIColor clearColor];
         
         car1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:15];
         [car1.physicsBody setLinearDamping:0.9];
@@ -147,6 +149,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRightCar:) name:kUPDATECAR2 object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceleratorPressed2:) name:kACCELERATE2 object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(decceleratorPressed2:) name:kDECCELERATE2 object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameFinished) name:kGAMEFINISHED object:nil];
         _webSockets = [UltimateRacerWebSockets sharedInstance];
         turned1[0] = turned2[0] = YES;
         turned1[1] = turned1[2] = turned1[3] = turned2[1] = turned2[2] = turned2[3] = NO;
@@ -154,6 +157,7 @@
         timer = [NSTimer scheduledTimerWithTimeInterval:INTERVAL target:self selector:@selector(updateCar) userInfo:nil repeats:YES];
         
         trackChangeTimer = 100 + (arc4random() % 200);
+        lapCount = 0;
     }
     return self;
 }
@@ -163,12 +167,16 @@
     NSDictionary *json = [note object];
     car2.position = CGPointMake([[json objectForKey:@"car2.x"] floatValue], [[json objectForKey:@"car2.y"] floatValue]);
     car2.physicsBody.velocity = CGVectorMake([[json objectForKey:@"velocity2.x"] floatValue], [[json objectForKey:@"velocity2.y"] floatValue]);
+    turned2[0] = [[json objectForKey:@"turned_0"] boolValue];
+    turned2[1] = [[json objectForKey:@"turned_1"] boolValue];
+    turned2[2] = [[json objectForKey:@"turned_2"] boolValue];
+    turned2[3] = [[json objectForKey:@"turned_3"] boolValue];
 }
 
 - (void)updateCar
 {
     _message = [NSMutableString stringWithFormat:@"{ \"%@\":\"left\" , ", kUPDATECAR1];
-    [_message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"velocity1.x\":%f, \"velocity1.y\":%f }", car1.position.x, car1.position.y, car1.physicsBody.velocity.dx, car1.physicsBody.velocity.dy]];
+    [_message appendString:[NSString stringWithFormat:@"\"car1.x\":%f, \"car1.y\":%f, \"velocity1.x\":%f, \"velocity1.y\":%f, \"turned_0\":%d, \"turned_1\":%d, \"turned_2\":%d, \"turned_3\":%d }", car1.position.x, car1.position.y, car1.physicsBody.velocity.dx, car1.physicsBody.velocity.dy, turned1[0], turned1[1], turned1[2], turned1[3]]];
     [[UltimateRacerWebSockets sharedInstance] sendMessage:_message];
 }
 
@@ -217,7 +225,7 @@
         if (accelerate1 && pressed1)
         {
             [DPlayer stop];
-            NSLog(@"Accelerate");
+            //NSLog(@"Accelerate");
             NSURL * countDownURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Accelerate.mp3",[[NSBundle mainBundle] resourcePath]]];
             NSError * error;
             
@@ -377,6 +385,8 @@
         UltimateRacerViewController* temp = (UltimateRacerViewController *)self.view.window.rootViewController.presentedViewController.presentedViewController;
         
         [temp hideLight];
+        lapCount++;
+        [_label setText:[NSString stringWithFormat:@"Lap %d/3", lapCount]];
     }
     
     if (accelerate1 && pressed1)
@@ -427,6 +437,26 @@
     
     if (accelerate2 && pressed2)
         [car2.physicsBody applyForce:trial2];
+    
+    if(lapCount == 3)
+    {
+        UltimateRacerGameFinishViewController *vc = (UltimateRacerGameFinishViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GameFinishVC"];
+        [vc setMessage:@"Winner"];
+        [_webSockets sendMessage:kGAMEFINISHED];
+        [self.viewController presentViewController:vc animated:YES completion:^{
+            [self.viewController dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
+}
+
+- (void)gameFinished
+{
+    if(lapCount < 3)
+    {
+        UltimateRacerGameFinishViewController *vc = (UltimateRacerGameFinishViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GameFinishVC"];
+        [vc setMessage:@"Try Again"];
+        [self.viewController presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 - (void)dealloc

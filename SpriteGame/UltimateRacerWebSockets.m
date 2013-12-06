@@ -122,6 +122,10 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:kCLOSEGAME object:nil];
     }
+    else if([message rangeOfString:kGAMEFINISHED].location != NSNotFound)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kGAMEFINISHED object:message];
+    }
     else if([message rangeOfString:kNEWGAME].location != NSNotFound)
     {
         NSLog(@"new game created %@", message);
@@ -130,7 +134,7 @@ NSString * const kOutboxString = @"ws://secret-headland-1305.herokuapp.com/submi
     {
         //[_outboxWebSockets send:[NSString stringWithFormat:@"hello"]];
     }
-    NSLog(@"%@", message);
+    //NSLog(@"%@", message);
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
